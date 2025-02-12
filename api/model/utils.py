@@ -1,14 +1,14 @@
+import torch
+
 from IPython.display import Image
 
 from imblearn.combine import SMOTETomek
 from imblearn.over_sampling import SMOTE
-from imblearn.under_sampling import RandomUnderSampler
+from imblearn.under_sampling import RandomUnderSampler, TomekLinks
 
 import os
 
 import pandas as pd
-
-import pydotplus
 
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.linear_model import LogisticRegression
@@ -105,27 +105,6 @@ def preprocess(df):
     return df
 
 
-def vis_tree(model, config):
-
-    tree = model.estimators_[0]
-
-    dot_data = export_graphviz(tree, out_file=None, 
-                            filled=True, rounded=True, 
-                            special_characters=True)
-
-    graph = pydotplus.graph_from_dot_data(dot_data)  
-
-    Image(graph.create_png())
-
-    if not os.path.exists(config['vis_path']):
-        os.makedirs(config['vis_path'])
-    
-    path = os.path.join(config['vis_path'], 'tree.png')
-    graph.write_png(path)
-
-    return graph
-
-
 def get_model(config):
 
     class_weight_value = config['class_weight']
@@ -184,3 +163,14 @@ def evaluate(y_test, y_pred, verbose=False):
         print("Confusion Matrix\n", conf_matrix)
 
     return accuracy, precision, recall, f1, conf_matrix
+
+
+def get_processed_data(config):
+
+    df = pd.read_csv(config['data_path'], sep=';')
+    df = preprocess(df)
+
+    X = df.drop('FRAUD', axis=1)
+    y = df['FRAUD']
+
+    return torch.tensor(X.values.astype(float)).float(), torch.tensor(y.values.astype(float)).long()
