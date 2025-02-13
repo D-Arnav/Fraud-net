@@ -74,8 +74,8 @@ const transposedRows = transposeData(rows);
 
 function BasicTable() {
   return (
-    <TableContainer component={Paper}>
-      <Table className="simple-table" aria-label="simple table">
+    <TableContainer component={Paper} elevation={0}>
+      <Table className="simple-table" size="small" aria-label="simple table">
         <TableBody className='table-body'>
           {transposedRows.map((row) => (
             <TableRow className='table-row' key={row.key}>
