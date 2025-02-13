@@ -76,9 +76,9 @@ function BasicTable() {
   return (
     <TableContainer component={Paper}>
       <Table className="simple-table" aria-label="simple table">
-        <TableBody>
+        <TableBody className='table-body'>
           {transposedRows.map((row) => (
-            <TableRow key={row.key}>
+            <TableRow className='table-row' key={row.key}>
               <TableCell component="th" scope="row">
                 <strong>{row.key}</strong>
               </TableCell>
