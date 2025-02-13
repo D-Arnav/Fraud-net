@@ -18,6 +18,8 @@ from utils import train, get_processed_data, evaluate
 
 args = parse_args()
 
+torch.manual_seed(args.seed)
+
 config = {
     'seed': args.seed,
     'data_path': args.data_path,
@@ -26,7 +28,7 @@ config = {
     'log_path': args.log_path,
     'split': args.split,
     'class_weight': args.class_weight,
-    'save': False
+    'save': args.save
 }
 
 X_train, y_train, X_test, y_test = get_processed_data(config)

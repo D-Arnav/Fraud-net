@@ -2,8 +2,6 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 
-from IPython.display import Image
-
 from imblearn.combine import SMOTETomek
 from imblearn.over_sampling import SMOTE
 from imblearn.under_sampling import RandomUnderSampler, TomekLinks
@@ -66,7 +64,8 @@ def rename_columns(df):
 
 def select_columns(df):
 
-    df = df[['CARD_TYPE', 'CARD_NAME', 'CREATION_TYPE', 'MCC', 'COUNTRY', 'SCA_EXEMPTION', 'SCA_EXEMPTION_FLOW', 'MERCHANT', 'SHOP', 'AMOUNT', 'FRAUD']]
+    df = df[['CARD_TYPE', 'CARD_NAME', 'CREATION_TYPE', 'MCC', 'COUNTRY', 'SCA_EXEMPTION', 
+             'SCA_EXEMPTION_FLOW', 'MERCHANT', 'SHOP', 'AMOUNT', 'FRAUD']]
 
     return df
 
@@ -118,48 +117,6 @@ def preprocess(df):
     df = encode_columns(df)
 
     return df
-
-
-def get_model(config):
-
-    class_weight_value = config['class_weight']
-
-    models =  {
-        'logistic': LogisticRegression(
-            class_weight={0: class_weight_value, 1: 1 - class_weight_value}, 
-            random_state=config['seed']),
-
-        'svm': SVC(class_weight={0: class_weight_value, 1: 1 - class_weight_value}, 
-                   random_state=config['seed']),
-
-        'random_forest': RandomForestClassifier(verbose=True, 
-                                                max_depth=config['depth'], 
-                                                class_weight={0: class_weight_value, 1: 1 - class_weight_value}, 
-                                                random_state=config['seed']),
-
-        'neural_network': MLPClassifier(random_state=config['seed']),
-        
-        'gb_trees': GradientBoostingClassifier(random_state=config['seed'])
-    }
-
-    model = models[config['model']]
-
-
-    return model
-
-
-def resample(X_train, y_train, config):
-
-    if config['class_balance_method'] == 'smote_tomek':
-        X_train, y_train = SMOTETomek(random_state=config['seed']).fit_resample(X_train, y_train)
-
-    elif config['class_balance_method'] == 'smote':
-        X_train, y_train = SMOTE(random_state=config['seed']).fit_resample(X_train, y_train)
-
-    elif config['class_balance_method'] == 'undersampling':
-        X_train, y_train = RandomUnderSampler(random_state=config['seed']).fit_resample(X_train, y_train)
-
-    return X_train, y_train
 
 
 def get_processed_data(config, tomek=True):

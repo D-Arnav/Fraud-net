@@ -14,6 +14,12 @@ def get_current_time():
 
 @app.route('/predict_one', methods=['GET', 'POST'])
 def predict_one():
+    """
+    JSON Request
+    
+    """
+    
+    
     data = request.get_json()
     pass
 
