@@ -13,6 +13,7 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 
+// Heading title
 function Title() {
   return (
     <Box className="title">
@@ -28,6 +29,7 @@ function LabTabs() {
     setValue(newValue);
   };
 
+  
   return (
     <Box className="table">
       <TabContext value={value}>
@@ -41,7 +43,8 @@ function LabTabs() {
         </Box>
         <TabPanel value="1">
           <BasicTable />
-          <div></div>
+          {/* spacing between tables */}
+          <Box sx={{ height:32 }}></Box> 
           <NormalTable />
         </TabPanel>
         <TabPanel value="2">Item Two</TabPanel>
@@ -77,8 +80,8 @@ const transposedRows = transposeData(rows);
 
 function BasicTable() {
   return (
-    <TableContainer component={Paper}>
-      <Table className="simple-table" aria-label="simple table">
+    <TableContainer component={Paper} elevation={0}>
+      <Table className="simple-table" size="small" aria-label="simple table">
         <TableBody className='table-body'>
           {transposedRows.map((row) => (
             <TableRow className='table-row' key={row.key}>
@@ -111,15 +114,15 @@ const rows1 = [
 
 function NormalTable() {
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+    <TableContainer className="result-table" component={Paper} elevation={0}>
+      <Table sx={{ minWidth: 650}} size="small" aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>S.No</TableCell>
-            <TableCell align="right">Payment ID</TableCell>
-            <TableCell align="right">Predicted Status</TableCell>
-            <TableCell align="right">True Status</TableCell>
-            <TableCell align="right">Confidence Score</TableCell>
+            <TableCell align="center"><b>S.No</b></TableCell>
+            <TableCell align="center"><b>Payment ID</b></TableCell>
+            <TableCell align="center"><b>Predicted Status</b></TableCell>
+            <TableCell align="center"><b>True Status</b></TableCell>
+            <TableCell align="center"><b>Confidence Score</b></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -128,13 +131,17 @@ function NormalTable() {
               key={row.name}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              <TableCell component="th" scope="row">
+              <TableCell component="th" scope="row" align="center">
                 {row.no}
               </TableCell>
-              <TableCell align="right">{row.pay_id}</TableCell>
-              <TableCell align="right">{row.pred_status}</TableCell>
-              <TableCell align="right">{row.true_status}</TableCell>
-              <TableCell align="right">{row.conf_sc}</TableCell>
+              <TableCell align="center">{row.pay_id}</TableCell>
+              <TableCell align="center" style={{ color: row.pred_status === "Legitimate" ? 'green' : 'red', fontWeight: 'bold'}}>
+                {row.pred_status}
+              </TableCell>
+              <TableCell align="center" style={{ color: row.true_status === "Legitimate" ? 'green' : 'red', fontWeight: 'bold'}}>
+                {row.true_status}
+              </TableCell>
+              <TableCell align="center">{row.conf_sc}</TableCell>
             </TableRow>
           ))}
         </TableBody>

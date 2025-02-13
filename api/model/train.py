@@ -1,15 +1,20 @@
+import os
+
 import numpy as np
 
-import pandas as pd
+from imblearn.under_sampling import TomekLinks
 
-from parser import parse_args
-
-from sklearn.model_selection import train_test_split, StratifiedKFold
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
 from sklearn.decomposition import PCA
 
-from utils import preprocess, vis_tree, get_model, resample, evaluate
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+import torch.optim as optim
 
-
+from parser import parse_args
+from utils import train, get_processed_data
 
 
 args = parse_args()
@@ -20,63 +25,44 @@ config = {
     'save_path': args.save_path,
     'vis_path': args.vis_path,
     'split': args.split,
-    'model': args.model,
-    'depth': args.tree_depth,
     'class_weight': args.class_weight,
-    'class_balance_method': args.class_balance_method,
-    'pca_dim': args.pca_dim,
-    'k_folds': args.k_folds
+    'save': False
 }
 
-# Load Data
 
-df = pd.read_csv(config['data_path'], sep=';')
-df = preprocess(df)
+X, y = get_processed_data(config)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=config['seed'])
+X_train, y_train = TomekLinks().fit_resample(X_train, y_train)
+X_train, y_train = torch.tensor(X_train), torch.tensor(y_train)
 
-# Train Model
+model = train(X_train, y_train, config)
 
-X = df.drop('FRAUD', axis=1)
-y = df['FRAUD']
-
-if config['pca_dim'] != 0:
-    pca = PCA(n_components=config['pca_dim'], random_state=config['seed'])
-    X = pca.fit_transform(X)
-
-
-kf = StratifiedKFold(n_splits=config['k_folds'], shuffle=True, random_state=config['seed'])
-
-avg_acc, avg_prec, avg_rec, avg_f1 = 0, 0, 0, 0
-
-for train_index, test_index in kf.split(X, y):
-    
-    X_train, X_test = X.iloc[train_index], X.iloc[test_index]
-    y_train, y_test = y.iloc[train_index], y.iloc[test_index]
-
-    X_train, y_train = resample(X_train, y_train, config)
-
-    model = get_model(config)
-    model.fit(X_train, y_train)
-
-    y_pred = model.predict(X_test)
-    accuracy, precision, recall, f1, conf_matrix = evaluate(y_test, y_pred, verbose=False)
-
-    avg_acc += accuracy
-    avg_prec += precision
-    avg_rec += recall
-    avg_f1 += f1
-
-avg_acc /= config['k_folds']
-avg_prec /= config['k_folds']
-avg_rec /= config['k_folds']
-avg_f1 /= config['k_folds']
+results = eval()
+model.eval()
+with torch.no_grad():
+    y_pred = model(X_test).argmax(dim=1).numpy()
 
 
-print(f"Average Metrics\n"
-      f"Accuracy: {avg_acc*100:.1f}%\n"
-      f"Precision: {avg_prec*100:.2f}%\n"
-      f"Recall: {avg_rec*100:.2f}%\n"
-      f"F1 Score: {avg_f1:.2f}\n\n")
-       
 
-if config['model'] in ['decision_tree', 'random_forest']:
-    vis_tree(model, config)
+accuracy = accuracy_score(y_test, y_pred)
+precision = precision_score(y_test, y_pred)
+recall = recall_score(y_test, y_pred)
+f1 = f1_score(y_test, y_pred)
+conf_matrix = confusion_matrix(y_test, y_pred)
+
+tn, fp, fn, tp = conf_matrix.ravel()
+fpr = fp / (fp + tn)
+fnr = fn / (fn + tp)
+
+print(f'Class Weight {config['class_weight']}')
+print(f'Accuracy: {accuracy*100:.4f}%')
+print(f'Precision: {precision*100:.4f}%')
+print(f'Recall: {recall*100:.4f}%')
+print(f'F1 Score: {f1*100:.4f}%')
+print(f'Confusion Matrix\n')
+print(f'{np.array([[tp, fn], [fp, tn]])}')
+
+
+with open('api/model/log.txt', 'a') as f:
+    out = f"CW {config['class_weight']}\nPrec {precision*100:.2f}% & Rec {recall*100:.2f}%\n{conf_matrix} | FPR ({fpr*100:.2f}%) & FNR ({fnr*100:.2f}%)\n"
+    f.write(out)

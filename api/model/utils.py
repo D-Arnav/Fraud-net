@@ -1,4 +1,6 @@
 import torch
+import torch.nn as nn
+import torch.optim as optim
 
 from IPython.display import Image
 
@@ -16,6 +18,9 @@ from sklearn.svm import SVC
 from sklearn.tree import export_graphviz
 from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
+
+from models import NeuralNet
+
 
 
 
@@ -174,3 +179,29 @@ def get_processed_data(config):
     y = df['FRAUD']
 
     return torch.tensor(X.values.astype(float)).float(), torch.tensor(y.values.astype(float)).long()
+
+
+def train(X_train, y_train, config):
+
+    model = NeuralNet(inputs=X_train.shape[1], outputs=2)
+    criterion = nn.CrossEntropyLoss(weight=torch.tensor([config['class_weight'], 1-config['class_weight']], dtype=torch.float32))
+    optimizer = optim.Adam(model.parameters(), lr=0.01)
+
+    epochs = 100
+    for epoch in range(epochs):
+
+        model.train()
+        optimizer.zero_grad()
+        outputs = model(X_train)
+        loss = criterion(outputs, y_train)
+        loss.backward()
+        optimizer.step()
+
+        if epoch % 10 == 0:
+            print(f'Epoch [{epoch+1}/{epochs}], Loss: {loss.item()}')
+
+    if config['save']:
+        torch.save(model.state_dict(), os.path.join(config['save_path'], 'model.pt'))
+
+    return model 
+
