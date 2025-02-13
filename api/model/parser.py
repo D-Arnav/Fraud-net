@@ -5,7 +5,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Fraud Detection')
 
     parser.add_argument('-seed', '--seed', type=int, default=1, help='Random Seed')
-    parser.add_argument('-dp', '--data_path', type=str, default='api/data/data.csv', help='Dataset Path')
+    parser.add_argument('-dp', '--data_path', type=str, default='api/data/data_2.csv', help='Dataset Path')
     parser.add_argument('-sp', '--save_path', type=str, default='api/weights/', help='Save Path')
     parser.add_argument('-vp', '--vis_path', type=str, default='api/vis/', help='Visualization Path')
 

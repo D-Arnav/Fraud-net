@@ -37,7 +37,8 @@ X_train, y_train = torch.tensor(X_train), torch.tensor(y_train)
 
 model = train(X_train, y_train, config)
 
-results = eval()
+results = eval(X_test, y_test, config)
+
 model.eval()
 with torch.no_grad():
     y_pred = model(X_test).argmax(dim=1).numpy()
