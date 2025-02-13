@@ -28,6 +28,7 @@ venv
 
 # data
 data/
+log.txt
 
 # vscode
 .vscode/

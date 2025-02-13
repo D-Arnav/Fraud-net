@@ -85,6 +85,12 @@ recall = recall_score(y_test, y_pred)
 f1 = f1_score(y_test, y_pred)
 conf_matrix = confusion_matrix(y_test, y_pred)
 
+tn, fp, fn, tp = conf_matrix.ravel()
+
+# Calculate FPR and FNR
+fpr = fp / (fp + tn)
+fnr = fn / (fn + tp)
+
 
 print(f'Class Weight {config['class_weight']}')
 print(f'Accuracy: {accuracy*100:.4f}%')
@@ -94,5 +100,5 @@ print(f'F1 Score: {f1*100:.4f}%')
 print(f'Confusion Matrix\n {conf_matrix}')
 
 with open('api/model/logs/log.txt', 'a') as f:
-    out = f"CW {config['class_weight']}\nPrec {precision*100:.2f}% & Rec {recall*100:.2f}%\n{conf_matrix}\n"
+    out = f"CW {config['class_weight']}\nPrec {precision*100:.2f}% & Rec {recall*100:.2f}%\n{conf_matrix} | FPR ({fpr*100:.2f}%) & FNR ({fnr*100:.2f}%)\n"
     f.write(out)

@@ -15,7 +15,7 @@ import TabPanel from '@mui/lab/TabPanel';
 
 function Title() {
   return (
-    <Box sx={{ width: '100%', typography: 'body1', paddingLeft: '20px' }}>
+    <Box className="title">
       <h1>Fraud detection testing</h1>
     </Box>
   );
@@ -29,7 +29,7 @@ function LabTabs() {
   };
 
   return (
-    <Box sx={{ width: '100%', typography: 'body1', padding: '20px' }}>
+    <Box className="table">
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <TabList onChange={handleChange} aria-label="tabs">
@@ -51,13 +51,15 @@ function LabTabs() {
 }
 
 const rows = [
-  { 'Serial Number': 1, 
+  { 
+    'Serial Number': 1, 
     'Payment ID': 9493786284, 
     'Name of the card holder': 'John Doe', 
     'Card Hash': '1234 1234 1234 1234', 
     'Card Bin': 123456, 
-    'Amount' : 212, 
-    'Currency' : 'USD' },
+    'Amount': 212, 
+    'Currency': 'USD' 
+  },
 ];
 
 const transposeData = (data) => {
@@ -73,10 +75,10 @@ const transposedRows = transposeData(rows);
 function BasicTable() {
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ maxWidth: 700 }} aria-label="simple table">
-        <TableBody>
+      <Table className="simple-table" aria-label="simple table">
+        <TableBody className='table-body'>
           {transposedRows.map((row) => (
-            <TableRow key={row.key}>
+            <TableRow className='table-row' key={row.key}>
               <TableCell component="th" scope="row">
                 <strong>{row.key}</strong>
               </TableCell>
