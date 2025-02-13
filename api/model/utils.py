@@ -146,7 +146,7 @@ def train(X_train, y_train, config):
     criterion = nn.CrossEntropyLoss(weight=torch.tensor([config['class_weight'], 1-config['class_weight']], dtype=torch.float32))
     optimizer = optim.Adam(model.parameters(), lr=0.01)
 
-    epochs = 100
+    epochs = 200
     for epoch in range(epochs):
 
         model.train()
