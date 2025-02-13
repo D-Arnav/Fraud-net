@@ -1,18 +1,16 @@
 import './App.css';
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 
+// Import components
+import BasicTable from './components/BasicTable';
+import NormalTable from './components/NormalTable';
+
+// Heading title
 function Title() {
   return (
     <Box className="title">
@@ -29,7 +27,7 @@ function LabTabs() {
   };
 
   return (
-    <Box className="table">
+    <Box className="tabs">
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <TabList onChange={handleChange} aria-label="tabs">
@@ -40,7 +38,13 @@ function LabTabs() {
           </TabList>
         </Box>
         <TabPanel value="1">
-          <BasicTable />
+          <div className="center-container">
+            <BasicTable />
+          </div>
+          {/* spacing between tables */}
+          <Box sx={{ height: 32 }} />
+          <hr className="pagebre" />
+          <NormalTable />
         </TabPanel>
         <TabPanel value="2">Item Two</TabPanel>
         <TabPanel value="3">Item Three</TabPanel>
@@ -50,6 +54,7 @@ function LabTabs() {
   );
 }
 
+<<<<<<< HEAD
 const rows = [
   { 
     'Serial Number': 1, 
@@ -95,6 +100,8 @@ function BasicTable() {
   );
 }
 
+=======
+>>>>>>> 85bed01b27063d49aa54a399858e085616e40c4f
 function App() {
   return (
     <div>

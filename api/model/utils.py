@@ -1,6 +1,6 @@
 import torch
-
-from IPython.display import Image
+import torch.nn as nn
+import torch.optim as optim
 
 from imblearn.combine import SMOTETomek
 from imblearn.over_sampling import SMOTE
@@ -8,15 +8,28 @@ from imblearn.under_sampling import RandomUnderSampler, TomekLinks
 
 import os
 
+import numpy as np
+
 import pandas as pd
 
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
-from sklearn.tree import export_graphviz
 from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
+from sklearn.model_selection import train_test_split
 
+from models import NeuralNet
+
+
+
+
+def log(text, config, printit=True):
+    if printit:
+        print(text)
+    
+    with open(config['log_path'], 'a') as f:
+        f.write(text)
 
 
 def rename_columns(df):
@@ -51,7 +64,8 @@ def rename_columns(df):
 
 def select_columns(df):
 
-    df = df[['CARD_TYPE', 'CARD_NAME', 'CREATION_TYPE', 'MCC', 'COUNTRY', 'SCA_EXEMPTION', 'SCA_EXEMPTION_FLOW', 'MERCHANT', 'SHOP', 'AMOUNT', 'FRAUD']]
+    df = df[['CARD_TYPE', 'CARD_NAME', 'CREATION_TYPE', 'MCC', 'COUNTRY', 'SCA_EXEMPTION', 
+             'SCA_EXEMPTION_FLOW', 'MERCHANT', 'SHOP', 'AMOUNT', 'FRAUD']]
 
     return df
 
@@ -105,67 +119,7 @@ def preprocess(df):
     return df
 
 
-def get_model(config):
-
-    class_weight_value = config['class_weight']
-
-    models =  {
-        'logistic': LogisticRegression(
-            class_weight={0: class_weight_value, 1: 1 - class_weight_value}, 
-            random_state=config['seed']),
-
-        'svm': SVC(class_weight={0: class_weight_value, 1: 1 - class_weight_value}, 
-                   random_state=config['seed']),
-
-        'random_forest': RandomForestClassifier(verbose=True, 
-                                                max_depth=config['depth'], 
-                                                class_weight={0: class_weight_value, 1: 1 - class_weight_value}, 
-                                                random_state=config['seed']),
-
-        'neural_network': MLPClassifier(random_state=config['seed']),
-        
-        'gb_trees': GradientBoostingClassifier(random_state=config['seed'])
-    }
-
-    model = models[config['model']]
-
-
-    return model
-
-
-def resample(X_train, y_train, config):
-
-    if config['class_balance_method'] == 'smote_tomek':
-        X_train, y_train = SMOTETomek(random_state=config['seed']).fit_resample(X_train, y_train)
-
-    elif config['class_balance_method'] == 'smote':
-        X_train, y_train = SMOTE(random_state=config['seed']).fit_resample(X_train, y_train)
-
-    elif config['class_balance_method'] == 'undersampling':
-        X_train, y_train = RandomUnderSampler(random_state=config['seed']).fit_resample(X_train, y_train)
-
-    return X_train, y_train
-
-
-def evaluate(y_test, y_pred, verbose=False):
-
-    conf_matrix = confusion_matrix(y_test, y_pred)
-    accuracy = accuracy_score(y_test, y_pred)
-    precision = precision_score(y_test, y_pred, average='binary')
-    recall = recall_score(y_test, y_pred, average='binary')
-    f1 = f1_score(y_test, y_pred, average='binary')
-
-    if verbose:
-        print("\nAccuracy: {:.2f}%".format(100*accuracy))
-        print("Precision: {:.2f}%".format(100*precision))
-        print("Recall: {:.2f}%".format(100*recall))
-        print("F1 Score: {:.2f}%".format(100*f1))
-        print("Confusion Matrix\n", conf_matrix)
-
-    return accuracy, precision, recall, f1, conf_matrix
-
-
-def get_processed_data(config):
+def get_processed_data(config, tomek=True):
 
     df = pd.read_csv(config['data_path'], sep=';')
     df = preprocess(df)
@@ -173,4 +127,74 @@ def get_processed_data(config):
     X = df.drop('FRAUD', axis=1)
     y = df['FRAUD']
 
-    return torch.tensor(X.values.astype(float)).float(), torch.tensor(y.values.astype(float)).long()
+    X = torch.tensor(X.values.astype(float)).float()
+    y = torch.tensor(y.values.astype(float)).long()
+
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=config['seed'])
+    
+    if tomek:
+        X_train, y_train = TomekLinks().fit_resample(X_train, y_train)
+    
+    X_train, y_train = torch.tensor(X_train), torch.tensor(y_train)
+
+    return X_train, y_train, X_test, y_test
+
+
+def train(X_train, y_train, config):
+
+    model = NeuralNet(inputs=X_train.shape[1], outputs=2)
+    criterion = nn.CrossEntropyLoss(weight=torch.tensor([config['class_weight'], 1-config['class_weight']], dtype=torch.float32))
+    optimizer = optim.Adam(model.parameters(), lr=0.01)
+
+    epochs = 100
+    for epoch in range(epochs):
+
+        model.train()
+        optimizer.zero_grad()
+        outputs = model(X_train)
+        loss = criterion(outputs, y_train)
+        loss.backward()
+        optimizer.step()
+
+        if epoch % 10 == 0:
+            print(f'Epoch [{epoch+1}/{epochs}], Loss: {loss.item()}')
+
+    if config['save']:
+        torch.save(model.state_dict(), os.path.join(config['save_path'], 'model.pt'))
+
+    return model 
+
+
+def evaluate(X_test, y_test, model, config, log_text=True):
+
+    model.eval()
+    with torch.no_grad():
+        y_pred = model(X_test).argmax(dim=1).numpy()
+
+    acc = accuracy_score(y_test, y_pred)
+    prec = precision_score(y_test, y_pred)
+    rec = recall_score(y_test, y_pred)
+    f1 = f1_score(y_test, y_pred)
+    conf_matrix = confusion_matrix(y_test, y_pred)
+
+    tn, fp, fn, tp = conf_matrix.ravel()
+    fpr = fp / (fp + tn)
+    fnr = fn / (fn + tp)
+
+    conf_matrix = np.array([[tp, fn], [fp, tn]])
+
+    if log_text:
+        text = f"{'-'*30}\nPrecision{' '*11}: {prec*100:.2f}%\nRecall{' '*14}: {rec*100:.2f}%\nFalse Positive Rate : {fpr*100:.2f}%\nFalse Negative Rate : {fnr*100:.2f}%\n{'-'*30}\nAccuracy: {acc*100:.2f}%\nF1 Score: {f1*100:.2f}%\nConfusion Matrix\n{conf_matrix}\n{'-'*30}\n\n"
+        log(text, config)
+
+    results = {
+        'acc': acc,
+        'prec': prec,
+        'rec': rec,
+        'f1': f1,
+        'fpr': fpr,
+        'fnr': fnr,
+        'conf': conf_matrix
+    }
+
+    return results

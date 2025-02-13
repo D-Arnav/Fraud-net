@@ -5,9 +5,11 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Fraud Detection')
 
     parser.add_argument('-seed', '--seed', type=int, default=1, help='Random Seed')
-    parser.add_argument('-dp', '--data_path', type=str, default='api/data/data.csv', help='Dataset Path')
-    parser.add_argument('-sp', '--save_path', type=str, default='api/weights/', help='Save Path')
-    parser.add_argument('-vp', '--vis_path', type=str, default='api/vis/', help='Visualization Path')
+    parser.add_argument('-dp', '--data_path', type=str, default='api/data/data_2.csv', help='Dataset Path')
+    parser.add_argument('-sp', '--save_path', type=str, default='api/model/weights/', help='Save Path')
+    parser.add_argument('-vp', '--vis_path', type=str, default='api/model/vis/', help='Visualization Path')
+    parser.add_argument('-lp', '--log_path', type=str, default='api/model/log.txt', help='Log File Path')
+    parser.add_argument('-sv', '--save', action='store_true', help='Save Model')
 
     parser.add_argument('-s', '--split', type=float, default=0.2, help='Test Train Split')
     parser.add_argument('-m', '--model', type=str, default='logistic', help='Model Type (logistic, svm, random_forest, neural_network, gb_trees)')
