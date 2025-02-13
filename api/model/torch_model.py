@@ -84,8 +84,6 @@ f1 = f1_score(y_test, y_pred)
 conf_matrix = confusion_matrix(y_test, y_pred)
 
 tn, fp, fn, tp = conf_matrix.ravel()
-
-# Calculate FPR and FNR
 fpr = fp / (fp + tn)
 fnr = fn / (fn + tp)
 
