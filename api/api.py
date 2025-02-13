@@ -10,3 +10,18 @@ def get_current_time():
     b = data.get('b')
     res = add(a, b)
     return {'sum': res}
+
+
+@app.route('/predict_one', methods=['GET', 'POST'])
+def predict_one():
+    data = request.get_json()
+    pass
+
+
+@app.route('/predict_batch', methods=['GET', 'POST'])
+def predict_batch():
+    pass
+
+@app.route('/predict_file', methods=['GET', 'POST'])
+def predict_file():
+    pass

@@ -44,12 +44,18 @@ html, body {
   padding: 0;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
 .title {
   width: 100%;
   padding-left: 20px;
 }
 
-.table {
+.tabs {
   width: 60%;
   padding: 20px;
 }
@@ -57,9 +63,31 @@ html, body {
 .simple-table {
   border-top: 2px solid black;
   border-bottom: 2px solid black;
+  width: auto; /* Ensures the table doesn't stretch */
+  min-width: 400px; /* Adjust as needed */
 }
 
 .result-table {
   border-top: 2px solid black;
   border-bottom: 2px solid black;
+}
+
+/* .pagebreak{
+  display: ;
+} */
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.table-body {
+  text-align: left;
+}
+
+.table-row {
+  border-bottom: 1px solid #ddd; /* Light border for cleaner look */
 }

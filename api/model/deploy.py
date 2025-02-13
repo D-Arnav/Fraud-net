@@ -1,11 +1,17 @@
+import warnings
+
+import os
+
 import torch
-import torch.nn as nn
 
 from parser import parse_args
+from utils import get_processed_data, evaluate
 from models import NeuralNet
 
 
 
+
+warnings.filterwarnings("ignore")
 
 args = parse_args()
 
@@ -14,18 +20,15 @@ config = {
     'data_path': args.data_path,
     'save_path': args.save_path,
     'vis_path': args.vis_path,
+    'log_path': args.log_path,
     'split': args.split,
     'class_weight': args.class_weight,
+    'save': False
 }
-        
 
-def predict_fraud(X_batch, y_batch):
+X_test, y_test = get_processed_data(config)[2:]
 
-    model = NeuralNet(inputs=X_batch.shape[1], outputs=2)
+model = NeuralNet(inputs=X_test.shape[1], outputs=2)
+model.load_state_dict(torch.load(os.path.join(config['save_path'], 'model.pt')))
 
-    model.eval()
-    with torch.no_grad():
-        y_pred = model(X_batch).argmax(dim=1).numpy()
-
-    return 
-
+results = evaluate(X_test, y_test, model, config, log_text=True)

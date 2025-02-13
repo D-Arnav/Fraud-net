@@ -10,18 +10,28 @@ from imblearn.under_sampling import RandomUnderSampler, TomekLinks
 
 import os
 
+import numpy as np
+
 import pandas as pd
 
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
-from sklearn.tree import export_graphviz
 from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
+from sklearn.model_selection import train_test_split
 
 from models import NeuralNet
 
 
+
+
+def log(text, config, printit=True):
+    if printit:
+        print(text)
+    
+    with open(config['log_path'], 'a') as f:
+        f.write(text)
 
 
 def rename_columns(df):
@@ -152,25 +162,7 @@ def resample(X_train, y_train, config):
     return X_train, y_train
 
 
-def evaluate(y_test, y_pred, verbose=False):
-
-    conf_matrix = confusion_matrix(y_test, y_pred)
-    accuracy = accuracy_score(y_test, y_pred)
-    precision = precision_score(y_test, y_pred, average='binary')
-    recall = recall_score(y_test, y_pred, average='binary')
-    f1 = f1_score(y_test, y_pred, average='binary')
-
-    if verbose:
-        print("\nAccuracy: {:.2f}%".format(100*accuracy))
-        print("Precision: {:.2f}%".format(100*precision))
-        print("Recall: {:.2f}%".format(100*recall))
-        print("F1 Score: {:.2f}%".format(100*f1))
-        print("Confusion Matrix\n", conf_matrix)
-
-    return accuracy, precision, recall, f1, conf_matrix
-
-
-def get_processed_data(config):
+def get_processed_data(config, tomek=True):
 
     df = pd.read_csv(config['data_path'], sep=';')
     df = preprocess(df)
@@ -178,7 +170,17 @@ def get_processed_data(config):
     X = df.drop('FRAUD', axis=1)
     y = df['FRAUD']
 
-    return torch.tensor(X.values.astype(float)).float(), torch.tensor(y.values.astype(float)).long()
+    X = torch.tensor(X.values.astype(float)).float()
+    y = torch.tensor(y.values.astype(float)).long()
+
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=config['seed'])
+    
+    if tomek:
+        X_train, y_train = TomekLinks().fit_resample(X_train, y_train)
+    
+    X_train, y_train = torch.tensor(X_train), torch.tensor(y_train)
+
+    return X_train, y_train, X_test, y_test
 
 
 def train(X_train, y_train, config):
@@ -205,3 +207,37 @@ def train(X_train, y_train, config):
 
     return model 
 
+
+def evaluate(X_test, y_test, model, config, log_text=True):
+
+    model.eval()
+    with torch.no_grad():
+        y_pred = model(X_test).argmax(dim=1).numpy()
+
+    acc = accuracy_score(y_test, y_pred)
+    prec = precision_score(y_test, y_pred)
+    rec = recall_score(y_test, y_pred)
+    f1 = f1_score(y_test, y_pred)
+    conf_matrix = confusion_matrix(y_test, y_pred)
+
+    tn, fp, fn, tp = conf_matrix.ravel()
+    fpr = fp / (fp + tn)
+    fnr = fn / (fn + tp)
+
+    conf_matrix = np.array([[tp, fn], [fp, tn]])
+
+    if log_text:
+        text = f"{'-'*30}\nPrecision{' '*11}: {prec*100:.2f}%\nRecall{' '*14}: {rec*100:.2f}%\nFalse Positive Rate : {fpr*100:.2f}%\nFalse Negative Rate : {fnr*100:.2f}%\n{'-'*30}\nAccuracy: {acc*100:.2f}%\nF1 Score: {f1*100:.2f}%\nConfusion Matrix\n{conf_matrix}\n{'-'*30}\n\n"
+        log(text, config)
+
+    results = {
+        'acc': acc,
+        'prec': prec,
+        'rec': rec,
+        'f1': f1,
+        'fpr': fpr,
+        'fnr': fnr,
+        'conf': conf_matrix
+    }
+
+    return results
