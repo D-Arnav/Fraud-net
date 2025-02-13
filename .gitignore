@@ -28,6 +28,8 @@ venv
 
 # data
 data/
+vis/
+weights/
 log.txt
 
 # vscode

@@ -1,4 +1,7 @@
-from imblearn.combine import SMOTETomek
+import os
+
+import numpy as np
+
 from imblearn.under_sampling import TomekLinks
 
 from sklearn.model_selection import train_test_split
@@ -45,22 +48,15 @@ config = {
     'class_weight': args.class_weight,
 }
 
+
 X, y = get_processed_data(config)
-
-# pca = PCA(n_components=10, random_state=config['seed'])
-# X = torch.tensor(pca.fit_transform(X)).float()
-
-
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=config['seed'])
-
 X_train, y_train = TomekLinks().fit_resample(X_train, y_train)
-
 X_train, y_train = torch.tensor(X_train), torch.tensor(y_train)
 
+
 model = NeuralNet(inputs=X_train.shape[1], outputs=2)
-
 criterion = nn.CrossEntropyLoss(weight=torch.tensor([config['class_weight'], 1-config['class_weight']], dtype=torch.float32))
-
 optimizer = optim.Adam(model.parameters(), lr=0.01)
 
 epochs = 100
@@ -78,6 +74,8 @@ for epoch in range(epochs):
 model.eval()
 with torch.no_grad():
     y_pred = model(X_test).argmax(dim=1).numpy()
+
+print(y_test.float().sum())
 
 accuracy = accuracy_score(y_test, y_pred)
 precision = precision_score(y_test, y_pred)
@@ -97,7 +95,10 @@ print(f'Accuracy: {accuracy*100:.4f}%')
 print(f'Precision: {precision*100:.4f}%')
 print(f'Recall: {recall*100:.4f}%')
 print(f'F1 Score: {f1*100:.4f}%')
-print(f'Confusion Matrix\n {conf_matrix}')
+print(f'Confusion Matrix\n')
+print(f'{np.array([[tp, fn], [fp, tn]])}')
+
+# torch.save(model.state_dict(), os.path.join(config['save_path'], 'model.pt'))
 
 with open('api/model/logs/log.txt', 'a') as f:
     out = f"CW {config['class_weight']}\nPrec {precision*100:.2f}% & Rec {recall*100:.2f}%\n{conf_matrix} | FPR ({fpr*100:.2f}%) & FNR ({fnr*100:.2f}%)\n"
