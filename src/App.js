@@ -5,11 +5,11 @@ import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
-
+ 
 // Import components
 import BasicTable from './components/BasicTable';
 import NormalTable from './components/NormalTable';
-
+ 
 // Heading title
 function Title() {
   return (
@@ -18,14 +18,14 @@ function Title() {
     </Box>
   );
 }
-
+ 
 function LabTabs() {
   const [value, setValue] = React.useState('1');
-
+ 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
+ 
   return (
     <Box className="tabs">
       <TabContext value={value}>
@@ -53,55 +53,7 @@ function LabTabs() {
     </Box>
   );
 }
-
-<<<<<<< HEAD
-const rows = [
-  { 
-    'Serial Number': 1, 
-    'Payment ID': 9493786284, 
-    'Name of the card holder': 'John Doe', 
-    'Card Hash': '1234 1234 1234 1234', 
-    'Card Bin': 123456, 
-    'Amount': 212, 
-    'Currency': 'USD' 
-  },
-];
-
-const transposeData = (data) => {
-  const keys = Object.keys(data[0]);
-  return keys.map((key) => ({
-    key,
-    values: data.map((item) => item[key]),
-  }));
-};
-
-const transposedRows = transposeData(rows);
-
-function BasicTable() {
-  return (
-    <TableContainer component={Paper} elevation={0}>
-      <Table className="simple-table" size="small" aria-label="simple table">
-        <TableBody className='table-body'>
-          {transposedRows.map((row) => (
-            <TableRow className='table-row' key={row.key}>
-              <TableCell component="th" scope="row">
-                <strong>{row.key}</strong>
-              </TableCell>
-              {row.values.map((value, index) => (
-                <TableCell key={index} align="right">
-                  {value}
-                </TableCell>
-              ))}
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
-  );
-}
-
-=======
->>>>>>> 85bed01b27063d49aa54a399858e085616e40c4f
+ 
 function App() {
   return (
     <div>
@@ -110,5 +62,5 @@ function App() {
     </div>
   );
 }
-
+ 
 export default App;
