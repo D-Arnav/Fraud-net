@@ -30,6 +30,7 @@ venv
 data/
 vis/
 weights/
+temp/
 log.txt
 
 # vscode

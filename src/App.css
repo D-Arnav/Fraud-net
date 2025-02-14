@@ -56,8 +56,19 @@ body {
 }
 
 .tabs {
-  width: 60%;
-  padding: 20px;
+  width: 100%;
+  padding: 20px 40px;
+}
+
+.MuiTabs-flexContainer {
+  justify-content: center !important;
+}
+
+.MuiTabs-root {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 20px 40px !important;
 }
 
 .simple-table {
@@ -72,9 +83,14 @@ body {
   border-bottom: 2px solid black;
 }
 
-/* .pagebreak{
-  display: ;
-} */
+.pagebreak {
+  width: 100vw;
+  position: relative;
+  left: 0;
+  border: none;
+  border-top: 1px solid rgb(117, 117, 117);
+  margin: 20px -45px;
+}
 
 .center-container {
   display: flex;
@@ -88,4 +104,33 @@ body {
 
 .table-row {
   border-bottom: 1px solid #ddd; /* Light border for cleaner look */
+}
+
+/* Align buttons to the right */
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Push buttons to the right */
+  gap: 10px; /* Adds space between buttons */
+  margin-top: 10px; /* Space from above elements */
+  width: 100%;
+}
+
+
+.btn {
+  background-color: #e3e3e3 !important;
+  color: black !important;
+  text-transform: none !important;
+}
+
+.btn:hover {
+  background-color: #c1c1c1 !important;
+}
+
+#run {
+  background-color: #549254 !important;
+  color: white !important;
+}
+
+#run:hover {
+  background-color: #3e7c3e !important;
 }
