@@ -1,4 +1,4 @@
-from flask import request, Flask
+from flask import request, jsonify, Flask
 import pandas as pd
 
 from model.utils import preprocess
@@ -15,13 +15,13 @@ def gen_rand_hash():
 
 
 def row_to_details(row):
-    
+
     data = {
-        'Serial': str(row['Serial']),
+        'Serial Number': str(row['Serial']),
         'Payment ID': str(row['PaymentID']),
-        'Name': gen_rand_name(),
-        'Hash': gen_rand_hash(),
-        'Bin': str(row['BIN#']),
+        'Name of the card holder': gen_rand_name(),
+        'Card Hash': gen_rand_hash(),
+        'Card Bin': str(row['BIN#']),
         'Amount': str(row['Settled Pmt Amt']),
         'Currency': str(row['Payment Currency Code'])
     }
@@ -31,7 +31,7 @@ def row_to_details(row):
 
 @app.route('/fetch-transaction', methods=['GET', 'POST'])
 def fetch_transaction():
-    df = pd.read_csv('api/data/batch.csv', sep=';')
+    df = pd.read_csv('data/batch.csv', sep=';')
     # idx = request.get_json().get('index')
     idx = 1
     df.insert(0, 'Serial', range(1, len(df) + 1))
@@ -40,4 +40,4 @@ def fetch_transaction():
     print(details)
     return details
 
-fetch_transaction()
+# fetch_transaction()

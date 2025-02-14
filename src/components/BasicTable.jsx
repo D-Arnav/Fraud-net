@@ -8,17 +8,13 @@ import Paper from '@mui/material/Paper';
 import { EastRounded } from '@mui/icons-material';
 
 // Example data to display in the table
-const rows = [
-  { 
-    'Serial Number': 1, 
-    'Payment ID': 9493786284, 
-    'Name of the card holder': 'John Doe', 
-    'Card Hash': '1234 1234 1234 1234', 
-    'Card Bin': 123456, 
-    'Amount': 212, 
-    'Currency': 'USD' 
-  },
-];
+
+const response = await fetch('/fetch-transaction')
+
+const row = await response.json()
+console.log(row)
+
+const rows = [row]
 
 // Function to transpose data
 const transposeData = (data) => {

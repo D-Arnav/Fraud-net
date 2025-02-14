@@ -95,7 +95,7 @@ const BasicTable = () => {
         </Table>
       </TableContainer>
 
-      {/* Navigation Buttons
+      {/* Navigation Buttons */}
       <div className="button-container">
         <Button variant="contained" className="btn" onClick={fetchPrevTransaction}>
           Previous
@@ -103,7 +103,7 @@ const BasicTable = () => {
         <Button variant="contained" className="btn" onClick={fetchNextTransaction}>
           Next
         </Button>
-      </div> */}
+      </div>
     </div>
   );
 };
