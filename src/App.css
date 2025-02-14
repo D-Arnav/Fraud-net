@@ -1,3 +1,4 @@
+/* Global Styles */
 .App {
   text-align: center;
 }
@@ -45,21 +46,32 @@ html, body {
 }
 
 body {
+  font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
   width: 100%;
 }
 
+/* Title text */
 .title {
   width: 100%;
   padding-left: 50px;
 }
 
+/* Tab Styles */
 .tabs {
   width: 100%;
-  padding-left: 200px; /* Left padding */
-  padding-right: 200px; /* Right padding */
-  box-sizing: border-box; /* Ensures padding is included in the width */
+  padding-left: 200px;
+  padding-right: 200px;
+  box-sizing: border-box;
+}
+
+.MuiTypography-root,
+.MuiButton-root,
+.MuiTab-root,
+.MuiTableCell-root,
+.MuiInputBase-root {
+  font-family: 'Inter', sans-serif !important;
 }
 
 .MuiTabs-flexContainer {
@@ -72,25 +84,17 @@ body {
   width: 100%;
 }
 
+/* Table Styles */
 .simple-table {
   border-top: 2px solid black;
   border-bottom: 2px solid black;
-  width: auto; /* Ensures the table doesn't stretch */
-  min-width: 400px; /* Adjust as needed */
+  width: auto;
+  min-width: 400px;
 }
 
 .result-table {
   border-top: 2px solid black;
   border-bottom: 2px solid black;
-}
-
-.pagebreak {
-  width: auto; /* Match the width of the surrounding content */
-  max-width: 800%; /* Adjust this value to fit your table width */
-  position: relative;
-  border: none;
-  border-top: 1px solid rgb(117, 117, 117);
-  margin: 20px auto; /* Center the line */
 }
 
 .center-container {
@@ -104,14 +108,25 @@ body {
 }
 
 .table-row {
-  border-bottom: 1px solid #ddd; /* Light border for cleaner look */
+  border-bottom: 1px solid #ddd;
 }
 
+/* Divider */
+.pagebreak {
+  width: auto;
+  max-width: 800%;
+  position: relative;
+  border: none;
+  border-top: 1px solid rgb(117, 117, 117);
+  margin: 20px auto;
+}
+
+/* Button styles */
 .button-container {
   display: flex;
-  justify-content: flex-end; /* Push buttons to the right */
-  gap: 10px; /* Adds space between buttons */
-  margin-top: 10px; /* Space from above elements */
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
   width: 100%;
 }
 
@@ -125,7 +140,7 @@ body {
 }
 
 .btn:hover {
-  background-color: #c1c1c1 !important; /* Darker Grey */
+  background-color: #c1c1c1 !important;
 }
 
 #run{
@@ -134,5 +149,5 @@ body {
 }
 
 #run:hover {
-  background-color: #3e7c3e !important; /* Darker Green */
+  background-color: #3e7c3e !important;
 }

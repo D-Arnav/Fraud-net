@@ -1,15 +1,19 @@
-import './App.css';
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Tab from '@mui/material/Tab';
-import TabContext from '@mui/lab/TabContext';
-import TabList from '@mui/lab/TabList';
-import TabPanel from '@mui/lab/TabPanel';
-
+import "./App.css";
+import 'inter-ui/inter.css';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Tab from "@mui/material/Tab";
+import TabContext from "@mui/lab/TabContext";
+import TabList from "@mui/lab/TabList";
+import TabPanel from "@mui/lab/TabPanel";
+import Button from "@mui/material/Button";
+import { ArrowBack, ArrowForward, PlayArrowOutlined, Download } from "@mui/icons-material";
+ 
 // Import components
-import BasicTable from './components/BasicTable';
-import NormalTable from './components/NormalTable';
-
+import BasicTable from "./components/BasicTable";
+import NormalTable from "./components/NormalTable";
+import ConfusionMatrix from "./components/confmat";
+ 
 // Heading title
 function Title() {
   return (
@@ -20,8 +24,8 @@ function Title() {
 }
  
 function LabTabs() {
-  const [value, setValue] = React.useState('1');
-
+  const [value, setValue] = React.useState("1");
+ 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -36,12 +40,12 @@ function LabTabs() {
             <Tab label="Batch" value="3" />
           </TabList>
         </Box>
-
+ 
         <TabPanel value="1">
           <div className="center-container">
             <BasicTable />
           </div>
-
+ 
           {/* Buttons aligned to the right */}
           <Box className="button-container">
             <Button variant="contained" className="btn" startIcon={<ArrowBack />} disableElevation>
@@ -54,21 +58,21 @@ function LabTabs() {
               Run
             </Button>
           </Box>
-
+ 
           <div>
             <Box sx={{ height: 32 }} />
             <hr className="pagebreak" />
             <p>Results</p>
             <NormalTable />
           </div>
-
+ 
           {/* Download Button Aligned Right */}
           <Box className="button-container">
             <Button variant="contained" className="btn" endIcon={<Download />} disableElevation>
               Download
             </Button>
           </Box>
-
+ 
           <div>
             <Box sx={{ height: 32 }} />
             <hr className="pagebreak" />
@@ -76,62 +80,14 @@ function LabTabs() {
             <ConfusionMatrix />
           </div>
         </TabPanel>
-
+ 
         <TabPanel value="2">Item Two</TabPanel>
         <TabPanel value="3">Item Three</TabPanel>
       </TabContext>
     </Box>
   );
 }
-
-<<<<<<< HEAD
-const rows = [
-  { 
-    'Serial Number': 1, 
-    'Payment ID': 9493786284, 
-    'Name of the card holder': 'John Doe', 
-    'Card Hash': '1234 1234 1234 1234', 
-    'Card Bin': 123456, 
-    'Amount': 212, 
-    'Currency': 'USD' 
-  },
-];
-
-const transposeData = (data) => {
-  const keys = Object.keys(data[0]);
-  return keys.map((key) => ({
-    key,
-    values: data.map((item) => item[key]),
-  }));
-};
-
-const transposedRows = transposeData(rows);
-
-function BasicTable() {
-  return (
-    <TableContainer component={Paper} elevation={0}>
-      <Table className="simple-table" size="small" aria-label="simple table">
-        <TableBody className='table-body'>
-          {transposedRows.map((row) => (
-            <TableRow className='table-row' key={row.key}>
-              <TableCell component="th" scope="row">
-                <strong>{row.key}</strong>
-              </TableCell>
-              {row.values.map((value, index) => (
-                <TableCell key={index} align="right">
-                  {value}
-                </TableCell>
-              ))}
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
-  );
-}
-
-=======
->>>>>>> 85bed01b27063d49aa54a399858e085616e40c4f
+ 
 function App() {
   return (
     <div>
