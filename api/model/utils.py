@@ -16,7 +16,7 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 from sklearn.model_selection import train_test_split
 
 from models import NeuralNet
-
+from loss import FocalLoss
 
 
 
@@ -65,8 +65,6 @@ def encode_columns(df, config):
         
     df = pd.get_dummies(df, columns=encoding.keys(), drop_first=True)
     
-    print(df.head())
-
     return df
 
 
@@ -104,8 +102,12 @@ def get_processed_data(config, tomek=True):
 def train(X_train, y_train, config):
 
     model = NeuralNet(inputs=X_train.shape[1], outputs=2)
-    criterion = nn.CrossEntropyLoss(weight=torch.tensor([config['class_weight'], 1-config['class_weight']], dtype=torch.float32))
-    optimizer = optim.Adam(model.parameters(), lr=0.01)
+    
+    # criterion = nn.CrossEntropyLoss(weight=torch.tensor([config['class_weight'], 1-config['class_weight']], dtype=torch.float32))
+    
+    criterion = FocalLoss(alpha=config['class_weight'], gamma=1.5, reduction='mean')
+
+    optimizer = optim.Adam(model.parameters(), lr=0.005)
 
     epochs = 200
     for epoch in range(epochs):

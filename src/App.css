@@ -52,12 +52,18 @@ body {
 
 .title {
   width: 100%;
-  padding-left: 20px;
+  padding-left: 50px;
 }
 
 .tabs {
-  width: 60%;
-  padding: 20px;
+  width: 100%;
+  padding-left: 200px; /* Left padding */
+  padding-right: 200px; /* Right padding */
+  box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+.MuiTabs-flexContainer {
+  justify-content: flex-start !important;
 }
 
 .MuiTabs-root {
@@ -79,14 +85,13 @@ body {
 }
 
 .pagebreak {
-  width: 100vw;
+  width: auto; /* Match the width of the surrounding content */
+  max-width: 800%; /* Adjust this value to fit your table width */
   position: relative;
-  left: 0;
   border: none;
   border-top: 1px solid rgb(117, 117, 117);
-  margin: 20px -45px;
+  margin: 20px auto; /* Center the line */
 }
-
 
 .center-container {
   display: flex;
@@ -110,9 +115,13 @@ body {
   width: 100%;
 }
 
+.MuiButton-root {
+  text-transform: none !important;
+}
+
 .btn{
   background-color: #e3e3e3 !important;
-  color: black q
+  color: black !important;
 }
 
 .btn:hover {
@@ -121,7 +130,7 @@ body {
 
 #run{
   background-color: #549254 !important;
-  color: white;
+  color: white !important;
 }
 
 #run:hover {

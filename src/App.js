@@ -6,7 +6,7 @@ import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 import Button from "@mui/material/Button";
-import { ArrowBack, ArrowForward, PlayArrow, Download } from "@mui/icons-material";
+import { ArrowBack, ArrowForward, PlayArrowOutlined, Download } from "@mui/icons-material";
 
 // Import components
 import BasicTable from "./components/BasicTable";
@@ -17,7 +17,7 @@ import ConfusionMatrix from "./components/confmat";
 function Title() {
   return (
     <Box className="title">
-      <h1>Fraud Detection Testing</h1>
+      <h1>Fraud Model Testing</h1>
     </Box>
   );
 }
@@ -47,13 +47,13 @@ function LabTabs() {
 
           {/* Buttons aligned to the right */}
           <Box className="button-container">
-            <Button variant="contained" className="btn" startIcon={<ArrowBack />}>
+            <Button variant="contained" className="btn" startIcon={<ArrowBack />} disableElevation>
               Previous
             </Button>
-            <Button variant="contained" className="btn" endIcon={<ArrowForward />}>
+            <Button variant="contained" className="btn" endIcon={<ArrowForward />} disableElevation>
               Next
             </Button>
-            <Button variant="contained" className="btn" id="run" startIcon={<PlayArrow />}>
+            <Button variant="contained" className="btn" id="run" endIcon={<PlayArrowOutlined /> } disableElevation>
               Run
             </Button>
           </Box>
@@ -61,13 +61,13 @@ function LabTabs() {
           <div>
             <Box sx={{ height: 32 }} />
             <hr className="pagebreak" />
-            <p><b>Results</b></p>
+            <p>Results</p>
             <NormalTable />
           </div>
 
           {/* Download Button Aligned Right */}
           <Box className="button-container">
-            <Button variant="contained" className="btn" startIcon={<Download />}>
+            <Button variant="contained" className="btn" endIcon={<Download />} disableElevation>
               Download
             </Button>
           </Box>
@@ -75,7 +75,7 @@ function LabTabs() {
           <div>
             <Box sx={{ height: 32 }} />
             <hr className="pagebreak" />
-            <p><b>Confusion Matrix</b></p>
+            <p>Confusion Matrix</p>
             <ConfusionMatrix />
           </div>
         </TabPanel>
