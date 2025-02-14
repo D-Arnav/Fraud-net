@@ -135,7 +135,7 @@ body {
 .btn{
   background-color: #E3E3E3 !important;
   color: black !important;
-  border: solid 1px #767676 !important;
+  border: none !important;
   border-radius: 9px !important;
 }
 

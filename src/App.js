@@ -46,32 +46,12 @@ function LabTabs() {
             <BasicTable />
           </div>
  
-          {/* Buttons aligned to the right */}
-          <Box className="button-container">
-            <Button variant="contained" className="btn" startIcon={<ArrowBack /> } disableElevation>
-              Previous
-            </Button>
-            <Button variant="contained" className="btn" endIcon={<ArrowForward />} disableElevation>
-              Next
-            </Button>
-            <Button variant="contained" className="btn" id="run" endIcon={<PlayArrowOutlined /> } disableElevation>
-              Run
-            </Button>
-          </Box>
- 
           <div>
             <Box sx={{ height: 32 }} />
             <hr className="pagebreak" />
             <p className="side-heading">Results</p>
             <NormalTable />
           </div>
- 
-          {/* Download Button Aligned Right */}
-          <Box className="button-container">
-            <Button variant="contained" className="btn" endIcon={<Download />} disableElevation>
-              Download
-            </Button>
-          </Box>
  
           <div>
             <Box sx={{ height: 32 }} />

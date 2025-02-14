@@ -6,6 +6,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import TableHead from '@mui/material/TableHead';
 import Paper from '@mui/material/Paper';
+import Button from "@mui/material/Button";
+import {Download} from "@mui/icons-material";
 
 function createData(no, pay_id, pred_status, true_status, conf_sc) {
   return { no, pay_id, pred_status, true_status, conf_sc };
@@ -19,7 +21,7 @@ const rows1 = [
 
 const NormalTable = () => {
   return (
-    <TableContainer className="result-table" component={Paper} elevation={0}>
+    <><TableContainer className="result-table" component={Paper} elevation={0}>
       <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
         <TableHead>
           <TableRow>
@@ -59,6 +61,11 @@ const NormalTable = () => {
         </TableBody>
       </Table>
     </TableContainer>
+    <div className="button-container">
+        <Button variant="contained" className="btn" endIcon={<Download />} disableElevation>
+          Download
+        </Button>
+    </div></>
   );
 };
 
