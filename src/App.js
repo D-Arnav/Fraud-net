@@ -35,9 +35,9 @@ function LabTabs() {
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
           <TabList onChange={handleChange} aria-label="tabs">
-            <Tab label="Live Transactions" value="1" />
-            <Tab label="Transactional" value="2" />
-            <Tab label="Batch" value="3" />
+            <Tab label="Live Transactions" value="1" className="custom-tab"/>
+            <Tab label="Transactional" value="2" className="custom-tab"/>
+            <Tab label="Batch" value="3" className="custom-tab"/>
           </TabList>
         </Box>
  
@@ -48,7 +48,7 @@ function LabTabs() {
  
           {/* Buttons aligned to the right */}
           <Box className="button-container">
-            <Button variant="contained" className="btn" startIcon={<ArrowBack />} disableElevation>
+            <Button variant="contained" className="btn" startIcon={<ArrowBack /> } disableElevation>
               Previous
             </Button>
             <Button variant="contained" className="btn" endIcon={<ArrowForward />} disableElevation>
@@ -62,7 +62,7 @@ function LabTabs() {
           <div>
             <Box sx={{ height: 32 }} />
             <hr className="pagebreak" />
-            <p>Results</p>
+            <p className="side-heading">Results</p>
             <NormalTable />
           </div>
  
@@ -76,7 +76,7 @@ function LabTabs() {
           <div>
             <Box sx={{ height: 32 }} />
             <hr className="pagebreak" />
-            <p>Confusion Matrix</p>
+            <p className="side-heading">Confusion Matrix</p>
             <ConfusionMatrix />
           </div>
         </TabPanel>

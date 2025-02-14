@@ -5,6 +5,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { EastRounded } from '@mui/icons-material';
 
 // Example data to display in the table
 const rows = [
@@ -31,6 +32,8 @@ const transposeData = (data) => {
 // Transposed rows
 const transposedRows = transposeData(rows);
 
+
+
 export default class BasicTable extends Component {
   render() {
     return (
@@ -40,7 +43,7 @@ export default class BasicTable extends Component {
               {transposedRows.map((row) => (
                 <TableRow className='table-row' key={row.key}>
                   <TableCell component="th" scope="row">
-                    <strong>{row.key}</strong>
+                    <strong>{row  .key}</strong>
                   </TableCell>
                   {row.values.map((value, index) => (
                     <TableCell key={index} align="right">
@@ -55,3 +58,15 @@ export default class BasicTable extends Component {
     );
   }
 }
+
+
+// Backend Part
+
+// 1. On page load, use /fetch-first-transaction to get the first transaction
+
+// 2. On clicking Next, use /fetch-next-transaction with the current transaction id to fetch next.
+//    If transaction id is the last one, this should do nothing
+// 
+
+// 3. On clicking Previous, use /fetch-prev-transaction with the current transaction id to fetch prev.
+//    If transaction id is the first one, this should do nothing

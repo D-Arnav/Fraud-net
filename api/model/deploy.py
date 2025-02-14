@@ -4,9 +4,9 @@ import os
 
 import torch
 
-from parser import parse_args
-from utils import get_processed_data, evaluate
-from models import NeuralNet
+from model.parser import parse_args
+from model.utils import get_processed_data, evaluate
+from model.models import NeuralNet
 
 
 

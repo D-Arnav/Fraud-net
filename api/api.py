@@ -1,33 +1,43 @@
 from flask import request, Flask
-from model.deploy import add
+import pandas as pd
+
+from model.utils import preprocess
 
 app = Flask(__name__)
 
-@app.route('/add', methods=['GET', 'POST'])
-def get_current_time():
-    data = request.get_json()
-    a = data.get('a')
-    b = data.get('b')
-    res = add(a, b)
-    return {'sum': res}
+
+def gen_rand_name():
+    return "Gowtham aka Gowth man"
 
 
-@app.route('/predict_one', methods=['GET', 'POST'])
-def predict_one():
-    """
-    JSON Request
+def gen_rand_hash():
+    return "9493 7862 8494 9378"
+
+
+def row_to_details(row):
     
-    """
-    
-    
-    data = request.get_json()
-    pass
+    data = {
+        'Serial': str(row['Serial']),
+        'Payment ID': str(row['PaymentID']),
+        'Name': gen_rand_name(),
+        'Hash': gen_rand_hash(),
+        'Bin': str(row['BIN#']),
+        'Amount': str(row['Settled Pmt Amt']),
+        'Currency': str(row['Payment Currency Code'])
+    }
+
+    return data
 
 
-@app.route('/predict_batch', methods=['GET', 'POST'])
-def predict_batch():
-    pass
+@app.route('/fetch-transaction', methods=['GET', 'POST'])
+def fetch_transaction():
+    df = pd.read_csv('api/data/batch.csv', sep=';')
+    # idx = request.get_json().get('index')
+    idx = 1
+    df.insert(0, 'Serial', range(1, len(df) + 1))
+    details = row_to_details(df.iloc[idx].to_dict())
 
-@app.route('/predict_file', methods=['GET', 'POST'])
-def predict_file():
-    pass
+    print(details)
+    return details
+
+fetch_transaction()

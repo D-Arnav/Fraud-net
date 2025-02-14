@@ -15,8 +15,8 @@ import pandas as pd
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
 from sklearn.model_selection import train_test_split
 
-from models import NeuralNet
-from loss import FocalLoss
+from model.models import NeuralNet
+from model.loss import FocalLoss
 
 
 
@@ -48,7 +48,7 @@ def select_columns(df):
 def clean_data(df):
 
     df['FRAUD'] = df['FRAUD'].fillna(0).astype(int)
-    df['AMOUNT'] = df['AMOUNT'].apply(lambda x: float(str(x).replace(',', '.')))
+    df['AMOUNT'] = df['AMOUNT'].apply(lambda x: float(str(x).replace(',', '.')) if ',' in str(x) else float(str(x)))
     df[['SCA_EXEMPTION', 'SCA_EXEMPTION_FLOW']] = df[['SCA_EXEMPTION', 'SCA_EXEMPTION_FLOW']].fillna('Unkown')
     df.isna().sum() 
 
