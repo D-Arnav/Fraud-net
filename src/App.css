@@ -56,19 +56,14 @@ body {
 }
 
 .tabs {
-  width: 100%;
-  padding: 20px 40px;
-}
-
-.MuiTabs-flexContainer {
-  justify-content: center !important;
+  width: 60%;
+  padding: 20px;
 }
 
 .MuiTabs-root {
   display: flex;
   justify-content: center;
   width: 100%;
-  padding: 20px 40px !important;
 }
 
 .simple-table {
@@ -92,6 +87,7 @@ body {
   margin: 20px -45px;
 }
 
+
 .center-container {
   display: flex;
   justify-content: center;
@@ -106,7 +102,6 @@ body {
   border-bottom: 1px solid #ddd; /* Light border for cleaner look */
 }
 
-/* Align buttons to the right */
 .button-container {
   display: flex;
   justify-content: flex-end; /* Push buttons to the right */
@@ -115,22 +110,20 @@ body {
   width: 100%;
 }
 
-
-.btn {
+.btn{
   background-color: #e3e3e3 !important;
-  color: black !important;
-  text-transform: none !important;
+  color: black q
 }
 
 .btn:hover {
-  background-color: #c1c1c1 !important;
+  background-color: #c1c1c1 !important; /* Darker Grey */
 }
 
-#run {
+#run{
   background-color: #549254 !important;
-  color: white !important;
+  color: white;
 }
 
 #run:hover {
-  background-color: #3e7c3e !important;
+  background-color: #3e7c3e !important; /* Darker Green */
 }
