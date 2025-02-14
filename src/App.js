@@ -6,8 +6,6 @@ import Tab from "@mui/material/Tab";
 import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
-import Button from "@mui/material/Button";
-import { ArrowBack, ArrowForward, PlayArrowOutlined, Download } from "@mui/icons-material";
  
 // Import components
 import BasicTable from "./components/BasicTable";
