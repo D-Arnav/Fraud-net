@@ -5,23 +5,23 @@ import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
- 
+
 // Import components
 import BasicTable from './components/BasicTable';
 import NormalTable from './components/NormalTable';
- 
+
 // Heading title
 function Title() {
   return (
     <Box className="title">
-      <h1>Fraud detection testing</h1>
+      <h1>Fraud Model Testing</h1>
     </Box>
   );
 }
  
 function LabTabs() {
   const [value, setValue] = React.useState('1');
- 
+
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -29,31 +29,109 @@ function LabTabs() {
   return (
     <Box className="tabs">
       <TabContext value={value}>
-        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
           <TabList onChange={handleChange} aria-label="tabs">
             <Tab label="Live Transactions" value="1" />
             <Tab label="Transactional" value="2" />
             <Tab label="Batch" value="3" />
-            <Tab label="Performance Analysis" value="4" />
           </TabList>
         </Box>
+
         <TabPanel value="1">
           <div className="center-container">
             <BasicTable />
           </div>
-          {/* spacing between tables */}
-          <Box sx={{ height: 32 }} />
-          <hr className="pagebre" />
-          <NormalTable />
+
+          {/* Buttons aligned to the right */}
+          <Box className="button-container">
+            <Button variant="contained" className="btn" startIcon={<ArrowBack />} disableElevation>
+              Previous
+            </Button>
+            <Button variant="contained" className="btn" endIcon={<ArrowForward />} disableElevation>
+              Next
+            </Button>
+            <Button variant="contained" className="btn" id="run" endIcon={<PlayArrowOutlined /> } disableElevation>
+              Run
+            </Button>
+          </Box>
+
+          <div>
+            <Box sx={{ height: 32 }} />
+            <hr className="pagebreak" />
+            <p>Results</p>
+            <NormalTable />
+          </div>
+
+          {/* Download Button Aligned Right */}
+          <Box className="button-container">
+            <Button variant="contained" className="btn" endIcon={<Download />} disableElevation>
+              Download
+            </Button>
+          </Box>
+
+          <div>
+            <Box sx={{ height: 32 }} />
+            <hr className="pagebreak" />
+            <p>Confusion Matrix</p>
+            <ConfusionMatrix />
+          </div>
         </TabPanel>
+
         <TabPanel value="2">Item Two</TabPanel>
         <TabPanel value="3">Item Three</TabPanel>
-        <TabPanel value="4">Item Four</TabPanel>
       </TabContext>
     </Box>
   );
 }
- 
+
+<<<<<<< HEAD
+const rows = [
+  { 
+    'Serial Number': 1, 
+    'Payment ID': 9493786284, 
+    'Name of the card holder': 'John Doe', 
+    'Card Hash': '1234 1234 1234 1234', 
+    'Card Bin': 123456, 
+    'Amount': 212, 
+    'Currency': 'USD' 
+  },
+];
+
+const transposeData = (data) => {
+  const keys = Object.keys(data[0]);
+  return keys.map((key) => ({
+    key,
+    values: data.map((item) => item[key]),
+  }));
+};
+
+const transposedRows = transposeData(rows);
+
+function BasicTable() {
+  return (
+    <TableContainer component={Paper} elevation={0}>
+      <Table className="simple-table" size="small" aria-label="simple table">
+        <TableBody className='table-body'>
+          {transposedRows.map((row) => (
+            <TableRow className='table-row' key={row.key}>
+              <TableCell component="th" scope="row">
+                <strong>{row.key}</strong>
+              </TableCell>
+              {row.values.map((value, index) => (
+                <TableCell key={index} align="right">
+                  {value}
+                </TableCell>
+              ))}
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+  );
+}
+
+=======
+>>>>>>> 85bed01b27063d49aa54a399858e085616e40c4f
 function App() {
   return (
     <div>

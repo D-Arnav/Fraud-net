@@ -1,10 +1,10 @@
+import json
+
 import torch
 import torch.nn as nn
 import torch.optim as optim
 
-from imblearn.combine import SMOTETomek
-from imblearn.over_sampling import SMOTE
-from imblearn.under_sampling import RandomUnderSampler, TomekLinks
+from imblearn.under_sampling import TomekLinks
 
 import os
 
@@ -12,15 +12,11 @@ import numpy as np
 
 import pandas as pd
 
-from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
-from sklearn.linear_model import LogisticRegression
-from sklearn.svm import SVC
-from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
 from sklearn.model_selection import train_test_split
 
 from models import NeuralNet
-
+from loss import FocalLoss
 
 
 
@@ -32,32 +28,11 @@ def log(text, config, printit=True):
         f.write(text)
 
 
-def rename_columns(df):
+def rename_columns(df, config):
+    with open(os.path.join(os.path.dirname(config['data_path']), 'rename_cols.json'), 'r') as f:
+        cols = json.load(f)
 
-    df = df.rename(columns={
-        'CreditCardType': 'CARD_TYPE', 
-        'CreditCardFundingSourceName': 'CARD_NAME',
-        'PaymentCreationType': 'CREATION_TYPE',
-        'MerchantGrouping': 'MERCHANT_GROUP',
-        'AcquirerProperty': 'ACQUIRER_PROPERTY',
-        'MCC': 'MCC',
-        'BIN#': 'BIN',
-        'IssuerName': 'ISSUER',
-        'Issuer Country': 'COUNTRY',
-        'RequestedScaChallengeIndicator': 'SCA_INDICATOR',
-        'ScaExemption': 'SCA_EXEMPTION',
-        'ScaExemptionFlow': 'SCA_EXEMPTION_FLOW',
-        'ScaPolicy': 'SCA_POLICY',
-        'Partner': 'PARTNER',
-        'Merchant': 'MERCHANT',
-        'Shop': 'SHOP',
-        'PaymentProvider': 'PAYMENT_PROVIDER',
-        'Payment Currency Code': 'CURRENCY',
-        'PaymentID': 'PAYMENT_ID',
-        'Settled Pmt Amt': 'SETTLED_PAYMENT_AMOUNT',
-        'Settled Base Amt': 'AMOUNT',
-        'FN Qty': 'FRAUD'
-    })
+    df = df.rename(columns=cols)
 
     return df
 
@@ -80,41 +55,25 @@ def clean_data(df):
     return df
 
 
-def encode_top_k(df, column_name, k):
+def encode_columns(df, config):
 
-    top_k = df[column_name].value_counts().nlargest(k).index
-    top_k_mapping = {category: f'CLASS_{idx}' for idx, category in enumerate(top_k, start=1)}
-    top_k_mapping['Other'] = 'CLASS_0'
+    with open(os.path.join(os.path.dirname(config['data_path']), 'encode_cols.json'), 'r') as f:
+        encoding = json.load(f)
     
-    df[column_name] = df[column_name].apply(lambda x: top_k_mapping[x] if x in top_k_mapping else top_k_mapping['Other'])
-    df[column_name] = df[column_name].astype('category')
+    for col in encoding.keys():
+        df[col] = df[col].apply(lambda x: encoding[col][x] if x in encoding[col].keys() else 0)
+        
+    df = pd.get_dummies(df, columns=encoding.keys(), drop_first=True)
     
-    df = pd.get_dummies(df, columns=[column_name], drop_first=True)
-
     return df
 
 
-def encode_columns(df):
+def preprocess(df, config):
 
-    df = encode_top_k(df, 'CARD_TYPE', 4)
-    df = encode_top_k(df, 'CARD_NAME', 4)
-    df = encode_top_k(df, 'CREATION_TYPE', 4)
-    df = encode_top_k(df, 'MCC', 9)
-    df = encode_top_k(df, 'COUNTRY', 9)
-    df = encode_top_k(df, 'SCA_EXEMPTION', 4)
-    df = encode_top_k(df, 'SCA_EXEMPTION_FLOW', 3)
-    df = encode_top_k(df, 'MERCHANT', 9)
-    df = encode_top_k(df, 'SHOP', 9)
-
-    return df
-
-
-def preprocess(df):
-
-    df = rename_columns(df)
+    df = rename_columns(df, config)
     df = select_columns(df)
     df = clean_data(df)
-    df = encode_columns(df)
+    df = encode_columns(df, config)
 
     return df
 
@@ -122,7 +81,7 @@ def preprocess(df):
 def get_processed_data(config, tomek=True):
 
     df = pd.read_csv(config['data_path'], sep=';')
-    df = preprocess(df)
+    df = preprocess(df, config)
 
     X = df.drop('FRAUD', axis=1)
     y = df['FRAUD']
@@ -143,10 +102,14 @@ def get_processed_data(config, tomek=True):
 def train(X_train, y_train, config):
 
     model = NeuralNet(inputs=X_train.shape[1], outputs=2)
-    criterion = nn.CrossEntropyLoss(weight=torch.tensor([config['class_weight'], 1-config['class_weight']], dtype=torch.float32))
-    optimizer = optim.Adam(model.parameters(), lr=0.01)
+    
+    # criterion = nn.CrossEntropyLoss(weight=torch.tensor([config['class_weight'], 1-config['class_weight']], dtype=torch.float32))
+    
+    criterion = FocalLoss(alpha=config['class_weight'], gamma=1.5, reduction='mean')
 
-    epochs = 100
+    optimizer = optim.Adam(model.parameters(), lr=0.005)
+
+    epochs = 200
     for epoch in range(epochs):
 
         model.train()

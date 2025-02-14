@@ -34,7 +34,6 @@ const transposedRows = transposeData(rows);
 export default class BasicTable extends Component {
   render() {
     return (
-      <div className="center-container">
         <TableContainer component={Paper} elevation={0}>
           <Table className="simple-table" size="small" aria-label="simple table">
             <TableBody className='table-body'>
@@ -53,7 +52,6 @@ export default class BasicTable extends Component {
             </TableBody>
           </Table>
         </TableContainer>
-      </div>
     );
   }
 }

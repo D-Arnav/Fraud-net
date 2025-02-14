@@ -29,6 +29,6 @@ config = {
 X_test, y_test = get_processed_data(config)[2:]
 
 model = NeuralNet(inputs=X_test.shape[1], outputs=2)
-model.load_state_dict(torch.load(os.path.join(config['save_path'], 'model.pt')))
+model.load_state_dict(torch.load(os.path.join(config['save_path'], 'model_06_11.pt')))
 
 results = evaluate(X_test, y_test, model, config, log_text=True)
