@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 
 def gen_rand_name():
-    return "Gowtham aka Gowth man"
+    return "Gowtham"
 
 
 def gen_rand_hash():
