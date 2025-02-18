@@ -1,7 +1,7 @@
 import torch
 
-from parser import parse_args
-from utils import train, get_processed_data, evaluate
+from model.parser import parse_args
+from model.utils import train, get_processed_data, evaluate
 
 
 
@@ -17,8 +17,8 @@ config = {
     'vis_path': args.vis_path,
     'log_path': args.log_path,
     'split': args.split,
-    'class_weight': args.class_weight,
-    'save': args.save
+    'class_weight': 0.0795, # args.class_weight,
+    'save': True # args.save
 }
 
 X_train, y_train, X_test, y_test = get_processed_data(config)

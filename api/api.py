@@ -1,4 +1,4 @@
-from flask import request, jsonify, Flask
+from flask import request, Flask
 
 import pandas as pd
 
@@ -6,9 +6,15 @@ import names
 
 import random
 
-import secrets
+import torch
 
-from model.utils import preprocess
+import os
+
+from model.utils import preprocess, evaluate
+from model.models import NeuralNet
+# from model.deploy import *
+from model.train import * 
+
 
 app = Flask(__name__)
 
@@ -44,11 +50,35 @@ def row_to_details(row):
 def fetch_transaction():
     df = pd.read_csv('data/batch.csv', sep=';')
     idx = request.get_json().get('index')
-    # idx = 1
     df.insert(0, 'Serial', range(1, len(df) + 1))
     details = row_to_details(df.iloc[idx].to_dict())
 
     print(details)
     return details
 
-# fetch_transaction()
+
+@app.route('/predict-fraud', methods=['GET', 'POST'])
+def predict_fraud():
+    # idx = request.get_json().get('index')
+    idx = 13
+    df = pd.read_csv('data/batch.csv', sep=';')
+    df = preprocess(df, {'data_path': 'data/data_2.csv'})
+    row = df.iloc[idx]
+
+    X = torch.tensor(row.drop('FRAUD').astype(float).values).float()
+    y = torch.tensor(row['FRAUD']).clone().detach().long()
+
+    X = X.clone().detach().float()
+
+    print(X.shape[-1])
+    model = NeuralNet(inputs=X.shape[-1], outputs=2)
+
+    model.load_state_dict(torch.load(os.path.join('model/weights/model.pt')))
+
+    results = evaluate(X, y, model, {'log_path': 'model/log.txt'}, log_text=True)
+
+    print(results)
+    
+
+predict_fraud()
+

@@ -62,8 +62,14 @@ def encode_columns(df, config):
     
     for col in encoding.keys():
         df[col] = df[col].apply(lambda x: encoding[col][x] if x in encoding[col].keys() else 0)
-        
+    
+    dummy_cols = {f"{col}_{value}": [0] * len(df) for col in encoding.keys() for value in encoding[col].values() if f"{col}_{value}" not in df.columns}
+    dummy_df = pd.DataFrame(dummy_cols)    
+    df = pd.concat([df, dummy_df], axis=1)
+
     df = pd.get_dummies(df, columns=encoding.keys(), drop_first=True)
+    print(dummy_cols)
+    print('Cols', df.columns.to_numpy())
     
     return df
 

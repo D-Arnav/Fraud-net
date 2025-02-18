@@ -17,8 +17,8 @@ args = parse_args()
 
 config = {
     'seed': args.seed,
-    'data_path': args.data_path,
-    'save_path': args.save_path,
+    'data_path': 'data/data_2.csv',
+    'save_path': 'model/weights/',
     'vis_path': args.vis_path,
     'log_path': args.log_path,
     'split': args.split,
@@ -29,6 +29,7 @@ config = {
 X_test, y_test = get_processed_data(config)[2:]
 
 model = NeuralNet(inputs=X_test.shape[1], outputs=2)
-model.load_state_dict(torch.load(os.path.join(config['save_path'], 'model_06_11.pt')))
+
+model.load_state_dict(torch.load(os.path.join(config['save_path'], 'model.pt')))
 
 results = evaluate(X_test, y_test, model, config, log_text=True)
