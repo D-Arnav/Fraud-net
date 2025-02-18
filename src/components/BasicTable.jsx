@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -7,61 +7,105 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Button from "@mui/material/Button";
 import { ArrowBack, ArrowForward, PlayArrowOutlined } from "@mui/icons-material";
-// Example data to display in the table
 
-const response = await fetch('/fetch-transaction')
 
-const row = await response.json()
-console.log(row)
+const fetchTransaction = async (serial) => {
+  const response = await fetch('/fetch-transaction', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ index: serial })
+  });
 
-const rows = [row]
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
 
-// Function to transpose data
+  const row = await response.json();
+  return row;
+};
+
+
+const customOrder = ['Serial Number', 'Payment ID', 'Name of the card holder', 'Card Hash', 'Card Bin', 'Amount', 'Currency'];
+
 const transposeData = (data) => {
-  const keys = Object.keys(data[0]);
+  if (!data || data.length === 0) {
+    return [];
+  }
+  const keys = customOrder.length > 0 ? customOrder : Object.keys(data[0]);
   return keys.map((key) => ({
     key,
     values: data.map((item) => item[key]),
   }));
 };
 
-// Transposed rows
-const transposedRows = transposeData(rows);
-
-
 
 const BasicTable = () => {
+    const [serial, setSerial] = useState(0);
+    const [rows, setRows] = useState([]);
+
+    useEffect(() => {
+        const fetchInitialTransaction = async () => {
+          const initialRow = await fetchTransaction(0);
+          setRows([initialRow]);
+        };
+        
+        fetchInitialTransaction();
+    }, []);
+
+    const handlePrev = async () => {
+        const newSerial = Math.max(0, serial - 1);
+        setSerial(newSerial);
+        const newRow = await fetchTransaction(newSerial);
+        setRows([newRow]);
+    };
+
+    const handleNext = async () => {
+        const newSerial = Math.min(29, serial + 1);
+        setSerial(newSerial);
+        const newRow = await fetchTransaction(newSerial);
+        setRows([newRow]);
+    };
+
+    const handleRun = async () => {
+        const newRow = await fetchTransaction(serial);
+        setRows([newRow]);
+    };
+
+    const transposedRows = transposeData(rows);
+
     return (
         <TableContainer component={Paper} elevation={0}>
-            <Table className="simple-table" size="small" aria-label="simple table">
-                <TableBody className='table-body'>
-                    {transposedRows.map((row) => (
-                        <TableRow className='table-row' key={row.key}>
-                            <TableCell component="th" scope="row">
-                                <strong>{row.key}</strong>
-                            </TableCell>
-                            {row.values.map((value, index) => (
-                                <TableCell key={index} align="right">
-                                    {value}
-                                </TableCell>
-                            ))}
-                        </TableRow>
-                    ))}
-                </TableBody>
-            </Table>
-            <div className="button-container">  
-                <Button variant="contained" className="btn" startIcon={<ArrowBack />} disableElevation>
-                    Previous
-                </Button>
-                <Button variant="contained" className="btn" endIcon={<ArrowForward />} disableElevation>
-                    Next
-                </Button>
-                <Button variant="contained" className="btn" id="run" endIcon={<PlayArrowOutlined />} disableElevation>
-                    Run
-                </Button>
-            </div>
+        <Table className="simple-table" size="small" aria-label="simple table">
+            <TableBody className='table-body'>
+            {transposedRows.map((row) => (
+                <TableRow className='table-row' key={row.key}>
+                <TableCell component="th" scope="row">
+                    <strong>{row.key}</strong>
+                </TableCell>
+                {row.values.map((value, index) => (
+                    <TableCell key={index} align="right">
+                    {value}
+                    </TableCell>
+                ))}
+                </TableRow>
+            ))}
+            </TableBody>
+        </Table>
+        <div className="button-container">
+            <Button variant="contained" className="btn" startIcon={<ArrowBack />} onClick={handlePrev} disableElevation>
+            Previous
+            </Button>
+            <Button variant="contained" className="btn" endIcon={<ArrowForward />} onClick={handleNext} disableElevation>
+            Next
+            </Button>
+            <Button variant="contained" className="btn" id="run" endIcon={<PlayArrowOutlined />} onClick={handleRun} disableElevation>
+            Run
+            </Button>
+        </div>
         </TableContainer>
-        
     );
-}
-export default BasicTable
+};
+  
+export default BasicTable;
