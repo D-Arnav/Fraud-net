@@ -34,9 +34,8 @@ function LabTabs() {
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
           <TabList onChange={handleChange} aria-label="tabs">
-            <Tab label="Live Transactions" value="1" className="custom-tab" />
-            <Tab label="Transactional" value="2" className="custom-tab" />
-            <Tab label="Batch" value="3" className="custom-tab" />
+            <Tab label="Transactional" value="1" className="custom-tab" />
+            <Tab label="Batch" value="2" className="custom-tab" />
           </TabList>
         </Box>
 
@@ -68,7 +67,6 @@ function LabTabs() {
         </TabPanel>
 
         <TabPanel value="2">Item Two</TabPanel>
-        <TabPanel value="3">Item Three</TabPanel>
       </TabContext>
     </Box>
   );
