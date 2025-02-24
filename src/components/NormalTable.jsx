@@ -19,7 +19,7 @@ const rows1 = [
   createData(3, 8628494937, "Legitimate", "Legitimate", 0.56714),
 ];
 
-const NormalTable = () => {
+const NormalTable = ({ results, serial }) => {
   return (
     <><TableContainer className="result-table" component={Paper} elevation={0}>
       <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
@@ -33,7 +33,7 @@ const NormalTable = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows1.map((row) => (
+          {results.map((row) => (
             <TableRow key={row.no}>
               <TableCell align="center">{row.no}</TableCell>
               <TableCell align="center">{row.pay_id}</TableCell>

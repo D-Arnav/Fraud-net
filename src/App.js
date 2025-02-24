@@ -24,6 +24,8 @@ function Title() {
 
 function LabTabs() {
   const [value, setValue] = React.useState("1");
+  const [serial, setSerial] = React.useState(0);
+  const [results, setResults] = React.useState([]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -41,14 +43,14 @@ function LabTabs() {
 
         <TabPanel value="1">
           <div className="center-container">
-            <BasicTable />
+            <BasicTable serial={serial} setSerial={setSerial} results={results} setResults={setResults} />
           </div>
 
           <div>
             <Box sx={{ height: 32 }} />
             <hr className="pagebreak" />
             <p className="side-heading">Results</p>
-            <NormalTable />
+            <NormalTable results={results} serial={serial} />
           </div>
 
           <div>

@@ -26,6 +26,27 @@ const fetchTransaction = async (serial) => {
   return row;
 };
 
+const predictFraud = async (serial) => {
+  const response = await fetch('/predict-fraud', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ index: serial })
+  });
+
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+
+  const row = await response.json();
+  return row;
+}
+
+
+function createData(no, pay_id, pred_status, true_status, conf_sc) {
+  return { no, pay_id, pred_status, true_status, conf_sc };
+}
 
 const customOrder = ['Serial Number', 'Payment ID', 'Name of the card holder', 'Card Hash', 'Card Bin', 'Amount', 'Currency'];
 
@@ -41,8 +62,7 @@ const transposeData = (data) => {
 };
 
 
-const BasicTable = () => {
-    const [serial, setSerial] = useState(0);
+const BasicTable = ({ serial, setSerial, results, setResults}) => {
     const [rows, setRows] = useState([]);
 
     useEffect(() => {
@@ -69,8 +89,9 @@ const BasicTable = () => {
     };
 
     const handleRun = async () => {
-        const newRow = await fetchTransaction(serial);
-        setRows([newRow]);
+        const row = await predictFraud(serial);
+        console.log(row)
+        setResults([...results, createData(serial+1, row.payment_id, row.predicted, row.actual, row.confidence)])
     };
 
     const transposedRows = transposeData(rows);
