@@ -5,7 +5,7 @@ import os
 import torch
 
 from model.parser import parse_args
-from model.utils import get_processed_data, evaluate
+from model.utils import get_processed_data, evaluate_single
 from model.models import NeuralNet
 
 
@@ -26,10 +26,12 @@ config = {
     'save': False
 }
 
-X_test, y_test = get_processed_data(config)[2:]
+X, y = get_processed_data(config, split=False, tomek=False)[:2]
 
-model = NeuralNet(inputs=X_test.shape[1], outputs=2)
+model = NeuralNet(inputs=X.shape[1], outputs=2)
 
 model.load_state_dict(torch.load(os.path.join(config['save_path'], 'model.pt')))
 
-results = evaluate(X_test, y_test, model, config, log_text=True)
+results = evaluate_single(X, y, model)
+
+# TODO: Create a new funciton that return TID, Actual, Predicted, Confidence.

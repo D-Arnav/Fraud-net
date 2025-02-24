@@ -17,7 +17,7 @@ config = {
     'vis_path': args.vis_path,
     'log_path': args.log_path,
     'split': args.split,
-    'class_weight': 0.0795, # args.class_weight,
+    'class_weight': 0.01, # args.class_weight,
     'save': True # args.save
 }
 

@@ -63,29 +63,18 @@ def encode_columns(df, config):
     for col in encoding.keys():
         df[col] = df[col].apply(lambda x: encoding[col][x] if x in encoding[col].keys() else 101) # using 0 for unknown breaks code :/
     
-    print('Cols before', df.columns.to_numpy())
+    df = pd.get_dummies(df, columns=encoding.keys())
 
-    df = pd.get_dummies(df, columns=encoding.keys(), drop_first=True)
-
-    print('Cols after', df.columns.to_numpy())
-
-    exit()
     all_cols = []
     for k, v in encoding.items():
         for k1, v1 in v.items():
             col_name = f'{k}_{v1}'
             all_cols.append(col_name)
         all_cols.append(f'{k}_101')
-
-    print(all_cols, len(all_cols))    
     
     for col in all_cols:
         if col not in df.columns:
             df[col] = False
-
-    print(df.head())
-
-    exit()
 
     return df
 
@@ -100,7 +89,7 @@ def preprocess(df, config):
     return df
 
 
-def get_processed_data(config, tomek=True):
+def get_processed_data(config, tomek=True, split=True):
 
     df = pd.read_csv(config['data_path'], sep=';')
     df = preprocess(df, config)
@@ -111,8 +100,13 @@ def get_processed_data(config, tomek=True):
     X = torch.tensor(X.values.astype(float)).float()
     y = torch.tensor(y.values.astype(float)).long()
 
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=config['seed'])
+    if split:
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=config['seed'])
     
+    else:
+        X_train, y_train = X, y
+        X_test, y_test = None, None
+
     if tomek:
         X_train, y_train = TomekLinks().fit_resample(X_train, y_train)
     
@@ -169,7 +163,7 @@ def evaluate(X_test, y_test, model, config, log_text=True):
     conf_matrix = np.array([[tp, fn], [fp, tn]])
 
     if log_text:
-        text = f"{'-'*30}\nPrecision{' '*11}: {prec*100:.2f}%\nRecall{' '*14}: {rec*100:.2f}%\nFalse Positive Rate : {fpr*100:.2f}%\nFalse Negative Rate : {fnr*100:.2f}%\n{'-'*30}\nAccuracy: {acc*100:.2f}%\nF1 Score: {f1*100:.2f}%\nConfusion Matrix\n{conf_matrix}\n{'-'*30}\n\n"
+        text = f"{'-'*30}\nPrecision{' '*11}: {prec*100:.2f}%\nRecall{' '*14}: {rec*100:.2f}%\nFalse Positive Rate : {fpr.item()*100:.2f}%\nFalse Negative Rate : {fnr.item()*100:.2f}%\n{'-'*30}\nAccuracy: {acc*100:.2f}%\nF1 Score: {f1*100:.2f}%\nConfusion Matrix\n{conf_matrix}\n{'-'*30}\n\n"
         log(text, config)
 
     results = {
@@ -183,3 +177,23 @@ def evaluate(X_test, y_test, model, config, log_text=True):
     }
 
     return results
+
+def evaluate_single(X, y, model):
+    """
+    
+    """
+
+    model.eval()
+    with torch.no_grad():
+        y_out = model(X)[0]
+        y_pred = y_out.argmax(dim=-1).numpy()
+
+        conf_0 = np.exp(y_out[0]) / (np.exp(y_out[0]) + np.exp(y_out[1]))
+        conf_1 = np.exp(y_out[1]) / (np.exp(y_out[0]) + np.exp(y_out[1]))
+        conf = max(conf_0, conf_1).item()
+    
+    return {
+        'predicted': 'Fraudulent' if y_pred else 'Legitimate',
+        'actual': 'Fraudulent' if y.item() else 'Legitimate',
+        'confidence': f"{conf:.2f}"  
+    }

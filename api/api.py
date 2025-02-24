@@ -10,9 +10,9 @@ import torch
 
 import os
 
-from model.utils import preprocess, evaluate
+from model.utils import preprocess, evaluate_single
 from model.models import NeuralNet
-from model.deploy import *
+# from model.deploy import *
 # from model.train import * 
 
 
@@ -59,26 +59,30 @@ def fetch_transaction():
 
 @app.route('/predict-fraud', methods=['GET', 'POST'])
 def predict_fraud():
-    # idx = request.get_json().get('index')
-    idx = 13
+    idx = request.get_json().get('index')
     df = pd.read_csv('data/batch.csv', sep=';')
-    df = preprocess(df, {'data_path': 'data/data_2.csv'})
-    row = df.iloc[idx]
+    df_p = preprocess(df, {'data_path': 'data/data_2.csv'})
+    row = df_p.iloc[idx]
 
     X = torch.tensor(row.drop('FRAUD').astype(float).values).float()
     y = torch.tensor(row['FRAUD']).clone().detach().long()
 
     X = X.clone().detach().float()
+    X = X.unsqueeze(0)
+    y = y.unsqueeze(0)
 
-    print(X.shape[-1])
     model = NeuralNet(inputs=X.shape[-1], outputs=2)
 
     model.load_state_dict(torch.load(os.path.join('model/weights/model.pt')))
 
-    results = evaluate(X, y, model, {'log_path': 'model/log.txt'}, log_text=True)
+    results = evaluate_single(X, y, model)
+    results['payment_id'] = df.iloc[idx].to_dict()['PaymentID']
 
     print(results)
+    return results
+
+# @app.route('/test-run', methods=['GET', 'POST'])
+# def test_run():
+#     serial = request.get_json().get('index')
+#     return {"index": serial}
     
-
-predict_fraud()
-
