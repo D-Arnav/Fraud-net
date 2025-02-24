@@ -61,16 +61,32 @@ def encode_columns(df, config):
         encoding = json.load(f)
     
     for col in encoding.keys():
-        df[col] = df[col].apply(lambda x: encoding[col][x] if x in encoding[col].keys() else 0)
+        df[col] = df[col].apply(lambda x: encoding[col][x] if x in encoding[col].keys() else 101) # using 0 for unknown breaks code :/
     
-    dummy_cols = {f"{col}_{value}": [0] * len(df) for col in encoding.keys() for value in encoding[col].values() if f"{col}_{value}" not in df.columns}
-    dummy_df = pd.DataFrame(dummy_cols)    
-    df = pd.concat([df, dummy_df], axis=1)
+    print('Cols before', df.columns.to_numpy())
 
     df = pd.get_dummies(df, columns=encoding.keys(), drop_first=True)
-    print(dummy_cols)
-    print('Cols', df.columns.to_numpy())
+
+    print('Cols after', df.columns.to_numpy())
+
+    exit()
+    all_cols = []
+    for k, v in encoding.items():
+        for k1, v1 in v.items():
+            col_name = f'{k}_{v1}'
+            all_cols.append(col_name)
+        all_cols.append(f'{k}_101')
+
+    print(all_cols, len(all_cols))    
     
+    for col in all_cols:
+        if col not in df.columns:
+            df[col] = False
+
+    print(df.head())
+
+    exit()
+
     return df
 
 

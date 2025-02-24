@@ -17,7 +17,7 @@ args = parse_args()
 
 config = {
     'seed': args.seed,
-    'data_path': 'data/data_2.csv',
+    'data_path': 'data/batch.csv',
     'save_path': 'model/weights/',
     'vis_path': args.vis_path,
     'log_path': args.log_path,

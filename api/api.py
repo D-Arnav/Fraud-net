@@ -12,8 +12,8 @@ import os
 
 from model.utils import preprocess, evaluate
 from model.models import NeuralNet
-# from model.deploy import *
-from model.train import * 
+from model.deploy import *
+# from model.train import * 
 
 
 app = Flask(__name__)
