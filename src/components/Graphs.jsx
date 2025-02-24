@@ -1,14 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-} from "recharts";
+import React from 'react';
+import { Line } from 'react-chartjs-2';
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
+
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 const data = [
   { name: "Jan", precision: 30, recall: 20, fp: 50, fn: 40 },
@@ -17,45 +11,69 @@ const data = [
   { name: "Apr", precision: 50, recall: 40, fp: 70, fn: 60 },
 ];
 
-const Graph = () => {
+const labels = data.map(entry => entry.name);
+const precisionData = data.map(entry => entry.precision);
+const recallData = data.map(entry => entry.recall);
+const fpData = data.map(entry => entry.fp);
+const fnData = data.map(entry => entry.fn);
+
+const chartData = {
+  labels: labels,
+  datasets: [
+    {
+      label: 'Precision',
+      data: precisionData,
+      borderColor: 'rgba(75, 192, 192, 1)',
+      backgroundColor: 'rgba(75, 192, 192, 0.2)',
+      fill: false,
+    },
+    {
+      label: 'Recall',
+      data: recallData,
+      borderColor: 'rgba(153, 102, 255, 1)',
+      backgroundColor: 'rgba(153, 102, 255, 0.2)',
+      fill: false,
+    },
+    {
+      label: 'False Positives',
+      data: fpData,
+      borderColor: 'rgba(255, 159, 64, 1)',
+      backgroundColor: 'rgba(255, 159, 64, 0.2)',
+      fill: false,
+    },
+    {
+      label: 'False Negatives',
+      data: fnData,
+      borderColor: 'rgba(255, 99, 132, 1)',
+      backgroundColor: 'rgba(255, 99, 132, 0.2)',
+      fill: false,
+    },
+  ],
+};
+
+const options = {
+  responsive: true,
+  scales: {
+    x: {
+      beginAtZero: true,
+    },
+    y: {
+      beginAtZero: true,
+    },
+  },
+  plugins: {
+    legend: {
+      position: 'bottom', // Ensure this is correctly placed under `plugins`
+    },
+  },
+};
+
+const LineChart = () => {
   return (
-    <ResponsiveContainer width="100%" height={400}>
-      <LineChart
-        data={data}
-        margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Line
-          type="linear"
-          dataKey="precision"
-          stroke="#8884d8"
-          strokeWidth={2}
-        />
-        <Line
-          type="linear"
-          dataKey="recall"
-          stroke="#82ca9d"
-          strokeWidth={2}
-        />
-        <Line
-          type="linear"
-          dataKey="fp"
-          stroke="#ffc658"
-          strokeWidth={2}
-        />
-        <Line
-          type="linear"
-          dataKey="fn"
-          stroke="#ff7300"
-          strokeWidth={2}
-        />
-      </LineChart>
-    </ResponsiveContainer>
+    <div>
+      <Line data={chartData} options={options} />
+    </div>
   );
 };
 
-export default Graph;
+export default LineChart;
