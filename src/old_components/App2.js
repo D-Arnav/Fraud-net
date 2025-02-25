@@ -22,57 +22,57 @@ function Title() {
   );
 }
 
-// function LabTabs() {
-//   const [value, setValue] = React.useState("1");
-//   const [serial, setSerial] = React.useState(0);
-//   const [results, setResults] = React.useState([]);
+function LabTabs() {
+  const [value, setValue] = React.useState("1");
+  const [serial, setSerial] = React.useState(0);
+  const [results, setResults] = React.useState([]);
 
-//   const handleChange = (event, newValue) => {
-//     setValue(newValue);
-//   };
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
 
-//   return (
-//     <Box className="tabs">
-//       <TabContext value={value}>
-//         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-//           <TabList onChange={handleChange} aria-label="tabs">
-//             <Tab label="Transactional" value="1" className="custom-tab" />
-//             <Tab label="Batch" value="2" className="custom-tab" />
-//           </TabList>
-//         </Box>
+  return (
+    <Box className="tabs">
+      <TabContext value={value}>
+        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+          <TabList onChange={handleChange} aria-label="tabs">
+            <Tab label="Transactional" value="1" className="custom-tab" />
+            <Tab label="Batch" value="2" className="custom-tab" />
+          </TabList>
+        </Box>
 
-//         <TabPanel value="1">
-//           <div className="center-container">
-//             <BasicTable serial={serial} setSerial={setSerial} results={results} setResults={setResults} />
-//           </div>
+        <TabPanel value="1">
+          <div className="center-container">
+            <BasicTable serial={serial} setSerial={setSerial} results={results} setResults={setResults} />
+          </div>
 
-//           <div>
-//             <Box sx={{ height: 32 }} />
-//             <hr className="pagebreak" />
-//             <p className="side-heading">Results</p>
-//             <NormalTable results={results} serial={serial} />
-//           </div>
+          <div>
+            <Box sx={{ height: 32 }} />
+            <hr className="pagebreak" />
+            <p className="side-heading">Results</p>
+            <NormalTable results={results} serial={serial} />
+          </div>
 
-//           <div>
-//             <Box sx={{ height: 32 }} />
-//             <hr className="pagebreak" />
-//             <p className="side-heading">Confusion Matrix</p>
-//             <ConfusionMatrix />
-//           </div>
+          <div>
+            <Box sx={{ height: 32 }} />
+            <hr className="pagebreak" />
+            <p className="side-heading">Confusion Matrix</p>
+            <ConfusionMatrix />
+          </div>
 
-//           <div>
-//             <Box sx={{ height: 32 }} />
-//             <hr className="pagebreak" />
-//             <p className="side-heading">Graph</p>
-//             <Graphs />
-//           </div>
-//         </TabPanel>
+          <div>
+            <Box sx={{ height: 32 }} />
+            <hr className="pagebreak" />
+            <p className="side-heading">Graph</p>
+            <Graphs />
+          </div>
+        </TabPanel>
 
-//         <TabPanel value="2">Item Two</TabPanel>
-//       </TabContext>
-//     </Box>
-//   );
-// }
+        <TabPanel value="2">Item Two</TabPanel>
+      </TabContext>
+    </Box>
+  );
+}
 
 function App() {
   return (

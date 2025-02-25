@@ -9,14 +9,10 @@ import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 
 //Import Hooks
-import {AppContext} from "./hooks/AppContext"
+import { AppContext } from "./hooks/AppContext";
 
-// Import components
-import TransactionTable from "./components/TransactionTable";
-import ResultsTable from "./components/ResultsTable";
-import ConfusionMatrix from "./components/ConfusionMatrix";
-import Graphs from "./components/Graphs";
-import LabTabs from "./components/LabTabs"; // Ensure LabTabs is imported correctly
+//Import Components
+import LabTabs from "./components/LabTabs";
 
 function App() {
   const {
@@ -34,13 +30,8 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Fraud Model Testing</h1>
-      </header>
-      <body>
-        {/* Tabs Component */}
-        <LabTabs />
-      </body>
+      <h1>Fraud Model Testing</h1>
+      <LabTabs />
     </div>
   );
 }

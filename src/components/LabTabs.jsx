@@ -14,9 +14,10 @@ import ResultsTable from "./ResultsTable";
 import ConfusionMatrix from "./ConfusionMatrix";
 import Graphs from "./Graphs";
 
-function LabTabs() {
+const LabTabs = () => {
   const [value, setValue] = React.useState("1");
-  const { serial, setSerial, results, setResults } = useContext(AppContext);
+  const [serial, setSerial] = React.useState(0);
+  const [results, setResults] = React.useState([]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -34,12 +35,7 @@ function LabTabs() {
 
         <TabPanel value="1">
           <div className="center-container">
-            <TransactionTable
-              serial={serial}
-              setSerial={setSerial}
-              results={results}
-              setResults={setResults}
-            />
+            <TransactionTable serial={serial} setSerial={setSerial} results={results} setResults={setResults} />
           </div>
 
           <div>
