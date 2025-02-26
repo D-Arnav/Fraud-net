@@ -59,10 +59,9 @@ def fetch_transaction():
 
 @app.route('/predict-fraud', methods=['GET', 'POST'])
 def predict_fraud():
-    # idx = request.get_json().get('index')
-    # day = request.get_json().get('day')
-
-    idx, day  = 0, 0
+    
+    idx = request.get_json().get('index')
+    day = request.get_json().get('day')
 
     with open(os.path.join('data/day_division.json'), 'r') as f:
         day_division = json.load(f)
@@ -76,8 +75,8 @@ def predict_fraud():
 
     current_transaction = preprocess(current_transaction, {'data_path': 'data/data_2.csv'})
 
-    X = torch.tensor(current_transaction.drop('FRAUD', axis=1).astype(float).values).float()
-    y = torch.tensor(current_transaction['FRAUD']).clone().detach().long()
+    X = torch.tensor(current_transaction.drop('FRAUD', axis=1).astype(float).values[0]).float()
+    y = torch.tensor(current_transaction['FRAUD'].values).clone().detach().long()
 
     X = X.clone().detach().float()
     X = X.unsqueeze(0)
@@ -88,13 +87,10 @@ def predict_fraud():
     model.load_state_dict(torch.load(os.path.join('model/weights/model.pt')))
 
     results = evaluate_single(X, y, model)
-    results['payment_id'] = df.iloc[idx].to_dict()['PaymentID']
+    results['payment_id'] = current_tid
 
-    print(results)
     return results
     
-predict_fraud();
-
 # @app.route('api/metrics', methods=['GET'])
 # def metrics():
 #     pass

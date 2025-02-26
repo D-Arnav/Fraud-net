@@ -56,6 +56,11 @@ def clean_data(df):
 
 
 def encode_columns(df, config):
+    """
+    TODO: Column ordering is screwed!
+        - First add the 110 column names in order
+        - Then set the row values based on encodings.
+    """
 
     with open(os.path.join(os.path.dirname(config['data_path']), 'encode_cols.json'), 'r') as f:
         encoding = json.load(f)
