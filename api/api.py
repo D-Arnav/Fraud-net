@@ -10,10 +10,10 @@ import torch
 
 import os
 
+import json
+
 from model.utils import preprocess, evaluate_single
 from model.models import NeuralNet
-# from model.deploy import *
-# from model.train import * 
 
 
 app = Flask(__name__)
@@ -59,9 +59,27 @@ def fetch_transaction():
 
 @app.route('/predict-fraud', methods=['GET', 'POST'])
 def predict_fraud():
-    idx = request.get_json().get('index')
+    # idx = request.get_json().get('index')
+    # day = request.get_json().get('day')
+
+    idx, day = 0, 0
+
+    with open(os.path.join('data/day_division.json'), 'r') as f:
+        day_division = json.load(f)
+    
+    fraud_ids = day_division['FRAUD'][day]
+    legit_ids = day_division['LEGIT'][day]
+
+    print(fraud_ids, legit_ids)
+
     df = pd.read_csv('data/batch.csv', sep=';')
     df_p = preprocess(df, {'data_path': 'data/data_2.csv'})
+    df_p.set_index('PAYMENT_ID', inplace=True)
+
+    print(df_p.col(fraud_ids[0]))
+
+
+
     row = df_p.iloc[idx]
 
     X = torch.tensor(row.drop('FRAUD').astype(float).values).float()
@@ -78,7 +96,6 @@ def predict_fraud():
     results = evaluate_single(X, y, model)
     results['payment_id'] = df.iloc[idx].to_dict()['PaymentID']
 
-    print(results)
     return results
 
 # @app.route('/test-run', methods=['GET', 'POST'])
@@ -86,3 +103,4 @@ def predict_fraud():
 #     serial = request.get_json().get('index')
 #     return {"index": serial}
     
+predict_fraud();
