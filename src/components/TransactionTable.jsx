@@ -101,6 +101,8 @@ const TransactionTable = () => {
     };
 
     const handleRun = async () => {
+
+      setResults([]);
       for (let newSerial = 0; newSerial < 30; newSerial++) {
           const newTransaction = await fetchTransaction(newSerial, day);
           setTransaction([newTransaction]);
@@ -108,6 +110,21 @@ const TransactionTable = () => {
           const result = await predictFraud(newSerial, day);
           const newResult = createData(newSerial + 1, result.payment_id, result.predicted, result.actual, result.confidence);
           setResults((prevResults) => [...prevResults, newResult]);
+
+          setMatrix((prevMatrix) => {
+            const [tp, fp, tn, fn] = prevMatrix;
+            if (result.payment_id === 'Fraudulent' && result.predicted === 'Fraudulent') {
+              return [tp + 1, fp, tn, fn];
+            } else if (result.payment_id !== 'Fraudulent' && result.predicted === 'Fraudulent') {
+              return [tp, fp + 1, tn, fn];
+            } else if (result.payment_id !== 'Fraudulent' && result.predicted !== 'Fraudulent') {
+              return [tp, fp, tn + 1, fn];
+            } else if (result.payment_id === 'Fraudulent' && result.predicted !== 'Fraudulent') {
+              return [tp, fp, tn, fn + 1];
+            }
+            return prevMatrix;
+          });
+
           setDay(0); // Running Status for Button
           await new Promise(resolve => setTimeout(resolve, Math.random() * 400 + 100));
       }
@@ -116,7 +133,7 @@ const TransactionTable = () => {
         setDay(day + 1);
       }
 
-  };
+    };
 
     const transposedTransactions = transposeData(transaction);
 
@@ -143,6 +160,10 @@ const TransactionTable = () => {
           <Button variant="contained" className="btn" id="run" endIcon={<PlayArrowOutlined />} onClick={handleRun} disableElevation>
             {day != 0 ? "Run Day " + day : "Running..."}
           </Button>
+        </div>
+        <div>
+          TODO: FIX THE MATRIX {matrix[0]} {matrix[1]} {matrix[2]} {matrix[3]}
+
         </div>
         </TableContainer>
     );

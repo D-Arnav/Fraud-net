@@ -62,6 +62,9 @@ def encode_columns(df, config):
         - Then set the row values based on encodings.
     """
 
+    with open(os.path.join(os.path.dirname(config['data_path']), 'col_names.json'), 'r') as f:
+        col_names = json.load(f)
+
     with open(os.path.join(os.path.dirname(config['data_path']), 'encode_cols.json'), 'r') as f:
         encoding = json.load(f)
     
@@ -81,7 +84,8 @@ def encode_columns(df, config):
         if col not in df.columns:
             df[col] = False
 
-    return df
+
+    return df[col_names]
 
 
 def preprocess(df, config):

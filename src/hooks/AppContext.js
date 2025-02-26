@@ -7,7 +7,7 @@ export const AppProvider = ({ children }) => {
   const [serial, setSerial] = useState(0);
   const [results, setResults] = useState([]);
   const [transaction, setTransaction] = useState(null);
-  const [matrix, setMatrix] = useState(null);
+  const [matrix, setMatrix] = useState([0, 0, 0, 0]);
   const [metrics, setMetrics] = useState({});
 
   return (

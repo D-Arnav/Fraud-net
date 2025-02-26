@@ -14,7 +14,7 @@ import json
 
 from model.utils import preprocess, evaluate_single
 from model.models import NeuralNet
-
+# from model.deploy import *
 
 app = Flask(__name__)
 
@@ -59,9 +59,11 @@ def fetch_transaction():
 
 @app.route('/predict-fraud', methods=['GET', 'POST'])
 def predict_fraud():
-    
+
     idx = request.get_json().get('index')
     day = request.get_json().get('day')
+
+    # day, idx = 0, 0
 
     with open(os.path.join('data/day_division.json'), 'r') as f:
         day_division = json.load(f)
@@ -90,7 +92,8 @@ def predict_fraud():
     results['payment_id'] = current_tid
 
     return results
-    
+
+
 # @app.route('api/metrics', methods=['GET'])
 # def metrics():
 #     pass
