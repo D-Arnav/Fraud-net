@@ -74,7 +74,7 @@ def predict_fraud():
     for i in range(len(day_division)):
         day_division_shuf.append(random.shuffle(day_division[i]))
     
-    print(day_division_shuf)
+    print(day_division)
 
     return 0
     
