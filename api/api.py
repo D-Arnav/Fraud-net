@@ -62,45 +62,24 @@ def predict_fraud():
     # idx = request.get_json().get('index')
     # day = request.get_json().get('day')
 
-    idx, day = 0, 0
+    idx, day  = 0, 0
 
     with open(os.path.join('data/day_division.json'), 'r') as f:
         day_division = json.load(f)
+
+    # Open day_division, it is an array of arrays
+    # Go to each array of array, shuffle it, and replace it
+
+    day_division_shuf = []
+    for i in range(len(day_division)):
+        day_division_shuf.append(random.shuffle(day_division[i]))
     
-    fraud_ids = day_division['FRAUD'][day]
-    legit_ids = day_division['LEGIT'][day]
+    print(day_division_shuf)
 
-    print(fraud_ids, legit_ids)
-
-    df = pd.read_csv('data/batch.csv', sep=';')
-    df_p = preprocess(df, {'data_path': 'data/data_2.csv'})
-    df_p.set_index('PAYMENT_ID', inplace=True)
-
-    print(df_p.col(fraud_ids[0]))
-
-
-
-    row = df_p.iloc[idx]
-
-    X = torch.tensor(row.drop('FRAUD').astype(float).values).float()
-    y = torch.tensor(row['FRAUD']).clone().detach().long()
-
-    X = X.clone().detach().float()
-    X = X.unsqueeze(0)
-    y = y.unsqueeze(0)
-
-    model = NeuralNet(inputs=X.shape[-1], outputs=2)
-
-    model.load_state_dict(torch.load(os.path.join('model/weights/model.pt')))
-
-    results = evaluate_single(X, y, model)
-    results['payment_id'] = df.iloc[idx].to_dict()['PaymentID']
-
-    return results
-
-# @app.route('/test-run', methods=['GET', 'POST'])
-# def test_run():
-#     serial = request.get_json().get('index')
-#     return {"index": serial}
+    return 0
     
 predict_fraud();
+
+@app.route('api/metrics', methods=['GET'])
+def metrics():
+    pass
