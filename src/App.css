@@ -83,6 +83,7 @@ body {
 
 .side-heading {
   font-size: 25px;
+  text-align: left;
 }
 
 .simple-table {
@@ -123,7 +124,8 @@ body {
 .button-container {
   display: flex;
   justify-content: flex-end; /* Push buttons to the right */
-  gap: 10px; /* Adds space between buttons */
+  align-items: center; /* Center vertically */
+  gap: 30px; /* Adds space between buttons */
   margin-top: 30px; /* Space from above elements */
   width: 100%;
 }

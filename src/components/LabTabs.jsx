@@ -35,14 +35,14 @@ const LabTabs = () => {
 
         <TabPanel value="1">
           <div className="center-container">
-            <TransactionTable serial={serial} setSerial={setSerial} results={results} setResults={setResults} />
+            <TransactionTable />
           </div>
 
           <div>
             <Box sx={{ height: 32 }} />
             <hr className="pagebreak" />
             <p className="side-heading">Results</p>
-            <ResultsTable results={results} serial={serial} />
+            <ResultsTable />
           </div>
 
           <div>

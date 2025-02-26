@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -7,6 +7,10 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Button from "@mui/material/Button";
 import { ArrowBack, ArrowForward, PlayArrowOutlined } from "@mui/icons-material";
+import { AppContext } from '../hooks/AppContext';
+
+//Import Components
+import ProgressBar from './ProgressBar';
 
 
 const fetchTransaction = async (serial) => {
@@ -62,13 +66,13 @@ const transposeData = (data) => {
 };
 
 
-const TransactionTable = ({ serial, setSerial, results, setResults}) => {
-    const [rows, setRows] = useState([]);
-
+const TransactionTable = () => {
+    const { day, setDay, serial, setSerial, results, setResults, transaction, setTransaction, matrix, setMatrix } = useContext(AppContext);
+    
     useEffect(() => {
         const fetchInitialTransaction = async () => {
-          const initialRow = await fetchTransaction(0);
-          setRows([initialRow]);
+          const initialTransaction = await fetchTransaction(0);
+          setTransaction([initialTransaction]);
         };
         
         fetchInitialTransaction();
@@ -77,30 +81,34 @@ const TransactionTable = ({ serial, setSerial, results, setResults}) => {
     const handlePrev = async () => {
         const newSerial = Math.max(0, serial - 1);
         setSerial(newSerial);
-        const newRow = await fetchTransaction(newSerial);
-        setRows([newRow]);
+        const newTransaction = await fetchTransaction(newSerial);
+        setTransaction([newTransaction]);
     };
 
     const handleNext = async () => {
         const newSerial = Math.min(29, serial + 1);
         setSerial(newSerial);
-        const newRow = await fetchTransaction(newSerial);
-        setRows([newRow]);
+        const newTransaction = await fetchTransaction(newSerial);
+        setTransaction(newTransaction);
     };
 
     const handleRun = async () => {
-        const row = await predictFraud(serial);
-        console.log(row)
-        setResults([...results, createData(serial+1, row.payment_id, row.predicted, row.actual, row.confidence)])
+        for (const newSerial = 0; newSerial < 30; newSerial++) {
+            const newTransaction = await fetchTransaction(newSerial);
+            setTransaction(newTransaction);
+            const result = await predictFraud(newSerial);
+            setResults([...results, createData(newSerial+1, result.payment_id, result.predicted, result.actual, result.confidence)])
+        }
     };
 
-    const transposedRows = transposeData(rows);
+    console.log([transaction])
+    const transposedTransactions = transposeData(transaction);
 
     return (
         <TableContainer component={Paper} elevation={0}>
         <Table className="simple-table" size="small" aria-label="simple table">
             <TableBody className='table-body'>
-            {transposedRows.map((row) => (
+            {transposedTransactions.map((row) => (
                 <TableRow className='table-row' key={row.key}>
                 <TableCell component="th" scope="row">
                     <strong>{row.key}</strong>
@@ -115,15 +123,10 @@ const TransactionTable = ({ serial, setSerial, results, setResults}) => {
             </TableBody>
         </Table>
         <div className="button-container">
-            <Button variant="contained" className="btn" startIcon={<ArrowBack />} onClick={handlePrev} disableElevation>
-            Previous
-            </Button>
-            <Button variant="contained" className="btn" endIcon={<ArrowForward />} onClick={handleNext} disableElevation>
-            Next
-            </Button>
-            <Button variant="contained" className="btn" id="run" endIcon={<PlayArrowOutlined />} onClick={handleRun} disableElevation>
-            Run
-            </Button>
+          <ProgressBar className="progressbar"/>
+          <Button variant="contained" className="btn" id="run" endIcon={<PlayArrowOutlined />} onClick={handleRun} disableElevation>
+            Run Day {day}
+          </Button>
         </div>
         </TableContainer>
     );

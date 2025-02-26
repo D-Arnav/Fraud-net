@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -8,6 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import Paper from '@mui/material/Paper';
 import Button from "@mui/material/Button";
 import {Download} from "@mui/icons-material";
+import { AppContext } from '../hooks/AppContext';
 
 function createData(no, pay_id, pred_status, true_status, conf_sc) {
   return { no, pay_id, pred_status, true_status, conf_sc };
@@ -19,7 +20,9 @@ const rows1 = [
   createData(3, 8628494937, "Legitimate", "Legitimate", 0.56714),
 ];
 
-const ResultsTable = ({ results, serial }) => {
+const ResultsTable = () => {
+  const { day, setDay, serial, setSerial, results, setResults, transaction, setTransaction, matrix, setMatrix } = useContext(AppContext);
+
   return (
     <><TableContainer className="result-table" component={Paper} elevation={0}>
       <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
