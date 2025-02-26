@@ -1,9 +1,11 @@
-import * as React from 'react';
+import React, { useContext } from 'react';
 import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
+import { AppContext } from '../hooks/AppContext';
 
 export default function ProgressBar() {
   const [progress, setProgress] = React.useState(0);
+  const { day, setDay, serial, setSerial, results, transaction, setTransaction, matrix, setMatrix } = useContext(AppContext);
 
   React.useEffect(() => {
     const timer = setInterval(() => {
@@ -23,7 +25,7 @@ export default function ProgressBar() {
 
   return (
     <Box sx={{ width: '80%' }}>
-      <LinearProgress variant="determinate" value={progress} />
+      <LinearProgress variant="determinate" value={(serial + 1) * 100 / 30} sx={{ borderRadius: 5, height: 5}} />
       {/* Static value */}
     </Box>
   );

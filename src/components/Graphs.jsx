@@ -50,6 +50,63 @@ const options = {
     legend: {
       position: 'bottom',
     },
+    title: {
+      display: true,
+      text: 'Precision and Recall',
+    }, 
+  },
+};
+
+const secondData = [
+  { day: "2", falsePositive: 60, falseNegative: 40},
+  { day: "1", falsePositive: 50, falseNegative: 30},
+  { day: "3", falsePositive: 55, falseNegative: 35},
+  { day: "4", falsePositive: 70, falseNegative: 50},
+  { day: "5", falsePositive: 65, falseNegative: 45},
+];
+
+const secondLabels = secondData.map(entry => entry.day);
+const accuracyData = secondData.map(entry => entry.falsePositive);
+const f1ScoreData = secondData.map(entry => entry.falseNegative);
+
+const secondChartData = {
+  labels: secondLabels,
+  datasets: [
+    {
+      label: 'False Positive',
+      data: accuracyData,
+      borderColor: 'rgba(255, 99, 132, 1)',
+      backgroundColor: 'rgba(255, 99, 132, 0.2)',
+      fill: false,
+    },
+    {
+      label: 'False Negative',
+      data: f1ScoreData,
+      borderColor: 'rgba(54, 162, 235, 1)',
+      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+      fill: false,
+    },
+  ],
+};
+
+const secondChartOptions = {
+  responsive: true,
+  scales: {
+    x: {
+      beginAtZero: true,
+    },
+    y: {
+      beginAtZero: true,
+    },
+  },
+  plugins: {
+    legend: {
+      position: 'bottom',
+    },
+    title: {
+      display: true,
+      text: 'False Positive and False Negative',
+    }
   },
 };
 
@@ -57,6 +114,7 @@ const LineChart = () => {
   return (
     <div>
       <Line data={chartData} options={options} />
+      <Line data={secondChartData} options={secondChartOptions} />
     </div>
   );
 };

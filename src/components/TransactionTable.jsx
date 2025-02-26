@@ -13,13 +13,13 @@ import { AppContext } from '../hooks/AppContext';
 import ProgressBar from './ProgressBar';
 
 
-const fetchTransaction = async (serial) => {
+const fetchTransaction = async (serial, day) => {
   const response = await fetch('/fetch-transaction', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ index: serial })
+    body: JSON.stringify({ index: serial, day: day })
   });
 
   if (!response.ok) {
@@ -30,13 +30,13 @@ const fetchTransaction = async (serial) => {
   return row;
 };
 
-const predictFraud = async (serial) => {
+const predictFraud = async (serial, day) => {
   const response = await fetch('/predict-fraud', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ index: serial })
+    body: JSON.stringify({ index: serial, day: day })
   });
 
   if (!response.ok) {
@@ -71,7 +71,15 @@ const TransactionTable = () => {
     
     useEffect(() => {
         const fetchInitialTransaction = async () => {
-          const initialTransaction = await fetchTransaction(0);
+          const initialTransaction = {
+            "Amount": "",
+            "Card Bin": "",
+            "Card Hash": "",
+            "Currency": "",
+            "Name of the card holder": "", 
+            "Payment ID": "",
+            "Serial Number": ""
+          }
           setTransaction([initialTransaction]);
         };
         
@@ -81,27 +89,35 @@ const TransactionTable = () => {
     const handlePrev = async () => {
         const newSerial = Math.max(0, serial - 1);
         setSerial(newSerial);
-        const newTransaction = await fetchTransaction(newSerial);
+        const newTransaction = await fetchTransaction(newSerial, day);
         setTransaction([newTransaction]);
     };
 
     const handleNext = async () => {
         const newSerial = Math.min(29, serial + 1);
         setSerial(newSerial);
-        const newTransaction = await fetchTransaction(newSerial);
+        const newTransaction = await fetchTransaction(newSerial, day);
         setTransaction(newTransaction);
     };
 
     const handleRun = async () => {
-        for (const newSerial = 0; newSerial < 30; newSerial++) {
-            const newTransaction = await fetchTransaction(newSerial);
-            setTransaction(newTransaction);
-            const result = await predictFraud(newSerial);
-            setResults([...results, createData(newSerial+1, result.payment_id, result.predicted, result.actual, result.confidence)])
-        }
-    };
+      for (let newSerial = 0; newSerial < 30; newSerial++) {
+          const newTransaction = await fetchTransaction(newSerial, day);
+          setTransaction([newTransaction]);
+          setSerial(newSerial);
+          const result = await predictFraud(newSerial, day);
+          const newResult = createData(newSerial + 1, result.payment_id, result.predicted, result.actual, result.confidence);
+          setResults((prevResults) => [...prevResults, newResult]);
+          setDay(0); // Running Status for Button
+          await new Promise(resolve => setTimeout(resolve, Math.random() * 400 + 100));
+      }
 
-    console.log([transaction])
+      if (day < 5) {
+        setDay(day + 1);
+      }
+
+  };
+
     const transposedTransactions = transposeData(transaction);
 
     return (
@@ -125,7 +141,7 @@ const TransactionTable = () => {
         <div className="button-container">
           <ProgressBar className="progressbar"/>
           <Button variant="contained" className="btn" id="run" endIcon={<PlayArrowOutlined />} onClick={handleRun} disableElevation>
-            Run Day {day}
+            {day != 0 ? "Run Day " + day : "Running..."}
           </Button>
         </div>
         </TableContainer>

@@ -29,7 +29,7 @@ const LabTabs = () => {
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
           <TabList onChange={handleChange} aria-label="tabs">
             <Tab label="Transactional" value="1" className="custom-tab" />
-            <Tab label="Batch" value="2" className="custom-tab" />
+            <Tab label="Graphs" value="2" className="custom-tab" />
           </TabList>
         </Box>
 
@@ -51,16 +51,14 @@ const LabTabs = () => {
             <p className="side-heading">Confusion Matrix</p>
             <ConfusionMatrix />
           </div>
-
-          <div>
-            <Box sx={{ height: 32 }} />
-            <hr className="pagebreak" />
-            <p className="side-heading">Graph</p>
-            <Graphs />
-          </div>
         </TabPanel>
 
-        <TabPanel value="2">Item Two</TabPanel>
+        <TabPanel value="2">
+          <div>
+            <Box sx={{ height: 32 }} />
+            <Graphs />
+          </div>
+          </TabPanel>
       </TabContext>
     </Box>
   );

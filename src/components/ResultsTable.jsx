@@ -21,7 +21,24 @@ const rows1 = [
 ];
 
 const ResultsTable = () => {
-  const { day, setDay, serial, setSerial, results, setResults, transaction, setTransaction, matrix, setMatrix } = useContext(AppContext);
+  const { day, setDay, serial, setSerial, results, transaction, setTransaction, matrix, setMatrix } = useContext(AppContext);
+
+  const downloadCSV = () => {
+    const headers = ["S.No", "Payment ID", "Predicted Status", "True Status", "Confidence Score"];
+    const rows = results.map(row => [row.no, row.pay_id, row.pred_status, row.true_status, row.conf_sc]);
+
+    let csvContent = "data:text/csv;charset=utf-8," 
+      + headers.join(",") + "\n"
+      + rows.map(e => e.join(",")).join("\n");
+
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", "results.csv");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <><TableContainer className="result-table" component={Paper} elevation={0}>
@@ -65,7 +82,7 @@ const ResultsTable = () => {
       </Table>
     </TableContainer>
     <div className="button-container">
-        <Button variant="contained" className="btn" endIcon={<Download />} disableElevation>
+        <Button variant="contained" className="btn" onClick={downloadCSV} endIcon={<Download />} disableElevation>
           Download
         </Button>
     </div></>

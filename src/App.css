@@ -96,6 +96,8 @@ body {
 .result-table {
   border-top: 2px solid black;
   border-bottom: 2px solid black;
+  max-height: 300px;
+  overflow: auto;
 }
 
 .pagebreak {
@@ -130,6 +132,10 @@ body {
   width: 100%;
 }
 
+.progressbar{
+  border-radius: 5px;
+}
+
 .MuiButton-root {
   text-transform: none !important;
 }
@@ -152,4 +158,37 @@ body {
 
 #run:hover {
   background-color: #3e7c3e !important; /* Darker Green */
+}
+
+.result-table {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  max-height: 400px;
+  overflow: auto;
+  padding-right: 10px; 
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px; 
+}
+
+.result-table::-webkit-scrollbar {
+  width: 5px;
+}
+
+.result-table::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.result-table::-webkit-scrollbar-thumb {
+  background: #000;
+  border-radius: 10px;
+  transition: width 0.3s;
+}
+
+.result-table::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  width: 10px;
 }
