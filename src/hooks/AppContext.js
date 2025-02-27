@@ -8,7 +8,7 @@ export const AppProvider = ({ children }) => {
   const [results, setResults] = useState([]);
   const [transaction, setTransaction] = useState(null);
   const [matrix, setMatrix] = useState([0, 0, 0, 0]);
-  const [metrics, setMetrics] = useState({});
+  const [metrics, setMetrics] = useState([]);
 
   return (
     <AppContext.Provider

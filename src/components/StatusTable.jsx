@@ -25,8 +25,8 @@ const ResultsTable = () => {
   }, [results]);
 
   const downloadCSV = () => {
-    const headers = ["S.No", "Payment ID", "Predicted Status", "Date", "True Status", "Confidence Score"];
-    const rows = results.map(row => [row.no, row.pay_id, row.date, row.pred_status, row.true_status, row.conf_sc]);
+    const headers = ["S.No", "Payment ID", "Date", "Predicted Status", "Confidence Score"];
+    const rows = results.map(row => [row.no, row.pay_id, row.date, row.pred_status, row.conf_sc]);
 
     let csvContent = "data:text/csv;charset=utf-8," 
       + headers.join(",") + "\n"
@@ -35,7 +35,7 @@ const ResultsTable = () => {
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement("a");
     link.setAttribute("href", encodedUri);
-    link.setAttribute("download", "results.csv");
+    link.setAttribute("download", "status.csv");
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -55,7 +55,6 @@ const ResultsTable = () => {
               <TableCell align="center"><b>Payment ID</b></TableCell>
               <TableCell align="center"><b>Date</b></TableCell>
               <TableCell align="center"><b>Predicted Status</b></TableCell>
-              <TableCell align="center"><b>True Status</b></TableCell>
               <TableCell align="center"><b>Confidence Score</b></TableCell>
             </TableRow>
           </TableHead>
@@ -73,15 +72,6 @@ const ResultsTable = () => {
                   }}
                 >
                   {row.pred_status}
-                </TableCell>
-                <TableCell
-                  align="center"
-                  style={{
-                    color: row.true_status === "Legitimate" ? 'green' : 'red',
-                    fontWeight: 'bold',
-                  }}
-                >
-                  {row.true_status}
                 </TableCell>
                 <TableCell align="center">{row.conf_sc}</TableCell>
               </TableRow>

@@ -14,7 +14,6 @@ import json
 
 from model.utils import preprocess, evaluate_single
 from model.models import NeuralNet
-# from model.deploy import *
 
 app = Flask(__name__)
 
@@ -26,18 +25,22 @@ def get_rand_name(serial):
     last_name = names.get_last_name()
     return f"{first_name} {last_name}"
 
+
 def get_rand_hash(serial):
     random.seed(serial)
-    return ''.join([str(random.randint(0, 9)) for _ in range(16)])
+    nums = str(random.randint(1000000000000000, 9999999999999999))
+    return ' '.join([nums[i:i+4] for i in range(0, len(nums), 4)])
 
-def get_date_time():
-    return pd.Timestamp.now()
 
-def row_to_details(row):
+def get_date(day):
+    return str(pd.Timestamp(2025, 2, day).date())
+    
+
+def row_to_details(row, day):
 
     data = {
         'Serial Number': str(row['Serial']),
-        'Date Time': str(get_date_time()),
+        'Date Time': str(get_date(day)),
         'Payment ID': str(row['PaymentID']),
         'Name of the card holder': get_rand_name(row['Serial']),
         'Card Hash': get_rand_hash(row['Serial']),
@@ -51,12 +54,13 @@ def row_to_details(row):
 
 @app.route('/fetch-transaction', methods=['GET', 'POST'])
 def fetch_transaction():
-    df = pd.read_csv('data/batch.csv', sep=';')
+    day = request.get_json().get('day')
     idx = request.get_json().get('index')
-    df.insert(0, 'Serial', range(1, len(df) + 1))
-    details = row_to_details(df.iloc[idx].to_dict())
 
-    print(details)
+    df = pd.read_csv('data/batch.csv', sep=';')
+    df.insert(0, 'Serial', range(1, len(df) + 1))
+    details = row_to_details(df.iloc[idx].to_dict(), day)
+
     return details
 
 
@@ -66,15 +70,13 @@ def predict_fraud():
     idx = request.get_json().get('index')
     day = request.get_json().get('day')
 
-    # day, idx = 0, 0
-
     with open(os.path.join('data/day_division.json'), 'r') as f:
         day_division = json.load(f)
 
     df = pd.read_csv('data/data_2.csv', sep=';')
     df.set_index('PaymentID', inplace=True)
 
-    current_tid = day_division[day][idx]
+    current_tid = day_division[day-1][idx]
 
     current_transaction = df.loc[current_tid].to_frame().T
 
@@ -93,10 +95,7 @@ def predict_fraud():
 
     results = evaluate_single(X, y, model)
     results['payment_id'] = current_tid
+    results['date'] = get_date(day)
 
     return results
 
-
-# @app.route('api/metrics', methods=['GET'])
-# def metrics():
-#     pass

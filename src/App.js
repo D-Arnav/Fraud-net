@@ -30,7 +30,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Fraud Model Testing</h1>
+      <h1 className="title">Fraud Model Testing <span className="ver">FN 1.01</span></h1>
       <LabTabs />
     </div>
   );

@@ -50,17 +50,11 @@ def clean_data(df):
     df['FRAUD'] = df['FRAUD'].fillna(0).astype(int)
     df['AMOUNT'] = df['AMOUNT'].apply(lambda x: float(str(x).replace(',', '.')) if ',' in str(x) else float(str(x)))
     df[['SCA_EXEMPTION', 'SCA_EXEMPTION_FLOW']] = df[['SCA_EXEMPTION', 'SCA_EXEMPTION_FLOW']].fillna('Unkown')
-    df.isna().sum() 
 
     return df
 
 
 def encode_columns(df, config):
-    """
-    TODO: Column ordering is screwed!
-        - First add the 110 column names in order
-        - Then set the row values based on encodings.
-    """
 
     with open(os.path.join(os.path.dirname(config['data_path']), 'col_names.json'), 'r') as f:
         col_names = json.load(f)

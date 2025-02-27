@@ -10,9 +10,11 @@ import { AppContext } from "../hooks/AppContext";
 
 // Import components
 import TransactionTable from "./TransactionTable";
+import LiveTransactionTable from "./LiveTransactionTable";
 import ResultsTable from "./ResultsTable";
 import ConfusionMatrix from "./ConfusionMatrix";
 import Graphs from "./Graphs";
+import StatusTable from "./StatusTable";
 
 const LabTabs = () => {
   const [value, setValue] = React.useState("1");
@@ -31,18 +33,19 @@ const LabTabs = () => {
             <Tab label="Live Transactions" value="1" className="custom-tab" />
             <Tab label="Batch" value="2" className="custom-tab" />
             <Tab label="Performance Analytics" value="3" className="custom-tab" />
+            <Tab label="Guidance" value="4" className="custom-tab" />
           </TabList>
         </Box>
 
         <TabPanel value="1">
         <div className="center-container">
-            <TransactionTable />
+            <LiveTransactionTable />
           </div>
 
           <div>
             <Box sx={{ height: 32 }} />
             <hr className="pagebreak" />
-            <ResultsTable />
+            <StatusTable />
           </div>
         </TabPanel>
 
@@ -70,6 +73,10 @@ const LabTabs = () => {
             <Graphs />
           </div>
           </TabPanel>
+        
+        <TabPanel value="4">
+          <p>Guidance</p>
+        </TabPanel>
       </TabContext>
     </Box>
   );

@@ -65,71 +65,6 @@ const transposeData = (data) => {
 };
 
 
-const RunButton = () => {
-  const { day, setDay, setTransaction, setSerial, setResults, setMatrix, setMetrics} = useContext(AppContext);
-
-  const handleRun = async () => {
-    setResults([]);
-    setMatrix([0, 0, 0, 0]);
-    let finalMatrix = [0, 0, 0, 0];
-
-    for (let newSerial = 0; newSerial < 30; newSerial++) {
-        const newTransaction = await fetchTransaction(newSerial, day);
-        setTransaction([newTransaction]);
-        setSerial(newSerial);
-        const result = await predictFraud(newSerial, day);
-        const newResult = createData(newSerial + 1, result.payment_id, result.date, result.predicted, result.actual, result.confidence);
-        setResults((prevResults) => [...prevResults, newResult]);
-
-        finalMatrix = ((prevMatrix) => {
-          const [tp, fn, fp, tn] = prevMatrix;
-          let newMatrix;
-          if (result.predicted === 'Fraudulent' && result.actual === 'Fraudulent') {
-            newMatrix = [tp + 1, fn, fp, tn];
-          } else if (result.predicted === 'Legitimate' && result.actual === 'Fraudulent') {
-            newMatrix = [tp, fn + 1, fp, tn];
-          } else if (result.predicted === 'Fraudulent' && result.actual === 'Legitimate') {
-            newMatrix = [tp, fn, fp + 1, tn];
-          } else if (result.predicted === 'Legitimate' && result.actual === 'Legitimate') {
-            newMatrix = [tp, fn, fp, tn + 1];
-          } else {
-            newMatrix = prevMatrix;
-          }
-          return newMatrix;
-        })(finalMatrix);
-        
-        setMatrix(finalMatrix);
-
-        setDay(0); // Running Status for Button
-        await new Promise(resolve => setTimeout(resolve, Math.random() * 400 + 100));
-    }
-
-    setMetrics((prevMetrics) => [...prevMetrics, {
-      day: day,
-      precision: (finalMatrix[0] / (finalMatrix[0] + finalMatrix[2])) * 100,
-      recall: (finalMatrix[0] / (finalMatrix[0] + finalMatrix[1])) * 100,
-      f1: (2 * (finalMatrix[0] / (finalMatrix[0] + finalMatrix[2])) * (finalMatrix[0] / (finalMatrix[0] + finalMatrix[1]))) / ((finalMatrix[0] / (finalMatrix[0] + finalMatrix[2])) + (finalMatrix[0] / (finalMatrix[0] + finalMatrix[1]))),
-      fpr: (finalMatrix[2] / (finalMatrix[2] + finalMatrix[3])) * 100,
-      fnr: (finalMatrix[1] / (finalMatrix[1] + finalMatrix[0])) * 100
-    }]);
-
-
-    if (day < 5) {
-      setDay(day + 1);
-    }
-  }
-
-  return (
-    <div className="button-container">
-      <ProgressBar className="progressbar"/>
-      <Button variant="contained" className="btn" id="run" endIcon={<PlayArrowOutlined />} onClick={handleRun} disableElevation disabled={day === 0}>
-      {day != 0 ? "Run Day " + day : "Running..."}
-      </Button>
-    </div>
-  );
-}
-
-
 const TransactionTable = () => {
     const { day, setDay, serial, setSerial, results, setResults, transaction, setTransaction, matrix, setMatrix } = useContext(AppContext);
     
@@ -171,7 +106,6 @@ const TransactionTable = () => {
             ))}
             </TableBody>
         </Table>
-        <RunButton />
         </TableContainer>
       );
 };

@@ -25,7 +25,7 @@ export default function ProgressBar() {
 
   return (
     <Box sx={{ width: '80%' }}>
-      <LinearProgress variant="determinate" value={(serial + 1) * 100 / 30} sx={{ borderRadius: 5, height: 5}} />
+      <LinearProgress variant="determinate" value={(serial) * 100 / 29} sx={{ borderRadius: 5, height: 5}} />
       {/* Static value */}
     </Box>
   );
