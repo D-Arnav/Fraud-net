@@ -12,6 +12,8 @@ const ConfusionMatrix = () => {
   const { matrix } = useContext(AppContext);
   
   return (
+    <>
+    <p className="side-heading">Confusion Matrix</p>
     <TableContainer component={Paper} elevation={0} sx={{ maxWidth: 400, margin: "auto" }}>
       <Table size="small" aria-label="confusion matrix" sx={{ border: "2px solid black" }}>
         <TableHead>
@@ -57,6 +59,7 @@ const ConfusionMatrix = () => {
         </TableBody>
       </Table>
     </TableContainer>
+    </>
   );
 };
 

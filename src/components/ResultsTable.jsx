@@ -43,6 +43,10 @@ const ResultsTable = () => {
 
   return (
     <>
+      <div className="result-header">
+      <p className="side-heading">Results</p>
+      <p className="score">Score: {}%</p>
+      </div>
       <TableContainer className="result-table" component={Paper} elevation={0} ref={tableRef}>
         <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
           <TableHead>

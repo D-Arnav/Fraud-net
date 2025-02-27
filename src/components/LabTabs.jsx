@@ -42,7 +42,6 @@ const LabTabs = () => {
           <div>
             <Box sx={{ height: 32 }} />
             <hr className="pagebreak" />
-            <p className="side-heading">Results</p>
             <ResultsTable />
           </div>
         </TabPanel>
@@ -55,14 +54,12 @@ const LabTabs = () => {
           <div>
             <Box sx={{ height: 32 }} />
             <hr className="pagebreak" />
-            <p className="side-heading">Results</p>
             <ResultsTable />
           </div>
 
           <div>
             <Box sx={{ height: 32 }} />
             <hr className="pagebreak" />
-            <p className="side-heading">Confusion Matrix</p>
             <ConfusionMatrix />
           </div>
         </TabPanel>

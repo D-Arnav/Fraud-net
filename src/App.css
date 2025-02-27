@@ -172,6 +172,16 @@ body {
   margin-bottom: 20px; 
 }
 
+.result-header{
+  display: flex;
+  align-items: baseline;
+  gap:15px;
+}
+.score{
+  color: black;
+  font-size: 20px;
+}
+
 .result-table::-webkit-scrollbar {
   width: 5px; 
   transition: width 0.3s ease;
