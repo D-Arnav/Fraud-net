@@ -28,12 +28,26 @@ const LabTabs = () => {
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
           <TabList onChange={handleChange} aria-label="tabs">
-            <Tab label="Transactional" value="1" className="custom-tab" />
-            <Tab label="Graphs" value="2" className="custom-tab" />
+            <Tab label="Live Transactions" value="1" className="custom-tab" />
+            <Tab label="Batch" value="2" className="custom-tab" />
+            <Tab label="Performance Analytics" value="3" className="custom-tab" />
           </TabList>
         </Box>
 
         <TabPanel value="1">
+        <div className="center-container">
+            <TransactionTable />
+          </div>
+
+          <div>
+            <Box sx={{ height: 32 }} />
+            <hr className="pagebreak" />
+            <p className="side-heading">Results</p>
+            <ResultsTable />
+          </div>
+        </TabPanel>
+
+        <TabPanel value="2">
           <div className="center-container">
             <TransactionTable />
           </div>
@@ -53,7 +67,7 @@ const LabTabs = () => {
           </div>
         </TabPanel>
 
-        <TabPanel value="2">
+        <TabPanel value="3">
           <div>
             <Box sx={{ height: 32 }} />
             <Graphs />

@@ -30,11 +30,14 @@ def get_rand_hash(serial):
     random.seed(serial)
     return ''.join([str(random.randint(0, 9)) for _ in range(16)])
 
+def get_date_time():
+    return pd.Timestamp.now()
 
 def row_to_details(row):
 
     data = {
         'Serial Number': str(row['Serial']),
+        'Date Time': str(get_date_time()),
         'Payment ID': str(row['PaymentID']),
         'Name of the card holder': get_rand_name(row['Serial']),
         'Card Hash': get_rand_hash(row['Serial']),

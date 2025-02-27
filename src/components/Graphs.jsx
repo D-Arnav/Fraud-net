@@ -4,17 +4,26 @@ import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
+//prec = tp/(tp+fp)
+//recall = tp/(tp+fn)
+//f1 = (2*prec*recall)/(prec+recall)
+
+//fpr = fp/(fp+tn)
+//fnr = fn/(fn+tp)
+
 const data = [
-  { day: "1", precision: 30, recall: 20},
-  { day: "2", precision: 40, recall: 30},
-  { day: "3", precision: 35, recall: 25},
-  { day: "4", precision: 50, recall: 40},
-  { day: "5", precision: 45, recall: 20},
+  { day: "1", precision: 30, recall: 20, f1: 25},
+  { day: "2", precision: 40, recall: 30, f1: 30},
+  { day: "3", precision: 35, recall: 25, f1: 30},
+  { day: "4", precision: 50, recall: 40, f1: 45},
+  { day: "5", precision: 45, recall: 20, f1: 30},
 ];
 
 const labels = data.map(entry => entry.day);
 const precisionData = data.map(entry => entry.precision);
 const recallData = data.map(entry => entry.recall);
+const f1ScoreData = data.map(entry => (2 * entry.precision * entry.recall) / (entry.precision + entry.recall));
+
 
 const chartData = {
   labels: labels,
@@ -31,6 +40,13 @@ const chartData = {
       data: recallData,
       borderColor: 'rgba(153, 102, 255, 1)',
       backgroundColor: 'rgba(153, 102, 255, 0.2)',
+      fill: false,
+    },
+    {
+      label: 'F1 Score',
+      data: f1ScoreData,
+      borderColor: 'rgba(255, 206, 86, 1)',
+      backgroundColor: 'rgba(255, 206, 86, 0.2)',
       fill: false,
     },
   ],
@@ -52,7 +68,7 @@ const options = {
     },
     title: {
       display: true,
-      text: 'Precision and Recall',
+      text: 'Precision, Recall and F1 Score',
     }, 
   },
 };
@@ -67,7 +83,7 @@ const secondData = [
 
 const secondLabels = secondData.map(entry => entry.day);
 const accuracyData = secondData.map(entry => entry.falsePositive);
-const f1ScoreData = secondData.map(entry => entry.falseNegative);
+// const f1ScoreData = secondData.map(entry => entry.falseNegative);
 
 const secondChartData = {
   labels: secondLabels,

@@ -52,7 +52,7 @@ function createData(no, pay_id, pred_status, true_status, conf_sc) {
   return { no, pay_id, pred_status, true_status, conf_sc };
 }
 
-const customOrder = ['Serial Number', 'Payment ID', 'Name of the card holder', 'Card Hash', 'Card Bin', 'Amount', 'Currency'];
+const customOrder = ['Serial Number', 'Date Time', 'Payment ID', 'Name of the card holder', 'Card Hash', 'Card Bin', 'Amount', 'Currency'];
 
 const transposeData = (data) => {
   if (!data || data.length === 0) {
@@ -73,6 +73,7 @@ const TransactionTable = () => {
         const fetchInitialTransaction = async () => {
           const initialTransaction = {
             "Amount": "",
+            "Date Time": "",
             "Card Bin": "",
             "Card Hash": "",
             "Currency": "",
@@ -103,6 +104,7 @@ const TransactionTable = () => {
     const handleRun = async () => {
 
       setResults([]);
+      setMatrix([0, 0, 0, 0]);
       for (let newSerial = 0; newSerial < 30; newSerial++) {
           const newTransaction = await fetchTransaction(newSerial, day);
           setTransaction([newTransaction]);
@@ -112,15 +114,15 @@ const TransactionTable = () => {
           setResults((prevResults) => [...prevResults, newResult]);
 
           setMatrix((prevMatrix) => {
-            const [tp, fp, tn, fn] = prevMatrix;
-            if (result.payment_id === 'Fraudulent' && result.predicted === 'Fraudulent') {
-              return [tp + 1, fp, tn, fn];
-            } else if (result.payment_id !== 'Fraudulent' && result.predicted === 'Fraudulent') {
-              return [tp, fp + 1, tn, fn];
-            } else if (result.payment_id !== 'Fraudulent' && result.predicted !== 'Fraudulent') {
-              return [tp, fp, tn + 1, fn];
-            } else if (result.payment_id === 'Fraudulent' && result.predicted !== 'Fraudulent') {
-              return [tp, fp, tn, fn + 1];
+            const [tp, fn, fp, tn] = prevMatrix;
+            if (result.predicted === 'Fraudulent' && result.actual === 'Fraudulent') {
+              return [tp + 1, fn, fp, tn];
+            } else if (result.predicted === 'Legitimate' && result.actual === 'Fraudulent') {
+              return [tp, fn + 1, fp, tn];
+            } else if (result.predicted === 'Fraudulent' && result.actual === 'Legitimate') {
+              return [tp, fn, fp + 1, tn];
+            } else if (result.predicted === 'Legitimate' && result.actual === 'Legitimate') {
+              return [tp, fn, fp, tn + 1];
             }
             return prevMatrix;
           });
@@ -160,10 +162,6 @@ const TransactionTable = () => {
           <Button variant="contained" className="btn" id="run" endIcon={<PlayArrowOutlined />} onClick={handleRun} disableElevation>
             {day != 0 ? "Run Day " + day : "Running..."}
           </Button>
-        </div>
-        <div>
-          TODO: FIX THE MATRIX {matrix[0]} {matrix[1]} {matrix[2]} {matrix[3]}
-
         </div>
         </TableContainer>
     );
