@@ -54,13 +54,21 @@ def row_to_details(row, day):
 
 @app.route('/fetch-transaction', methods=['GET', 'POST'])
 def fetch_transaction():
-    day = request.get_json().get('day')
+
     idx = request.get_json().get('index')
+    day = request.get_json().get('day')
 
-    df = pd.read_csv('data/batch.csv', sep=';')
+    with open(os.path.join('data/day_division.json'), 'r') as f:
+        day_division = json.load(f)
+
+    df = pd.read_csv('data/data_2.csv', sep=';')
     df.insert(0, 'Serial', range(1, len(df) + 1))
-    details = row_to_details(df.iloc[idx].to_dict(), day)
+    df.set_index('PaymentID', inplace=True, drop=False)
 
+    current_tid = day_division[day-1][idx]
+
+    details = row_to_details(df.loc[current_tid].to_dict(), day)
+    
     return details
 
 
@@ -99,3 +107,46 @@ def predict_fraud():
 
     return results
 
+
+@app.route('/fetch-random-transaction', methods=['GET', 'POST'])
+def fetch_random_transaction():
+
+
+    df = pd.read_csv('data/data_2.csv', sep=';')
+    df.insert(0, 'Serial', range(1, len(df) + 1))
+    df.set_index('PaymentID', inplace=True, drop=False)
+
+    current_tid = random.choice(df.index)
+    details = row_to_details(df.loc[current_tid].to_dict(), 1)
+    
+    return details
+
+
+@app.route('/predict-random-fraud', methods=['GET', 'POST'])
+def predict_random_fraud():
+
+    current_tid = int(request.get_json().get('payment_id'))
+
+    df = pd.read_csv('data/data_2.csv', sep=';')
+    df.set_index('PaymentID', inplace=True)
+
+    current_transaction = df.loc[current_tid].to_frame().T
+
+    current_transaction = preprocess(current_transaction, {'data_path': 'data/data_2.csv'})
+
+    X = torch.tensor(current_transaction.drop('FRAUD', axis=1).astype(float).values[0]).float()
+    y = torch.tensor(current_transaction['FRAUD'].values).clone().detach().long()
+
+    X = X.clone().detach().float()
+    X = X.unsqueeze(0)
+    y = y.unsqueeze(0)
+
+    model = NeuralNet(inputs=X.shape[-1], outputs=2)
+
+    model.load_state_dict(torch.load(os.path.join('model/weights/model.pt')))
+
+    results = evaluate_single(X, y, model)
+    results['payment_id'] = current_tid
+    results['date'] = get_date(1)
+
+    return results  

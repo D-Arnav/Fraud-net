@@ -18,9 +18,9 @@ const ConfusionMatrix = () => {
     tn: matrix[3],
   };
 
-  const formatMetric = (value) => {
+  const formatMetric = (value, threshold, flip) => {
     const percentage = (value * 100).toFixed(2);
-    const color = percentage >= 50 ? 'green' : 'red';
+    const color = flip ? (percentage <= threshold ? 'green' : 'red') : (percentage >= threshold ? 'green' : 'red');
     return (
       <span style={{ color, fontWeight: 'bold' }}>
         {percentage}%
@@ -88,16 +88,35 @@ const ConfusionMatrix = () => {
           </Table>
         </TableContainer>
         <div className="metrics">
-          <p><b>Accuracy:</b> {formatMetric((matrixValues.tp + matrixValues.tn) / (matrixValues.tp + matrixValues.fn + matrixValues.fp + matrixValues.tn))}</p>
-          <p><b>Precision:</b> {formatMetric(matrixValues.tp / (matrixValues.tp + matrixValues.fn))}</p>
-          <p><b>Recall:</b> {formatMetric(matrixValues.tp / (matrixValues.tp + matrixValues.fp))}</p>
-          <p><b>F1 Score:</b> {formatMetric((2 * matrixValues.tp) / (2 * matrixValues.tp + matrixValues.fn + matrixValues.fp))}</p>
-          <p><b>False Positive Rate:</b> {formatFRMetric(matrixValues.fn / (matrixValues.fn + matrixValues.tn))}</p>
-          <p><b>False Negative Rate:</b> {formatMetric(matrixValues.fp / (matrixValues.tp + matrixValues.fp))}</p>
+          <div className="metric-item">
+            <span className="metric-name">Accuracy Score ↑</span>
+            <span className="metric-value">{formatMetric((matrixValues.tp + matrixValues.tn) / (matrixValues.tp + matrixValues.fn + matrixValues.fp + matrixValues.tn), 90, false)}</span>
+          </div>
+          <div className="metric-item">
+            <span className="metric-name">Precision Score ↑</span>
+            <span className="metric-value">{formatMetric(matrixValues.tp / (matrixValues.tp + matrixValues.fn), 10, false)}</span>
+          </div>
+          <div className="metric-item">
+            <span className="metric-name">Recall Score ↑</span>
+            <span className="metric-value">{formatMetric(matrixValues.tp / (matrixValues.tp + matrixValues.fp), 25, false)}</span>
+          </div>
+          <div className="metric-item">
+            <span className="metric-name">F1 Score ↑</span>
+            <span className="metric-value">{formatMetric((2 * matrixValues.tp) / (2 * matrixValues.tp + matrixValues.fn + matrixValues.fp), 15, false)}</span>
+          </div>
+          <div className="metric-item">
+            <span className="metric-name">False Positive Rate ↓</span>
+            <span className="metric-value">{formatMetric(matrixValues.fp / (matrixValues.fp + matrixValues.tn), 5, true)}</span>
+          </div>
+          <div className="metric-item">
+            <span className="metric-name">False Negative Rate ↓</span>
+            <span className="metric-value">{formatMetric(matrixValues.fn / (matrixValues.tp + matrixValues.fn), 75, true)}</span>
+          </div>
         </div>
       </div>
     </>
   );
 };
+
 
 export default ConfusionMatrix;

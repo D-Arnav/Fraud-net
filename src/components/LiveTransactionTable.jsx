@@ -12,13 +12,13 @@ import { AppContext } from '../hooks/AppContext';
 import ProgressBar from './ProgressBar';
 
 
-const fetchTransaction = async (serial, day) => {
-  const response = await fetch('/fetch-transaction', {
+const fetchTransaction = async () => {
+  const response = await fetch('/fetch-random-transaction', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ index: serial, day: day })
+    body: JSON.stringify({})
   });
 
   if (!response.ok) {
@@ -29,13 +29,13 @@ const fetchTransaction = async (serial, day) => {
   return row;
 };
 
-const predictFraud = async (serial, day) => {
-  const response = await fetch('/predict-fraud', {
+const predictFraud = async (payment_id) => {
+  const response = await fetch('/predict-random-fraud', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ index: serial, day: day })
+    body: JSON.stringify({ payment_id: payment_id})
   });
 
   if (!response.ok) {
@@ -47,8 +47,8 @@ const predictFraud = async (serial, day) => {
 }
 
 
-function createData(no, pay_id, date, pred_status, true_status, conf_sc) {
-  return { no, pay_id, date, pred_status, true_status, conf_sc };
+function createData(pay_id, date, pred_status, true_status, conf_sc) {
+  return { pay_id, date, pred_status, true_status, conf_sc };
 }
 
 const customOrder = ['Serial Number', 'Date Time', 'Payment ID', 'Name of the card holder', 'Card Hash', 'Card Bin', 'Amount', 'Currency'];
@@ -66,9 +66,13 @@ const transposeData = (data) => {
 
 
 const TransactionTable = () => {
-    const { day, setDay, serial, setSerial, results, setResults, transaction, setTransaction, matrix, setMatrix } = useContext(AppContext);
+    const {serial, setSerial, setStatus, transaction, setTransaction } = useContext(AppContext);
     
     useEffect(() => {
+        if (transaction) {
+          return;
+        }
+
         const fetchInitialTransaction = async () => {
           const initialTransaction = {
             "Amount": "",
@@ -84,6 +88,22 @@ const TransactionTable = () => {
         };
         
         fetchInitialTransaction();
+    }, []);
+
+    const handleRun = () => {
+      const intervalId = setInterval(async () => {
+        const newTransaction = await fetchTransaction();
+        setTransaction([newTransaction]);
+        const result = await predictFraud(newTransaction['Payment ID']);
+        const newResult = createData(result.payment_id, result.date, result.predicted, result.actual, result.confidence);
+        setStatus((prevResults) => [...prevResults, newResult]);
+      }, 1500);
+      return () => clearInterval(intervalId);
+    };
+
+    useEffect(() => {
+      const stopInterval = handleRun();
+      return () => stopInterval();
     }, []);
 
     const transposedTransactions = transposeData(transaction);

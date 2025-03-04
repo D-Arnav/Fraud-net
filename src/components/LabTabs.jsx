@@ -15,6 +15,8 @@ import ResultsTable from "./ResultsTable";
 import ConfusionMatrix from "./ConfusionMatrix";
 import Graphs from "./Graphs";
 import StatusTable from "./StatusTable";
+import Guidance from "./Guidance";
+
 
 const LabTabs = () => {
   const [value, setValue] = React.useState("1");
@@ -75,7 +77,7 @@ const LabTabs = () => {
           </TabPanel>
         
         <TabPanel value="4">
-          <p>Guidance</p>
+          <Guidance />
         </TabPanel>
       </TabContext>
     </Box>

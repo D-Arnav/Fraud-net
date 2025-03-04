@@ -14,19 +14,19 @@ function createData(no, pay_id, pred_status, true_status, conf_sc) {
   return { no, pay_id, pred_status, true_status, conf_sc };
 }
 
-const ResultsTable = () => {
-  const { results } = useContext(AppContext);
+const StatusTable = () => {
+  const { status } = useContext(AppContext);
   const tableRef = useRef(null);
 
   useEffect(() => {
     if (tableRef.current) {
       tableRef.current.scrollTop = tableRef.current.scrollHeight;
     }
-  }, [results]);
+  }, [status]);
 
   const downloadCSV = () => {
     const headers = ["S.No", "Payment ID", "Date", "Predicted Status", "Confidence Score"];
-    const rows = results.map(row => [row.no, row.pay_id, row.date, row.pred_status, row.conf_sc]);
+    const rows = status.map(row => [row.no, row.pay_id, row.date, row.pred_status, row.conf_sc]);
 
     let csvContent = "data:text/csv;charset=utf-8," 
       + headers.join(",") + "\n"
@@ -51,17 +51,15 @@ const ResultsTable = () => {
         <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell align="center"><b>S.No</b></TableCell>
-              <TableCell align="center"><b>Payment ID</b></TableCell>
+               <TableCell align="center"><b>Payment ID</b></TableCell>
               <TableCell align="center"><b>Date</b></TableCell>
               <TableCell align="center"><b>Predicted Status</b></TableCell>
               <TableCell align="center"><b>Confidence Score</b></TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {results.map((row) => (
+            {status.map((row) => (
               <TableRow key={row.no}>
-                <TableCell align="center">{row.no}</TableCell>
                 <TableCell align="center">{row.pay_id}</TableCell>
                 <TableCell align="center">{row.date}</TableCell>
                 <TableCell
@@ -88,4 +86,4 @@ const ResultsTable = () => {
   );
 };
 
-export default ResultsTable;
+export default StatusTable;

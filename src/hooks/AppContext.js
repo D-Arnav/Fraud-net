@@ -6,6 +6,7 @@ export const AppProvider = ({ children }) => {
   const [day, setDay] = useState(1);
   const [serial, setSerial] = useState(0);
   const [results, setResults] = useState([]);
+  const [status, setStatus] = useState([]);
   const [transaction, setTransaction] = useState(null);
   const [matrix, setMatrix] = useState([0, 0, 0, 0]);
   const [metrics, setMetrics] = useState([]);
@@ -19,6 +20,8 @@ export const AppProvider = ({ children }) => {
         setSerial,
         results,
         setResults,
+        status,
+        setStatus,
         transaction,
         setTransaction,
         matrix,

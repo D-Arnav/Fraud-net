@@ -22,10 +22,14 @@ function App() {
     setSerial,
     results,
     setResults,
+    status,
+    setStatus,
     transaction,
     setTransaction,
     matrix,
     setMatrix,
+    metrics,
+    setMetrics,
   } = useContext(AppContext);
 
   return (

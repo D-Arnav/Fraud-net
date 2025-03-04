@@ -115,10 +115,13 @@ const LineChart = () => {
     <div>
       <div>
         <h2>Metrics</h2>
-        <pre>{JSON.stringify(metrics, null, 2)}</pre>
       </div>
-      <Line data={chartData} options={options} />
-      <Line data={secondChartData} options={secondChartOptions} />
+      <div style={{ width: '75%', margin: '0 auto' }}>
+        <Line data={chartData} options={options} />
+      </div>
+      <div style={{ width: '75%', margin: '0 auto' }}>
+        <Line data={secondChartData} options={secondChartOptions} />
+      </div>
     </div>
   );
 };

@@ -214,3 +214,24 @@ body {
   justify-items: space-between;
   margin-right: 50px;
 }
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  font-size: 0.8rem;
+}
+
+.metric-item {
+  text-align: center;
+}
+
+.metric-name {
+  display: block;
+  font-weight: bold;
+}
+
+.metric-value {
+  display: block;
+  margin-top: 4px;
+}
