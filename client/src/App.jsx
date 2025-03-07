@@ -1,27 +1,30 @@
-import { useState, useEffect } from 'react'
-import './App.css'
+import React, { useState, useEffect } from 'react';
 
 function App() {
-  const [message, setMessage] = useState("Nothing")
+  const [message, setMessage] = useState('');
 
-  const handleClick = () => {
-    fetch('http://localhost:8000/hello')
-      .then(response => response.json())
-      .then(data => setMessage(JSON.stringify(data)))
-  };
+  useEffect(() => {
+    const fetchMessage = async () => {
+      try {
+        const response = await fetch('http://localhost:8000/hello');
+        const data = await response.json();
+        setMessage(data.message);
+      } catch (error) {
+        console.error('Error fetching message:', error);
+        setMessage('Failed to load message.');
+      }
+    };
+
+    fetchMessage();
+  }, []);
 
   return (
-    <>
-      <div>
-      <button onClick={handleClick}>
-      Click to get message from API
-      </button>
-      <p>
-        Message from API: {message}
-      </p>
-      </div>
-    </>
-  )
+        <>
+        <p>
+          {message}
+        </p>
+        </>
+  );
 }
 
-export default App
+export default App;
