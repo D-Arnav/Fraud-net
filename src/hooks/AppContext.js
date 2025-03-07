@@ -5,6 +5,7 @@ export const AppContext = createContext();
 export const AppProvider = ({ children }) => {
   const [day, setDay] = useState(1);
   const [serial, setSerial] = useState(0);
+  const [liveSerial, setLiveSerial] = useState(0);
   const [results, setResults] = useState([]);
   const [status, setStatus] = useState([]);
   const [transaction, setTransaction] = useState(null);
@@ -18,6 +19,8 @@ export const AppProvider = ({ children }) => {
         setDay,
         serial,
         setSerial,
+        liveSerial,
+        setLiveSerial,
         results,
         setResults,
         status,

@@ -47,7 +47,7 @@ def select_columns(df):
 
 def clean_data(df):
 
-    df['FRAUD'] = df['FRAUD'].fillna(0).astype(int)
+    df['FRAUD'] = df['FRAUD'].infer_objects(copy=False).fillna(0)
     df['AMOUNT'] = df['AMOUNT'].apply(lambda x: float(str(x).replace(',', '.')) if ',' in str(x) else float(str(x)))
     df[['SCA_EXEMPTION', 'SCA_EXEMPTION_FLOW']] = df[['SCA_EXEMPTION', 'SCA_EXEMPTION_FLOW']].fillna('Unkown')
 
@@ -74,10 +74,10 @@ def encode_columns(df, config):
             all_cols.append(col_name)
         all_cols.append(f'{k}_101')
     
-    for col in all_cols:
-        if col not in df.columns:
-            df[col] = False
-
+    missing_cols = [col for col in all_cols if col not in df.columns]
+    missing_data = {col: False for col in missing_cols}
+    missing_df = pd.DataFrame(missing_data, index=df.index)
+    df = pd.concat([df, missing_df], axis=1)
 
     return df[col_names]
 

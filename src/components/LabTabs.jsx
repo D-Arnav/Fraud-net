@@ -16,6 +16,7 @@ import ConfusionMatrix from "./ConfusionMatrix";
 import Graphs from "./Graphs";
 import StatusTable from "./StatusTable";
 import Guidance from "./Guidance";
+import OtherModel from "./OtherModel";
 
 
 const LabTabs = () => {
@@ -36,6 +37,7 @@ const LabTabs = () => {
             <Tab label="Batch" value="2" className="custom-tab" />
             <Tab label="Performance Analytics" value="3" className="custom-tab" />
             <Tab label="Guidance" value="4" className="custom-tab" />
+            <Tab label="Other models" value="5" className="custom-tab" />
           </TabList>
         </Box>
 
@@ -78,6 +80,10 @@ const LabTabs = () => {
         
         <TabPanel value="4">
           <Guidance />
+        </TabPanel>
+
+        <TabPanel value="5">
+          <OtherModel />
         </TabPanel>
       </TabContext>
     </Box>

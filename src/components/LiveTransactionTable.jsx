@@ -66,7 +66,7 @@ const transposeData = (data) => {
 
 
 const TransactionTable = () => {
-    const {serial, setSerial, setStatus, transaction, setTransaction } = useContext(AppContext);
+    const {liveSerial, setLiveSerial, setStatus, transaction, setTransaction } = useContext(AppContext);
     
     useEffect(() => {
         if (transaction) {
@@ -93,11 +93,16 @@ const TransactionTable = () => {
     const handleRun = () => {
       const intervalId = setInterval(async () => {
         const newTransaction = await fetchTransaction();
+        setLiveSerial(prevLiveSerial => {
+          const newLiveSerial = prevLiveSerial + 1;
+          newTransaction['Serial Number'] = newLiveSerial;
+          return newLiveSerial;
+        });
         setTransaction([newTransaction]);
         const result = await predictFraud(newTransaction['Payment ID']);
         const newResult = createData(result.payment_id, result.date, result.predicted, result.actual, result.confidence);
         setStatus((prevResults) => [...prevResults, newResult]);
-      }, 1500);
+      }, 2500);
       return () => clearInterval(intervalId);
     };
 
@@ -109,7 +114,7 @@ const TransactionTable = () => {
     const transposedTransactions = transposeData(transaction);
 
     return (
-        <TableContainer component={Paper} elevation={0}>
+        <TableContainer component={Paper} elevation={0} className='table-container'>
         <Table className="simple-table" size="small" aria-label="simple table">
             <TableBody className='table-body'>
             {transposedTransactions.map((row) => (

@@ -28,9 +28,8 @@ def get_rand_name(serial):
 
 def get_rand_hash(serial):
     random.seed(serial)
-    nums = str(random.randint(1000000000000000, 9999999999999999))
-    return ' '.join([nums[i:i+4] for i in range(0, len(nums), 4)])
-
+    last_4_nums = str(random.randint(1000, 9999))
+    return f"×××× ×××× ×××× {last_4_nums}"
 
 def get_date(day):
     return str(pd.Timestamp(2025, 2, day).date())
@@ -45,8 +44,7 @@ def row_to_details(row, day):
         'Name of the card holder': get_rand_name(row['Serial']),
         'Card Hash': get_rand_hash(row['Serial']),
         'Card Bin': str(row['BIN#']),
-        'Amount': str(row['Settled Pmt Amt']),
-        'Currency': str(row['Payment Currency Code'])
+        'Amount': '{:.2f}'.format(float(row['Settled Pmt Amt'].replace(',', '.'))),        'Currency': str(row['Payment Currency Code'])
     }
 
     return data

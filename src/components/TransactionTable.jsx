@@ -108,9 +108,9 @@ const RunButton = () => {
       day: day,
       precision: (finalMatrix[0] / (finalMatrix[0] + finalMatrix[2])) * 100,
       recall: (finalMatrix[0] / (finalMatrix[0] + finalMatrix[1])) * 100,
-      f1: (2 * (finalMatrix[0] / (finalMatrix[0] + finalMatrix[2])) * (finalMatrix[0] / (finalMatrix[0] + finalMatrix[1]))) / ((finalMatrix[0] / (finalMatrix[0] + finalMatrix[2])) + (finalMatrix[0] / (finalMatrix[0] + finalMatrix[1]))),
-      fpr: (finalMatrix[2] / (finalMatrix[2] + finalMatrix[3])) * 100,
-      fnr: (finalMatrix[1] / (finalMatrix[1] + finalMatrix[0])) * 100
+      f1: 100 * (2 * (finalMatrix[0] / (finalMatrix[0] + finalMatrix[2])) * (finalMatrix[0] / (finalMatrix[0] + finalMatrix[1]))) / ((finalMatrix[0] / (finalMatrix[0] + finalMatrix[2])) + (finalMatrix[0] / (finalMatrix[0] + finalMatrix[1]))),
+      fp: (finalMatrix[2]),
+      fn: (finalMatrix[1])
     }]);
 
 

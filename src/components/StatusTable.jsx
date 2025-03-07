@@ -45,7 +45,6 @@ const StatusTable = () => {
     <>
       <div className="result-header">
       <p className="side-heading">Results</p>
-      <p className="score">Score: {}%</p>
       </div>
       <TableContainer className="result-table" component={Paper} elevation={0} ref={tableRef}>
         <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
@@ -78,6 +77,7 @@ const StatusTable = () => {
         </Table>
       </TableContainer>
       <div className="button-container">
+        <p className="score">Fraud Score: {}%</p>
         <Button variant="contained" className="btn" onClick={downloadCSV} endIcon={<Download />} disableElevation>
           Download
         </Button>

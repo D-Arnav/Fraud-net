@@ -2,11 +2,9 @@
 import React, { useContext } from "react";
 import "./App.css";
 import "inter-ui/inter.css";
-import Box from "@mui/material/Box";
-import Tab from "@mui/material/Tab";
-import TabContext from "@mui/lab/TabContext";
-import TabList from "@mui/lab/TabList";
-import TabPanel from "@mui/lab/TabPanel";
+
+// Import images
+import pxpLogo from "./assets/pxp-logo.png";
 
 //Import Hooks
 import { AppContext } from "./hooks/AppContext";
@@ -20,6 +18,8 @@ function App() {
     setDay,
     serial,
     setSerial,
+    liveSerial,
+    setLiveSerial,
     results,
     setResults,
     status,
@@ -34,8 +34,14 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="title">Fraud Model Testing <span className="ver">FN 1.01</span></h1>
-      <LabTabs />
+      <img src={pxpLogo} alt="PXP Logo" className="pxp-logo" />
+      <h1 className="title">
+        PXP Protect - AI Driven Fraud Detection Model{" "}
+        <span className="ver">Model FN 1.01</span>
+      </h1>
+      <div className="main-container">
+        <LabTabs />
+      </div>
     </div>
   );
 }
