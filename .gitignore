@@ -9,6 +9,7 @@ venv
 
 # data
 weights/
+data/
 
 # vscode
 .vscode/    
