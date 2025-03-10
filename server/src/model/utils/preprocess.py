@@ -1,7 +1,7 @@
 import pandas as pd
-import polars as pl
+import torch
+from torch.utils.data import DataLoader, TensorDataset
 
-from data import load_train_data, load_test_data
 
 
 def preprocess_data(df):
@@ -9,6 +9,9 @@ def preprocess_data(df):
     Preprocess the data for model training / inference
     """
 
+    config = {
+        'batch_size': 20480
+    }
 
     metadata = pd.read_json('server/src/data/metadata.json') 
     transform = metadata['transform'] # Load the transformation metadata
@@ -17,9 +20,9 @@ def preprocess_data(df):
     df = df.drop(columns=transform['drop_columns'])
     df = df.rename(columns=transform['rename_columns'])
 
-    # Convert Amount and Fraud to the correct data types
+    # Convert Amount and Fraud to the correct data types, ensure Fraud is either 0
     df['AMOUNT'] = df['AMOUNT'].str.replace(',', '.').astype(float)
-    df['FRAUD'] = df['FRAUD'].infer_objects(copy=False).fillna(0).astype(int)
+    df['FRAUD'] = df['FRAUD'].apply(lambda x: 1 if pd.notna(x) else 0)
 
     # Convert Categorial columns to one-hot encodings
     for col in transform['encodings']:
@@ -35,9 +38,13 @@ def preprocess_data(df):
     # Set the correct order of columns
     df = df[transform['order']]
 
-    return df
+    X = df.drop(columns=['FRAUD']).values
+    y = df['FRAUD'].values
 
-if __name__ == '__main__':
-    train_df = load_train_data()
-    test_df = load_test_data()
-    preprocess_data(test_df)
+    X = torch.tensor(X.astype(float)).float()
+    y = torch.tensor(y.astype(float)).float()
+
+    dataset = TensorDataset(X, y)
+    dl = DataLoader(dataset, batch_size=config['batch_size'], shuffle=True)
+
+    return dl
