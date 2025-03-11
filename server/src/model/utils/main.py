@@ -7,7 +7,7 @@ from evaluate import evaluate_dl, evaluate_single
 from train import train_model
 
 
-MODEL_PATH = 'server/src/model/weights/model_20250310_170204.pt'
+MODEL_PATH = 'src/model/weights/model_20250310_170204.pt'
 
 
 def train():
@@ -69,6 +69,16 @@ def eval_single(idx):
     
     return results
 
+
+def get_single(idx):
+
+    test_df = load_test_data(get_frame=True)
+
+    single_transaction = test_df.iloc[idx]
+
+    print(single_transaction)
+
+    return single_transaction
 
 
 if __name__ == "__main__":

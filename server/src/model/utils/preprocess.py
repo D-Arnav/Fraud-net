@@ -13,7 +13,9 @@ def preprocess_data(df):
         'batch_size': 20480
     }
 
-    metadata = pd.read_json('server/src/data/metadata.json') 
+    METADATA_PATH = 'src/data/metadata.json'
+
+    metadata = pd.read_json(METADATA_PATH) 
     transform = metadata['transform'] # Load the transformation metadata
 
     # Drop and rename columns

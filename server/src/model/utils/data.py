@@ -7,8 +7,8 @@ def load_train_data():
     """
 
     TRAIN_DATASET_PATHS = [
-        'server/src/data/Trainset1.csv', 
-        'server/src/data/Trainset2.csv'
+        'src/data/Trainset1.csv', 
+        'src/data/Trainset2.csv'
     ]
     
     dfs = []
@@ -22,15 +22,17 @@ def load_train_data():
     return dl
 
 
-def load_test_data():
+def load_test_data(get_frame=False):
     """
     Loads test data
     """
 
-    TEST_DATASET_PATH = 'server/src/data/Testset1.csv'
+    TEST_DATASET_PATH = 'src/data/Testset1.csv'
 
     df = pd.read_csv(TEST_DATASET_PATH, encoding='utf-8', sep=';')
     dl = preprocess_data(df)
+
+    if get_frame: return df
 
     return dl
 
@@ -43,7 +45,7 @@ def load_daywise_data(day):
 
     assert day >= 1 and day <= 16, 'Day should be an integer between 1 and 16'
 
-    DAYWISE_DATASET_PATHS = 'server/src/data/Daywise1.csv'
+    DAYWISE_DATASET_PATHS = 'src/data/Daywise1.csv'
 
     df = pd.read_csv(DAYWISE_DATASET_PATHS, encoding='latin-1', sep=';')
     df = df[df['Date'] == f"1/{14+day}/2025"]
