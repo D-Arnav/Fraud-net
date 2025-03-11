@@ -4,7 +4,7 @@ from torch.utils.data import DataLoader, TensorDataset
 
 
 
-def preprocess_data(df):
+def preprocess_data(df, get_frame=False):
     """
     Preprocess the data for model training / inference
     """
@@ -39,6 +39,8 @@ def preprocess_data(df):
     
     # Set the correct order of columns
     df = df[transform['order']]
+
+    if get_frame: return df
 
     X = df.drop(columns=['FRAUD']).values
     y = df['FRAUD'].values

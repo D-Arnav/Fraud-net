@@ -1,7 +1,7 @@
 import pandas as pd
 from preprocess import preprocess_data
 
-def load_train_data():
+def load_train_data(get_frame=False):
     """
     Loads train data
     """
@@ -18,6 +18,8 @@ def load_train_data():
 
     df = pd.concat(dfs, ignore_index=True)
     dl = preprocess_data(df)
+
+    if get_frame: return df
 
     return dl
 
@@ -47,7 +49,7 @@ def load_daywise_data(day):
 
     DAYWISE_DATASET_PATHS = 'src/data/Daywise1.csv'
 
-    df = pd.read_csv(DAYWISE_DATASET_PATHS, encoding='latin-1', sep=';')
+    df = pd.read_csv(DAYWISE_DATASET_PATHS, encoding='latin-1', sep=';', low_memory=False)
     df = df[df['Date'] == f"1/{14+day}/2025"]
 
     dl = preprocess_data(df)

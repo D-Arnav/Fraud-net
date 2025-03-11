@@ -3,11 +3,11 @@ from fastapi.middleware.cors import CORSMiddleware
 
 import sys
 sys.path.append("src/model/utils")
+sys.path.append("src/services/api/utils")
 
 from main import eval_day, eval_single, get_single
+from transaction import make_transaction
 
-
-#TODO: Fix imports, make a fetch_one_transaction_function
 
 app = FastAPI()
 
@@ -28,7 +28,13 @@ async def hello():
 async def predict_single(idx: int):
     """
     Fetch single transaction with index `idx`. 
-    Returns the transaction details and model prediction.
+    
+    Input: idx (int) - Index of the transaction to fetch
+    Output: results (dict): {
+        "actual": "Legitimate" or "Fraudulent",
+        "predicted": "Legitimate" or "Fraudulent",
+        "confidence": "X.X%"
+    }
     """
 
     results = eval_single(idx)
@@ -38,13 +44,19 @@ async def predict_single(idx: int):
 
 @app.get("/fetch_single")
 async def fetch_single(idx: int):
+    """
+    """
 
-    single_transaction = get_single(idx)
-    
-    return {"message": f"Predicting single transaction with index {idx}"}
+    transaction = get_single(idx)
+
+    transaction = make_transaction(transaction, idx)
+
+    return transaction
 
 
 @app.get("/predict_day")
 async def predict_day(day: int):
-    return {"message": f"Predicting transactions for day {day}"}
 
+    results = eval_day(day)
+
+    return results

@@ -16,13 +16,13 @@ def train_model(model, dl):
     """
 
     config = {
-        'class_balance': 0.036,
+        'class_balance': 0.035,
         'focal_loss_gamma': 1.5,
         'learning_rate': 0.005,
         'epochs': 50,
         'print_every': 10,
         'save': True,
-        'save_path': 'server/src/model/weights'
+        'save_path': 'src/model/weights'
     }
 
     criterion = FocalLoss(alpha=config['class_balance'], gamma=config['focal_loss_gamma'], reduction='mean')
