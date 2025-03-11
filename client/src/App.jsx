@@ -1,28 +1,20 @@
 import React, { useState, useEffect } from 'react';
+import logo from './assets/pxp_logo.svg';
 
 function App() {
-  const [message, setMessage] = useState('');
-
-  useEffect(() => {
-    const fetchMessage = async () => {
-      try {
-        const response = await fetch('http://localhost:8000/hello');
-        const data = await response.json();
-        setMessage(data.message);
-      } catch (error) {
-        console.error('Error fetching message:', error);
-        setMessage('Failed to load message.');
-      }
-    };
-
-    fetchMessage();
-  }, []);
-
   return (
         <>
-        <p>
-          {message}
-        </p>
+        <div className="pxp-page">
+            <header>
+            <img src={logo} alt="pxp-logo" className="logo" />
+            </header>
+            <div className="title">
+                <h1>PXP Protect <span className="ver">Model Version Fn1.01</span></h1>
+                <p>AI Driven Fraud Detection Model</p>
+            </div>
+            <div className="container">
+            </div>
+        </div>
         </>
   );
 }

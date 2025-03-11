@@ -1,42 +1,55 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Luxe+Uno&display=swap');
+
+body {
+  margin: 20px 80px 15px 80px;
+  padding: 0;
+  background: radial-gradient(circle at -1000px 750px, #292cf5, transparent 60%),
+              radial-gradient(circle at 1600px -180px, #540b90, transparent 40%),
+              #000;
+  background-attachment: fixed;
+  background-size: cover;
+  color: white;
+  font-family: "Inter", sans-serif;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* header {
+  margin-top: 20px;
+} */
+
+.logo{
+  width: 150px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Title section */
+.title {
+  /* margin: 20px 0 0 0; */
+  font-family: 'Luxe Uno';
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Main Heading */
+.title h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
 }
 
-.card {
-  padding: 2em;
+/* Version text with lighter font and spacing */
+.title .ver {
+  font-size: 0.9rem;
+  font-weight: 100;
 }
 
-.read-the-docs {
-  color: #888;
+/* Subtext */
+.title p {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: -25px;
+}
+
+.container {
+  display: block;
+  background-color: #09090C;
+  opacity: 0.35;
+  width: 100%;
+  height: 100vh;
+  border-radius: 25px;
 }
