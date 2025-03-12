@@ -14,13 +14,11 @@ body {
 
 .logo {
   width: 150px;
-  margin-left: 70px;
 }
 
 /* Title Section */
 .title {
   font-family: 'Luxe Uno', sans-serif;
-  margin-left: 70px;
 }
 
 .title h1 {
@@ -43,8 +41,7 @@ body {
   display: block;
   background-color: rgba(9, 9, 12, 0.35);
   opacity: 1;
-  width: 90%;
-  margin: 0 auto;
+  width: 100%;
   height: max-content;
   border-radius: 25px;
 }
@@ -209,3 +206,58 @@ body {
 
 
 /* ================= Confusion Matrix Styling ================= */
+/* Main Container */
+.confmat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Grid Layout */
+.confmat-grid {
+  display: grid;
+  grid-template-columns: 180px 180px 180px;
+  grid-template-rows: 60px 80px 80px;
+  border: 1px solid #fff;
+}
+
+/* Empty Top-left Cell */
+.confmat-empty-cell {
+  border: 1px solid #fff;
+}
+
+/* Header Cell Style */
+.confmat-header-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #fff;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Main Cell Style */
+.confmat-cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #fff;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Color Styling */
+.green {
+  color: #00FF00;
+}
+
+.red {
+  color: #FF4C4C;
+}

@@ -73,11 +73,7 @@ def eval_single(idx):
 
     model.load_state_dict(torch.load(MODEL_PATH))
 
-    start = time.perf_counter()
     results = evaluate_single(model, single_transaction)
-    end = time.perf_counter()
-
-    print(f"Time taken: {end-start}")
 
     return results
 

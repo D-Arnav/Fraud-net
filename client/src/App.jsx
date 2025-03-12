@@ -1,10 +1,18 @@
+import { useContext } from 'react';
 import './App.css'
 import logo from './assets/pxp_logo.svg';
 
-//Import Components
+// Import Components
 import LabTabs from "./components/LabTabs";
 
+// Import Context
+import { AppContext } from './context/AppContext';
+
+
 function App() {
+
+  const { index, setIndex, transaction, setTransaction, resultsTable, setResultsTable } = useContext(AppContext);
+  
   return (
     <>
       <div className="pxp-page">

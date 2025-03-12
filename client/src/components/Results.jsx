@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useContext } from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -7,19 +7,14 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-function createData(sno, date, payid, pred, conf) {
-  return { sno, date, payid, pred, conf };
-}
+import { AppContext } from '../context/AppContext';
 
-const rows = [
-  createData(1, "08-03-2025", 9493786284, "Fraudulent", 0.78483),
-  createData(1, "08-03-2025", 9493786284, "Fraudulent", 0.78483),
-  createData(1, "08-03-2025", 9493786284, "Fraudulent", 0.78483),
-  createData(1, "08-03-2025", 9493786284, "Fraudulent", 0.78483),
-  createData(1, "08-03-2025", 9493786284, "Fraudulent", 0.78483),
-];
+import computeScore from '../services/computeScore';
 
 export default function Results() {
+
+  const { resultsTable } = useContext(AppContext);
+  
   return (
     <div className="results-container">
     <h3 className="side-heading">Results</h3>
@@ -35,23 +30,23 @@ export default function Results() {
             </TableRow>
         </TableHead>
         <TableBody>
-            {rows.map((row) => (
+            {resultsTable.map((row) => (
             <TableRow key={row.sno} className="table-row">
-                <TableCell align="center">{row.sno}</TableCell>
+                <TableCell align="center">{row.serial}</TableCell>
                 <TableCell align="center">{row.date}</TableCell>
-                <TableCell align="center">{row.payid}</TableCell>
+                <TableCell align="center">{row.payment_id}</TableCell>
                 <TableCell 
                 align="center" 
-                className={row.pred === "Legitimate" ? "status-legitimate" : "status-fraudulent"}>
-                {row.pred}
+                className={row.predicted === "Legitimate" ? "status-legitimate" : "status-fraudulent"}>
+                {row.predicted}
                 </TableCell>
-                <TableCell align="center">{row.conf}</TableCell>
+                <TableCell align="center">{row.confidence}</TableCell>
             </TableRow>
             ))}
         </TableBody>    
         </Table>
     </TableContainer>
-    <p>Score: --%</p>
+    <p>Score: {computeScore(resultsTable)}%</p>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -6,32 +6,39 @@ import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-const transaction = {
-  "Serial Number": "9493786284",
-  "Payment ID": "9493786284",
-  "Name of the card holder": "John Doe",
-  "Card Hash": "1234 1234 1234 1234",
-  "Card Bin": "123456",
-  "Amount": "123",
-  "Currency": "USD"
-};
+import { useLiveViewUpdater } from '../services/useLiveViewUpdater';
+import { AppContext } from '../context/AppContext';
+
 
 const LiveView = () => {
+
+  const { transaction } = useContext(AppContext);
+
+  useLiveViewUpdater(); // Use the custom hook here
+
   return (
     <div className="liveview-container">
-    <h3 className="side-heading">Live View</h3>
-    <TableContainer component={Paper} elevation={0} className="table-container">
+      <h3 className="side-heading">Live View</h3>
+      <TableContainer component={Paper} elevation={0} className="table-container">
         <Table size="small" aria-label="simple table">
-        <TableBody>
-            {Object.entries(transaction).map(([key, value]) => (
-            <TableRow key={key} className="table-row">
-                <TableCell className="label-cell">{key}</TableCell>
-                <TableCell className="value-cell" align="right">{value}</TableCell>
-            </TableRow>
-            ))}
-        </TableBody>
+          <TableBody>
+            {Object.entries(transaction).map(([key, value]) => {
+                let formattedKey = key
+                  .replace(/_/g, ' ')
+                  .replace(/\b\w/g, char => char.toUpperCase())
+                  .replace('Id', 'ID')
+                  .replace('Bin', 'BIN');
+
+              return (
+                <TableRow key={key} className="table-row">
+                  <TableCell className="label-cell">{formattedKey}</TableCell>
+                  <TableCell className="value-cell" align="right">{value}</TableCell>
+                </TableRow>
+              );
+            })}
+          </TableBody>
         </Table>
-    </TableContainer>
+      </TableContainer>
     </div>
   );
 };

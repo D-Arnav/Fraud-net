@@ -27,7 +27,7 @@ async def hello():
 @app.get("/predict_single")
 async def predict_single(idx: int):
     """
-    Fetch single transaction with index `idx`. 
+    Predict single transaction with index `idx`. 
     
     Input: idx (int) - Index of the transaction to fetch
     Output: results (dict): {
@@ -45,6 +45,19 @@ async def predict_single(idx: int):
 @app.get("/fetch_single")
 async def fetch_single(idx: int):
     """
+    Fetch single transaction with index `idx`.
+
+    Input: idx (int) - Index of the transaction to fetch
+    Output: transaction (dict): {
+        "serial": str,
+        "payment_id": str,
+        "date": str,
+        "name": str,
+        "card_hash": str,
+        "card_bin": str,
+        "amount": str,
+        "currency": str
+    }
     """
 
     transaction = get_single(idx)
@@ -56,6 +69,26 @@ async def fetch_single(idx: int):
 
 @app.get("/predict_day")
 async def predict_day(day: int):
+    """
+    Predicts the fraud metrics for a given day.
+    Args:
+        day (int): The day for which to predict fraud metrics.
+    Returns:
+        dict: A dictionary containing the following keys:
+            - 'precision': Precision of the prediction.
+            - 'recall': Recall of the prediction.
+            - 'f1_score': F1 score of the prediction.
+            - 'false_positive_rate': False positive rate of the prediction.
+            - 'false_negative_rate': False negative rate of the prediction.
+            - 'accuracy': Accuracy of the prediction.
+            - 'num_legitimate': Number of legitimate transactions.
+            - 'num_fraudulent': Number of fraudulent transactions.
+            - 'true_positives': Number of true positive predictions.
+            - 'false_positives': Number of false positive predictions.
+            - 'true_negatives': Number of true negative predictions.
+            - 'false_negatives': Number of false negative predictions.
+    """
+
 
     results = eval_day(day)
 
