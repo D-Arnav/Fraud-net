@@ -8,6 +8,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
+import determineColor from '../utils/determineColor';
 
 function createData(date, legit, fraud, prec, rec, fnr, fpr) {
   return { date, legit, fraud, prec, rec, fnr, fpr };
@@ -15,7 +16,7 @@ function createData(date, legit, fraud, prec, rec, fnr, fpr) {
 
 export default function DailyView() {
 
-  const { dailyViewTable, selectedDate } = useContext(AppContext);
+  const { dailyViewTable } = useContext(AppContext);
   
   return (
     <div className="dailyview-container">
@@ -36,13 +37,27 @@ export default function DailyView() {
           <TableBody>
             {dailyViewTable.map((row, index) => (
               <TableRow key={index}>
-                <TableCell align="center">{row.date}</TableCell>
-                <TableCell align="center">{row.num_legitimate}</TableCell>
-                <TableCell align="center">{row.num_fraudulent}</TableCell>
-                <TableCell align="center">{row.precision}</TableCell>
-                <TableCell align="center">{row.recall}</TableCell>
-                <TableCell align="center">{row.false_negative_rate}</TableCell>
-                <TableCell align="center">{row.false_positive_rate}</TableCell>
+                <TableCell align="center">
+                  <span>{row.date}</span>
+                </TableCell>
+                <TableCell align="center">
+                  <span>{row.num_legitimate}</span>
+                </TableCell>
+                <TableCell align="center">
+                  <span>{row.num_fraudulent}</span>
+                </TableCell>
+                <TableCell align="center">
+                  <span className={determineColor('precision', 100 * row.precision)}>{(100 * row.precision).toFixed(2)}%</span>
+                </TableCell>
+                <TableCell align="center">
+                  <span className={determineColor('recall', 100 * row.recall)}>{(100 * row.recall).toFixed(2)}%</span>
+                </TableCell>
+                <TableCell align="center">
+                  <span className={determineColor('fnr', 100 * row.false_negative_rate)}>{(row.false_negative_rate * 100).toFixed(2)}%</span>
+                </TableCell>
+                <TableCell align="center">
+                  <span className={determineColor('fpr', 100 * row.false_positive_rate)}>{(row.false_positive_rate * 100).toFixed(2)}%</span>
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>    

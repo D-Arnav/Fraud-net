@@ -18,12 +18,12 @@ export const useLiveViewUpdater = () => {
       const prediction = await predictTransaction(currentIndex.current);
       
       setTransaction(transaction);
-      setResultsTable(prev => [...prev, {
+      setResultsTable(prev => [{
         serial: transaction.serial,
         date: transaction.date,
         payment_id: transaction.payment_id,
         ...prediction
-      }]);
+      }, ...prev]);
       
       setIndex(prev => prev + 1);
     };

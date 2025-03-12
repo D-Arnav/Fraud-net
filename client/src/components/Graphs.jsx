@@ -41,7 +41,7 @@ const baseOptions = {
       offset: true,
       title: {
         display: true,
-        text: 'Day',
+        text: 'Date',
         color: 'white',
         font: {
           size: 16,
@@ -126,7 +126,7 @@ const falsePositiveOptions = {
     ...baseOptions.plugins,
     title: {
       ...baseOptions.plugins.title,
-      text: 'False Positives Over Days',
+      text: 'False Negatives Over Days (Fraudulent Transactions Incorrectly Flagged as Legitimate)',
     },
   },
 };
@@ -147,7 +147,7 @@ const falseNegativeOptions = {
     ...baseOptions.plugins,
     title: {
       ...baseOptions.plugins.title,
-      text: 'False Negatives Over Days',
+      text: 'False Positives Over Days (Legitimate Transactions Incorrectly Flagged as Fraud)',
     },
   },
 };
@@ -184,7 +184,7 @@ const scoreChart = {
 const falsePositiveChart = {
   labels: dayWiseResults.map(entry => entry.day),
   datasets: [{
-    label: 'False Positive',
+    label: 'False Negative',
     data: dayWiseResults.map(entry => entry.false_positives),
     borderColor: '#DDFF61',
     backgroundColor: '#DDFF61',
@@ -195,7 +195,7 @@ const falsePositiveChart = {
 const falseNegativeChart = {
   labels: dayWiseResults.map(entry => entry.day),
   datasets: [{
-    label: 'False Negative',
+    label: 'False Positive',
     data: dayWiseResults.map(entry => entry.false_negatives),
     borderColor: '#4F51FF',
     backgroundColor: '#4F51FF',

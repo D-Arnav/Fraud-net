@@ -12,10 +12,14 @@ export const useDailyViewUpdater = () => {
             'date': `Jan ${14 + selectedDate}`,
             'num_legitimate': dayResult.num_legitimate.toString(),
             'num_fraudulent': dayResult.num_fraudulent.toString(),
-            'precision': dayResult.precision.toFixed(2),
-            'recall': dayResult.recall.toFixed(2),
-            'false_positive_rate': (dayResult.false_positive_rate * 100).toFixed(2) + '%',
-            'false_negative_rate': (dayResult.false_negative_rate * 100).toFixed(2) + '%'
+            'precision': dayResult.precision,
+            'recall': dayResult.recall,
+            'false_positive_rate': dayResult.false_positive_rate,
+            'false_negative_rate': dayResult.false_negative_rate,
+            'true_positives': dayResult.true_positives,
+            'false_positives': dayResult.false_positives,
+            'true_negatives': dayResult.true_negatives,
+            'false_negatives': dayResult.false_negatives
         }]);
 
     };

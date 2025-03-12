@@ -17,7 +17,10 @@ export default function Results() {
   
   return (
     <div className="results-container">
-    <h3 className="side-heading">Results</h3>
+    <div className="results-header">
+      <h3 className="side-heading">Results</h3>
+      <p className="score">Score: {computeScore(resultsTable)}%</p>
+    </div>
     <TableContainer component={Paper} elevation={0} className="table-container">
         <Table className="result-table" size="small" aria-label="simple table">
         <TableHead>
@@ -30,15 +33,13 @@ export default function Results() {
             </TableRow>
         </TableHead>
         <TableBody>
-            {resultsTable.map((row) => (
+            { resultsTable.map((row) => (
             <TableRow key={row.sno} className="table-row">
                 <TableCell align="center">{row.serial}</TableCell>
                 <TableCell align="center">{row.date}</TableCell>
                 <TableCell align="center">{row.payment_id}</TableCell>
-                <TableCell 
-                align="center" 
-                className={row.predicted === "Legitimate" ? "status-legitimate" : "status-fraudulent"}>
-                {row.predicted}
+                <TableCell align="center">
+                  <span className={row.predicted == 'Legitimate' ? 'green' : 'red'}>{row.predicted}</span>
                 </TableCell>
                 <TableCell align="center">{row.confidence}</TableCell>
             </TableRow>
@@ -46,7 +47,6 @@ export default function Results() {
         </TableBody>    
         </Table>
     </TableContainer>
-    <p>Score: {computeScore(resultsTable)}%</p>
     </div>
   );
 }

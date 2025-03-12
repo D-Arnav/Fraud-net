@@ -93,7 +93,7 @@ function DateDropdown() {
             id="date-dropdown"
             className="date-dropdown"
             label="Date"
-            defaultValue=""
+            defaultValue="1"
             onChange={handleDateChange}
             MenuProps={{
               PaperProps: {

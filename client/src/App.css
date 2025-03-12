@@ -172,7 +172,17 @@ body {
 .results-container .MuiTableBody-root .MuiTableCell-root {
   font-weight: 200 !important;
   font-size: 0.85rem;
-  padding: 15px;
+  padding: 10px;
+}
+
+.results-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.score {
+  margin-left: 20px !important;
 }
 
 /* ================= Daily View Table ================= */
@@ -346,6 +356,7 @@ body {
   color: #FF4C4C;
 
 }
+
 
 /* ================= Metrics Styling ================= */
 
@@ -546,6 +557,7 @@ body {
 
 .guidance-doc-image {
   display: block;
+  width: 600px;
   margin: 0 auto 20px auto;
   border-radius: 10px;
 }

@@ -51,7 +51,7 @@ function GuidanceDoc() {
       <h2 className="section-title">Example Scenarios</h2>
 
       <div className="section">
-        <h3 className="subsection-title">1. Fraud Detection</h3>
+        <h3 className="subsection-title">Fraud Detection</h3>
         <p><strong>Definitions:</strong></p>
         <ul>
           <li><strong>FP (False Positive):</strong> Predicted as fraud, but is not → Value should be <span className="important">low</span>.</li>
@@ -63,7 +63,7 @@ function GuidanceDoc() {
       </div>
 
       <div className="section">
-        <h3 className="subsection-title">2. Fire Alarm System</h3>
+        <h3 className="subsection-title">Fire Alarm System</h3>
         <p><strong>Scenario:</strong> A fire alarm system detected 10 fires in a year, but only 1 was real.</p>
         <ul>
           <li><strong>Precision:</strong> 10% (1 true positive out of 10 alarms) → Highlights many false alarms.</li>
