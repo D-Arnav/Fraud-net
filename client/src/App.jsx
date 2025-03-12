@@ -11,7 +11,7 @@ import { AppContext } from './context/AppContext';
 
 function App() {
 
-  const { index, setIndex, transaction, setTransaction, resultsTable, setResultsTable } = useContext(AppContext);
+  const { index, setIndex, transaction, setTransaction, resultsTable, setResultsTable, dailyViewTable, setDailyViewTable, selectedDate, setSelectedDate } = useContext(AppContext);
   
   return (
     <>

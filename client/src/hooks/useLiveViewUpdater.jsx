@@ -1,7 +1,8 @@
 import { useContext, useEffect, useRef } from 'react';
 import { AppContext } from '../context/AppContext';
-import fetchTransaction from './fetchTransaction';
-import predictTransaction from './predictTransaction';
+
+import fetchTransaction from '../services/fetchTransaction'
+import predictTransaction from '../services/predictTransaction'
 
 export const useLiveViewUpdater = () => {
   const { index, setIndex, setTransaction, setResultsTable } = useContext(AppContext);

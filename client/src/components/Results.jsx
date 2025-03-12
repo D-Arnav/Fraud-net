@@ -9,7 +9,7 @@ import Paper from '@mui/material/Paper';
 
 import { AppContext } from '../context/AppContext';
 
-import computeScore from '../services/computeScore';
+import computeScore from '../utils/computeScore';
 
 export default function Results() {
 

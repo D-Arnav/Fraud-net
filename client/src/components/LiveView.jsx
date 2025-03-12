@@ -6,7 +6,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-import { useLiveViewUpdater } from '../services/useLiveViewUpdater';
+import { useLiveViewUpdater } from '../hooks/useLiveViewUpdater';
 import { AppContext } from '../context/AppContext';
 
 
@@ -14,7 +14,7 @@ const LiveView = () => {
 
   const { transaction } = useContext(AppContext);
 
-  useLiveViewUpdater(); // Use the custom hook here
+  useLiveViewUpdater();
 
   return (
     <div className="liveview-container">

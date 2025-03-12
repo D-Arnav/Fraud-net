@@ -5,14 +5,16 @@ import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 
-
 // Import components
 import LiveView from "./LiveView";
 import Results from "./Results";
 import DailyView from "./DailyView";
 import Graphs from "./Graphs";
 import ConfusionMatrix from "./ConfusionMatrix";
-
+import TopThing from "./TopThing";
+import DownloadButton from "./DownloadButton";
+import GuidanceDoc from "./GuidanceDoc";
+import Models from "./Models";
 
 const LabTabs = () => {
   const [value, setValue] = React.useState("1");
@@ -35,22 +37,23 @@ const LabTabs = () => {
         </Box>
 
         <TabPanel value="1">
-        <div className="center-container">
+          <div className="center-container">
             <LiveView />
           </div>
-
           <div>
             <Box sx={{ height: 32 }} />
             <hr className="pagebreak" />
             <Results />
           </div>
-
         </TabPanel>
 
         <TabPanel value="2">
           <div className="center-container">
-            <p>Add dropdown, progress bar, run button here</p>
+          <TopThing />
             <DailyView />
+            <div className="download-button-container">
+              <DownloadButton />
+            </div>
           </div>
           <div>
             <Box sx={{ height: 32 }} />
@@ -64,18 +67,18 @@ const LabTabs = () => {
             <Box sx={{ height: 32 }} />
             <Graphs />
           </div>
-          </TabPanel>
-        
+        </TabPanel>
+
         <TabPanel value="4">
-          <p>1</p>
+          <Models />
         </TabPanel>
 
         <TabPanel value="5">
-          <p>1</p>
+          <GuidanceDoc />
         </TabPanel>
       </TabContext>
     </Box>
   );
-}
+};
 
 export default LabTabs;

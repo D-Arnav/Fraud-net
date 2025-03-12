@@ -21,12 +21,18 @@ export const AppProvider = ({ children }) => {
       
     const [resultsTable, setResultsTable] = useState([]);
 
+    const [dailyViewTable, setDailyViewTable] = useState([]);
+
+    const [selectedDate, setSelectedDate] = useState(1);
+
     return (
         <AppContext.Provider 
             value={{
                 index, setIndex,
                 transaction, setTransaction,
-                resultsTable, setResultsTable 
+                resultsTable, setResultsTable,
+                dailyViewTable, setDailyViewTable,
+                selectedDate, setSelectedDate
             }}
         >
             {children}
