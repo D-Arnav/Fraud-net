@@ -34,9 +34,9 @@ def evaluate_dl(model, dl):
     f1_score = 2 * (precision * recall) / (precision + recall + 1e-10)
 
     results_print = "\n" + \
-    f"               Predicted        Precision           : {precision:.2f}\n" + \
-    f"              (F)     (L)       Recall              : {recall:.2f} \n" + \
-    f"           -----------------    F1 Score            : {f1_score:.2f}\n" + \
+    f"               Predicted        Precision           : {precision*100:.2f}%\n" + \
+    f"              (F)     (L)       Recall              : {recall*100:.2f}%\n" + \
+    f"           -----------------    F1 Score            : {f1_score*100:.2f}%\n" + \
     f"Actual (F) | {tp:5} | {fn:5} |    False Positive Rate : {false_positive_rate*100:.2f}%\n" + \
     f"       (L) | {fp:5} | {tn:5} |    False Negative Rate : {false_negative_rate*100:.2f}%\n" + \
     f"           -----------------    Accuracy            : {accuracy*100:.2f}%\n"

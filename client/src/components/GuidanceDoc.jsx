@@ -1,11 +1,19 @@
 import React from 'react';
 import gd from '../assets/gd.jpg';
+import sigmoid from '../assets/sigmoid.png'
 
 function GuidanceDoc() {
   return (
     <div className="guidance-doc">
+      <h1 className='title'>Sigmoid Function</h1>
+      <img src={sigmoid} alt="Sigmoid Function" className="sigmoid-image" />
+      <p>
+        The <strong>Sigmoid</strong> function, defined as <code >σ(x) = 1 / (1 + e^(-x)) </code>, is a mathematical function that produces an "S"-shaped curve. It maps any real-valued number into the range (0, 1), making it useful in binary classification problems. The sigmoid function is often used in logistic regression and artificial neural networks to model probabilities of belonging to classes.
+      </p>
+      <br></br><br></br>
       <h1 className="title">Confusion Matrix</h1>
       <img src={gd} alt="Guidance Document" className="guidance-doc-image" />
+      <br></br>
       <h1 className="title">Precision and Recall: Key Metrics</h1>
       <p>
         <strong>Precision</strong> and <strong>recall</strong> are fundamental metrics for evaluating fraud detection models, each emphasizing different aspects of predictive performance:

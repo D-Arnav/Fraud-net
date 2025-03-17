@@ -129,6 +129,7 @@ export default function TopThing() {
 
   return (
     <div className="top-thing">
+      
       <DateDropdown />
       <ProgressBar running={isRunning} timeToComplete={timeToComplete} onComplete={handleProgressComplete} />
       <RunButton onRunClick={handleRunClick} />

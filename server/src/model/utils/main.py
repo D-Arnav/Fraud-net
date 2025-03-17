@@ -130,4 +130,6 @@ if __name__ == "__main__":
 
     # compute_average_inference_time()
 
-    compute_correlation()
+    # compute_correlation()
+
+    eval()

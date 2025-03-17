@@ -19,7 +19,7 @@ function App() {
             <header>
             <img src={logo} alt="pxp-logo" className="logo" />
             </header>
-            <div className="title">
+            <div className="pxp-title">
                 <h1>PXP Protect <span className="ver">Model Version Fn1.01</span></h1>
                 <p>AI Driven Fraud Detection Model</p>
             </div>

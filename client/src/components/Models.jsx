@@ -12,11 +12,16 @@ function createData(model, prec, recall, fnr, fpr) {
 }
 
 const rows = [
-  createData("Neural Network", 150, 0.6, 23, 4.3),
-  createData("Decision Tree", 237, 0.38, 54, 1.6),
-  createData("Random Forest", 262, 0.85, 23, 3.5),
-  createData("SVM", 305, 0.54, 16, 8.3),
-  createData("Logistic Regression", 356, 0.5, 26, 1.6),
+  createData("Logistic Regression", "0.00%", "0.00%", "100.00%", "0.00%"),
+  createData("Support Vector Machine", "0.00%", "0.00%", "100.00%", "0.00%"),
+  createData("Decision Tree", "17.14%", "2.73%", "97.27%", "0.08%"),
+  createData("Decision Tree + Class Balance", "10.36%", "16.82%", "83.18%", "0.91%"),
+  createData("Decision Tree + Tomek + Class Balance", "10.14%", "16.82%", "83.18%", "0.93%"),
+  createData("Random Forest", "19.23%", "2.27%", "97.73%", "0.06%"),
+  createData("Random Forest + Class Balance", "10.61%", "9.55%", "90.45%", "0.50%"),
+  createData("Random Forest + Tomek", "16.67%", "2.27%", "97.73%", "0.07%"),
+  createData("Random Forest + Tomek + Class Balance", "11.39%", "10.45%", "89.55%", "0.51%"),
+  createData("Neural Network", "6.72%", "59.09%", "40.91%", "5.13%")
 ];
 
 export default function Models() {
@@ -37,7 +42,7 @@ export default function Models() {
           <TableBody>
             {rows.map((row) => (
               <TableRow key={row.model} className="models-table-row">
-                <TableCell align="center" className="models-column">{row.model}</TableCell>
+                <TableCell align="Left" className="models-column">{row.model}</TableCell>
                 <TableCell align="center">{row.prec}</TableCell>
                 <TableCell align="center">{row.recall}</TableCell>
                 <TableCell align="center">{row.fnr}</TableCell>

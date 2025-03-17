@@ -14,24 +14,38 @@ body {
 
 .logo {
   width: 150px;
+  margin-left: 5%;
+  margin-top: 10px;
 }
 
 /* Title Section */
 .title {
   font-family: 'Luxe Uno', sans-serif;
+  margin-top: -10px;
 }
 
-.title h1 {
+.confmat-title {
+  margin-left: 110px;
+  margin-top: -10px;
+  font-family: 'Luxe Uno', sans-serif;
+}
+
+.pxp-title {
+  margin-left: 5%;
+  font-family: 'Luxe Uno', sans-serif;
+}
+
+.pxp-title h1 {
   font-size: 2.6rem;
   font-weight: 700;
 }
 
-.title .ver {
+.pxp-title .ver {
   font-size: 0.9rem;
   font-weight: 100;
 }
 
-.title p {
+.pxp-title p {
   font-size: 1rem;
   font-weight: 500;
   margin-top: -25px;
@@ -119,7 +133,7 @@ body {
   border-bottom: 2px solid white;
   background-color: transparent !important;
   color: white !important;
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
 }
 
@@ -159,6 +173,32 @@ body {
 }
 
 /* ================= Results Table ================= */
+.results-container {
+  max-height: 400px; /* Adjust height as needed */
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #111;
+}
+
+.results-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.results-container::-webkit-scrollbar-track {
+  background: #111;
+  border-radius: 10px;
+}
+
+.results-container::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+  border: 2px solid #111;
+}
+
+.results-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
 .results-container .MuiTableRow-root {
   border-bottom: 1px solid #555 !important;
 }
@@ -212,14 +252,69 @@ body {
   padding: 15px;
 }
 
+/* Customize the scroll bar */
+
+.dailyview-container .table-scroll {
+  max-height: 300px;
+  overflow-y: auto;
+  background: transparent; 
+}
+
+
+/* Make the table header sticky */
+.dailyview-container .MuiTableHead-root {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: rgba(17, 17, 18, 0.8);
+  backdrop-filter: blur(100px);
+}
+
+.dailyview-container .table-container.MuiPaper-root {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.dailyview-container .MuiTableHead-root .MuiTableCell-root {
+  background-color: transparent !important;
+  color: white !important;
+  font-family: 'Luxe Uno', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 1rem !important;
+}
+
+.dailyview-container .table-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dailyview-container .table-scroll::-webkit-scrollbar-track {
+  background: #222; /* Darker background for the track */
+  border-radius: 10px;
+}
+
+.dailyview-container .table-scroll::-webkit-scrollbar-thumb {
+  background-color: #555; /* Subtle gray color for the thumb */
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+.dailyview-container .table-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: #777; /* Lighter gray on hover */
+}
+
+
 /* ================= Models Table ================= */
 .models-table-container {
   border-top: 2px solid white;
   border-bottom: 2px solid white;
   background-color: transparent !important;
   color: white !important;
-  width: 80%;
+  width: 70% !important;
   margin: 0 auto;
+}
+
+.models-column {
+  padding-left: 40px !important;
 }
 
 .models-table .MuiTableCell-root {
@@ -430,7 +525,9 @@ body {
   display: flex;
   align-items: center;
   gap: 15px;
-  margin: 0 125px;
+  margin: 20px auto 50px auto;
+  width: 85%;
+  justify-items: center;
 }
 
 /* ================= Buttons Styling ================= */
@@ -556,6 +653,14 @@ body {
 }
 
 .guidance-doc-image {
+  display: block;
+  width: 600px;
+  margin: 0 auto 20px auto;
+  border-radius: 10px;
+}
+
+
+.sigmoid-image {
   display: block;
   width: 600px;
   margin: 0 auto 20px auto;

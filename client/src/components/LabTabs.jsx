@@ -49,6 +49,7 @@ const LabTabs = () => {
 
         <TabPanel value="2">
           <div className="center-container">
+          <h3 className="side-heading">Daily View</h3>
           <TopThing />
             <DailyView />
             <div className="download-button-container">

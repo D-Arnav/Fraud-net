@@ -47,6 +47,6 @@ def train_model(model, dl):
     current_time = datetime.now().strftime('%Y%m%d_%H%M%S')
 
     if config['save']:
-        torch.save(model.state_dict(), os.path.join(config['save_path'], f'model_{current_time}.pt'))
+        torch.save(model.state_dict(), os.path.join(config['save_path'], f'model_1{current_time}.pt'))
 
     return model 

@@ -126,7 +126,7 @@ const falsePositiveOptions = {
     ...baseOptions.plugins,
     title: {
       ...baseOptions.plugins.title,
-      text: 'False Negatives Over Days (Fraudulent Transactions Incorrectly Flagged as Legitimate)',
+      text: 'False Negatives Over Days \n(Fraudulent Transactions Incorrectly Flagged as Legitimate)',
     },
   },
 };
@@ -147,7 +147,7 @@ const falseNegativeOptions = {
     ...baseOptions.plugins,
     title: {
       ...baseOptions.plugins.title,
-      text: 'False Positives Over Days (Legitimate Transactions Incorrectly Flagged as Fraud)',
+      text: 'False Positives Over Days \n(Legitimate Transactions Incorrectly Flagged as Fraud)',
     },
   },
 };
