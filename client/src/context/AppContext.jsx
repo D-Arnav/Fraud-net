@@ -25,6 +25,8 @@ export const AppProvider = ({ children }) => {
 
     const [selectedDate, setSelectedDate] = useState(1);
 
+    const [theme, setTheme] = useState('light');
+
     return (
         <AppContext.Provider 
             value={{
@@ -32,7 +34,8 @@ export const AppProvider = ({ children }) => {
                 transaction, setTransaction,
                 resultsTable, setResultsTable,
                 dailyViewTable, setDailyViewTable,
-                selectedDate, setSelectedDate
+                selectedDate, setSelectedDate,
+                theme, setTheme
             }}
         >
             {children}

@@ -33,7 +33,7 @@ function ProgressBar({ running, timeToComplete, onComplete }) {
       setProgress((oldProgress) => {
         if (oldProgress >= 100) {
           clearInterval(timer);
-          onComplete(); // Call the onComplete callback
+          onComplete()
           return 100;
         }
         return oldProgress + 1;
@@ -124,7 +124,7 @@ export default function TopThing() {
   };
 
   const handleProgressComplete = () => {
-    setIsRunning(false); // Reset the running state
+    setIsRunning(false);
   };
 
   return (

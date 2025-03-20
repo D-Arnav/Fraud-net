@@ -1,15 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Luxe+Uno&display=swap');
 
+:root {
+  --primary-font: 'Inter', sans-serif;
+  --secondary-font: 'Luxe Uno', sans-serif;
+  --black: #0d0d11;
+  --dark-gray: #222;
+  --gray: #555;
+  --white: #edeeef;
+  --translucent: rgba(13, 13, 17, 0.3);
+  --brand-blue: #292cf5;
+  --brand-purple: #a047ff;
+  --brand-green: #5fc15f;
+  --brand-red: #d04c4c;
+  --tab-color: #8b58ce;
+  --highlight-purple: #8B58CE;
+  --highlight-yellow: #DDFF61;
+}
+
+.dark {
+  --black: #ffffff;
+  --dark-gray: #f0f0f0;
+  --gray: #555;
+  --white: #09090c;
+  --translucent: rgba(237, 238, 239, 0.15);
+  --brand-blue: #007bff;
+  --brand-purple: #6f42c1;
+  --brand-green: #28a745;
+  --brand-red: #dc3545;
+  --tab-color: #007bff;
+  --highlight-purple: #6610f2;
+  --highlight-yellow: #ffc107;
+  color: var(--white) !important;
+}
 body {
   margin: 20px 80px 15px 80px;
   padding: 0;
-  background: radial-gradient(circle at -1000px 750px, #292cf5, transparent 60%),
-              radial-gradient(circle at 1600px -180px, #540b90, transparent 40%),
-              #000;
   background-attachment: fixed;
   background-size: cover;
-  color: white !important;
-  font-family: "Inter", sans-serif;
+  color: var(--white) !important;
+  font-family: var(--primary-font);
+  background: radial-gradient(circle at -30%, var(--brand-blue), transparent 60%), radial-gradient(circle at 100% -180px, var(--brand-purple), transparent 60%), var(--black);
+
 }
 
 .logo {
@@ -18,21 +49,29 @@ body {
   margin-top: 10px;
 }
 
+.logo-dark {
+  filter: invert(1);
+}
+
+.logo-light {
+  filter: invert(0);
+}
+
 /* Title Section */
 .title {
-  font-family: 'Luxe Uno', sans-serif;
+  font-family: var(--secondary-font);
   margin-top: -10px;
 }
 
 .confmat-title {
   margin-left: 110px;
   margin-top: -10px;
-  font-family: 'Luxe Uno', sans-serif;
+  font-family: var(--secondary-font);
 }
 
 .pxp-title {
   margin-left: 5%;
-  font-family: 'Luxe Uno', sans-serif;
+  font-family: var(--secondary-font);
 }
 
 .pxp-title h1 {
@@ -53,7 +92,7 @@ body {
 
 .container {
   display: block;
-  background-color: rgba(9, 9, 12, 0.35);
+  background-color: var(--translucent);
   opacity: 1;
   width: 90%;
   margin: 0 auto;
@@ -62,7 +101,7 @@ body {
 }
 
 .side-heading {
-  font-family: 'Luxe Uno', sans-serif;
+  font-family: var(--secondary-font);
   font-weight: 500;
   font-size: 25px;
   text-align: left;
@@ -73,7 +112,7 @@ body {
   max-width: 800%; /* Adjust this value to fit your table width */
   position: relative;
   border: none;
-  border-top: 1px solid rgb(117, 117, 117);
+  border-top: 1px solid var(--gray);
   margin: 20px auto; /* Center the line */
 }
 
@@ -89,17 +128,17 @@ body {
 .custom-tab {
   text-transform: none !important;
   font-size: 16px !important;
-  font-family: Inter !important;
+  font-family: var(--primary-font) !important;
   font-weight: 100 !important;
-  color: white !important;
+  color: var(--white) !important;
 }
 
 .custom-tab.Mui-selected {
-  color: #8B58CE !important;
+  color: var(--tab-color) !important;
 }
 
 .MuiTabs-indicator {
-  background-color: #8B58CE !important;
+  background-color: var(--tab-color) !important;
   height: 2px !important;
   z-index: 2 !important;
 }
@@ -123,16 +162,16 @@ body {
   left: 0;
   right: 0;
   height: 2px;
-  background-color: white;
+  background-color: var(--white);
   z-index: 1;
 }
 
 /* ================= Common Table Styling ================= */
 .table-container {
-  border-top: 2px solid white;
-  border-bottom: 2px solid white;
+  border-top: 2px solid var(--white);
+  border-bottom: 2px solid var(--white);
   background-color: transparent !important;
-  color: white !important;
+  color: var(--white) !important;
   width: 70%;
   margin: 0 auto;
 }
@@ -143,9 +182,10 @@ body {
 }
 
 .MuiTableCell-root {
-  color: white !important;
+  color: var(--white) !important;
   background-color: transparent !important;
-  border-bottom: none !important;
+  border-bottom: 1px solid var(--gray) !important;
+  line-height: 1.5 !important;
 }
 
 .MuiTableContainer-root {
@@ -155,56 +195,63 @@ body {
 
 /* ================= LiveView Table ================= */
 .liveview-container .MuiTableRow-root {
-  border-bottom: 1px solid #555 !important;
+  border-bottom: 1px solid var(--white) !important;
 }
 
 .liveview-container .label-cell {
-  font-family: 'Luxe Uno', sans-serif !important;
+  font-family: var(--secondary-font) !important;
   font-weight: 500 !important;
   font-size: 1rem;
-  color: white !important;
+  color: var(--white) !important;
 }
 
 .liveview-container .value-cell {
-  font-family: 'Inter', sans-serif !important;
+  font-family: var(--primary-font) !important;
   font-weight: 200 !important;
   font-size: 0.85rem;
-  color: white !important;
+  color: var(--white) !important;
 }
 
 /* ================= Results Table ================= */
-.results-container {
-  max-height: 400px; /* Adjust height as needed */
+.table-container {
+  max-height: 300px; /* Adjust height as needed */
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: #888 #111;
+  scrollbar-color: var(--gray) var(--black);
 }
 
-.results-container::-webkit-scrollbar {
+.table-container::-webkit-scrollbar {
   width: 8px;
 }
 
-.results-container::-webkit-scrollbar-track {
-  background: #111;
+.table-container::-webkit-scrollbar-track {
+  background: var(--black);
   border-radius: 10px;
 }
 
-.results-container::-webkit-scrollbar-thumb {
-  background-color: #888;
+.table-container::-webkit-scrollbar-thumb {
+  background-color: var(--gray);
   border-radius: 10px;
-  border: 2px solid #111;
+  border: 2px solid var(--black);
 }
 
-.results-container::-webkit-scrollbar-thumb:hover {
-  background-color: #555;
+.table-container::-webkit-scrollbar-thumb:hover {
+  background-color: var(--gray);
+}
+
+.table-header {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(128px);
+  background-color: var(--translucent) !important;
 }
 
 .results-container .MuiTableRow-root {
-  border-bottom: 1px solid #555 !important;
+  border-bottom: 1px solid var(--black) !important;
 }
 
 .results-container .MuiTableHead-root .MuiTableCell-root {
-  font-family: 'Luxe Uno', sans-serif !important;
+  font-family: var(--secondary-font) !important;
   font-weight: 500 !important;
   font-size: 1rem !important;
 }
@@ -227,29 +274,41 @@ body {
 
 /* ================= Daily View Table ================= */
 .dailyview-container .table-container {
-  border-top: 2px solid white;
-  border-bottom: 2px solid white;
+  border-top: 2px solid var(--white);
+  border-bottom: 2px solid var(--white);
   background-color: transparent !important;
-  color: white !important;
+  color: var(--white) !important;
   width: 60%;
   margin: 0 auto;
 }
 
-.dailyview-container .MuiTableRow-root {
-  border-bottom: 1px solid #555 !important;
+.dailyview-container .MuiTableHead-root {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(128px); /* Match the blur effect */
+  background-color: var(--translucent) !important; /* Match the semi-transparent background */
 }
 
 .dailyview-container .MuiTableHead-root .MuiTableCell-root {
-  font-family: 'Luxe Uno', sans-serif !important;
+  font-family: var(--secondary-font) !important;
   font-weight: 500 !important;
   font-size: 1rem !important;
+  background-color: transparent !important; /* Match the transparent background */
+  color: var(--white) !important;
 }
 
 .dailyview-container .MuiTableBody-root .MuiTableCell-root {
-  font-family: 'Inter', sans-serif !important;
+  font-family: var(--primary-font) !important;
   font-weight: 100 !important;
   font-size: 0.85rem;
   padding: 15px;
+}
+
+.dailyview-container .MuiTableHead-root {
+  position: sticky !important;
+  top: 0;
+  z-index: 10;
 }
 
 /* Customize the scroll bar */
@@ -260,14 +319,11 @@ body {
   background: transparent; 
 }
 
-
 /* Make the table header sticky */
 .dailyview-container .MuiTableHead-root {
-  position: sticky;
+  position: sticky !important;
   top: 0;
   z-index: 10;
-  background-color: rgba(17, 17, 18, 0.8);
-  backdrop-filter: blur(100px);
 }
 
 .dailyview-container .table-container.MuiPaper-root {
@@ -277,8 +333,8 @@ body {
 
 .dailyview-container .MuiTableHead-root .MuiTableCell-root {
   background-color: transparent !important;
-  color: white !important;
-  font-family: 'Luxe Uno', sans-serif !important;
+  color: var(--white) !important;
+  font-family: var(--secondary-font) !important;
   font-weight: 500 !important;
   font-size: 1rem !important;
 }
@@ -288,27 +344,27 @@ body {
 }
 
 .dailyview-container .table-scroll::-webkit-scrollbar-track {
-  background: #222; /* Darker background for the track */
+  background: var(--dark-gray); /* Darker background for the track */
   border-radius: 10px;
 }
 
 .dailyview-container .table-scroll::-webkit-scrollbar-thumb {
-  background-color: #555; /* Subtle gray color for the thumb */
+  background-color: var(--gray); /* Subtle gray color for the thumb */
   border-radius: 10px;
   transition: background-color 0.3s;
 }
 
 .dailyview-container .table-scroll::-webkit-scrollbar-thumb:hover {
-  background-color: #777; /* Lighter gray on hover */
+  background-color: var(--gray); /* Lighter gray on hover */
 }
 
 
 /* ================= Models Table ================= */
 .models-table-container {
-  border-top: 2px solid white;
-  border-bottom: 2px solid white;
+  border-top: 2px solid var(--white);
+  border-bottom: 2px solid var(--white);
   background-color: transparent !important;
-  color: white !important;
+  color: var(--white) !important;
   width: 70% !important;
   margin: 0 auto;
 }
@@ -318,210 +374,144 @@ body {
 }
 
 .models-table .MuiTableCell-root {
-  color: white !important;
+  color: var(--white) !important;
   background-color: transparent !important;
-  border-bottom: 1px solid #555 !important;
+  border-bottom: 1px solid var(--white) !important;
   padding: 15px;
 }
 
 .models-table .MuiTableHead-root .MuiTableCell-root {
-  font-family: 'Luxe Uno', sans-serif !important;
+  font-family: var(--secondary-font) !important;
   font-weight: 500 !important;
   font-size: 1rem !important;
 }
 
 .models-table .MuiTableBody-root .MuiTableCell-root {
-  font-family: 'Inter', sans-serif !important;
+  font-family: var(--primary-font) !important;
   font-weight: 200 !important;
   font-size: 0.85rem;
 }
 
 .models-table .MuiTableRow-root {
-  border-bottom: 1px solid #555 !important;
+  border-bottom: 1px solid var(--white) !important;
 }
 
 /* ================= Graph Styling ================= */
 
-
-
-
-
-
-
 /* ================= Confusion Matrix Styling ================= */
 
 .confmat-container {
-
   display: flex;
-
   justify-content: space-between;
-
   align-items: center;
-
   justify-content: center;
-
   gap: 50px;
-
   background-color: transparent;
-
   padding: 10px;
-
   border-radius: 8px;
-
 }
 
 /* Grid Layout for Confusion Matrix */
 
 .confmat-grid {
-
   display: grid;
-
   grid-template-columns: 160px 160px 160px;
-
   grid-template-rows: 50px 80px 80px;
-
-  border: 2px solid #fff;
-
+  border: 2px solid var(--white);
 }
 
 /* Empty Top-left Cell */
 
 .confmat-empty-cell {
-
-  border: 1px solid #fff;
-
+  border: 1px solid var(--white);
 }
 
 /* Header Cell Style */
 
 .confmat-header-cell {
-
   display: flex;
-
   justify-content: center;
-
   align-items: center;
-
-  border: 1px solid #fff;
-
-  color: #fff;
-
+  border: 1px solid var(--white);
+  color: var(--white);
   font-weight: 500;
-
   padding: 10px;
-
   text-align: center;
-
   font-size: 0.9rem;
-
 }
 
 /* Main Cell Style */
 
 .confmat-cell {
-
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
-
   align-items: center;
-
-  border: 1px solid #fff;
-
+  border: 1px solid var(--white);
   padding: 10px;
-
   text-align: center;
-
   font-size: 0.85rem;
-
   gap: 5px;
-
 }
 
 .green {
-
-  color: #00FF00;
-
+  color: var(--brand-green);
 }
 
 .red {
-
-  color: #FF4C4C;
-
+  color: var(--brand-red);
 }
 
+.bold {
+  font-weight: bold;
+}
 
 /* ================= Metrics Styling ================= */
 
 .metrics {
-
   display: grid;
-
   grid-template-columns: repeat(2, 1fr);
-
   gap: 20px 30px;
-
 }
 
 .metric-item {
-
   display: flex;
-
   flex-direction: column;
-
   align-items: flex-start;
-
 }
 
 .metric-name {
-
-  font-family: 'Inter', sans-serif;
-
+  font-family: var(--primary-font);
   font-weight: 400;
-
   font-size: 0.95rem;
-
-  color: #e0e0e0;
-
+  color: var(--white);
   margin-bottom: 5px;
-
 }
 
 .metric-value {
-
-  font-family: 'Inter', sans-serif;
-
+  font-family: var(--primary-font);
   font-weight: 400;
-
   font-size: 0.9rem;
-
 }
 
 /* Metric Colors */
 
 .metric-value.green {
-
-  color: #00FF00;
-
+  color: var(--brand-green);
 }
 
 .metric-value.red {
-
-  color: #FF4C4C;
-
+  color: var(--brand-red);
 }
-
 
 /* ================= TopThing Styling ================= */
 
-.progressbar{
+.progressbar {
   border-radius: 8px;
   width: 100%;
 }
 
-.top-thing{
+.top-thing {
   display: flex;
   align-items: center;
   gap: 15px;
@@ -535,7 +525,7 @@ body {
   text-transform: none !important;
 }
 
-.btn{
+.btn {
   border: none !important;
   border-radius: 9px !important;
   padding: 10px 20px; /* Add padding to make the button wider */
@@ -546,9 +536,9 @@ body {
   background-color: #c1c1c1 !important; /* Darker Grey */
 }
 
-#run{
+#run {
   background-color: #549254 !important;
-  color: white !important;
+  color: #eee !important;
 }
 
 #run:hover {
@@ -556,8 +546,8 @@ body {
 }
 
 #download {
-  background-color: #363636 !important;
-  color: white !important;
+  background-color: #4d4d4d !important;
+  color: #eee !important;
 }
 
 #download:hover {
@@ -574,28 +564,26 @@ body {
 /* ================= Date Styling ================= */
 #date-dropdown {
   width: 200px;
-  color: #cfcfcf;
+  color: var(--white);
 }
 
 #date-dropdown option {
-  background-color: #363636;
-  color: white;
+  background-color: var(--dark-gray);
+  color: var(--white);
 }
 
 .dropdown-menu {
-  background-color: #363636 !important; 
-  color: white !important;
+  background-color: var(--dark-gray) !important; 
+  color: var(--white) !important;
 }
-
-/* Guidaance doc */
-/* Guidaance doc */
+/* Guidance doc */
 .guidance-doc {
   margin: 40px auto; /* Add top and bottom margin */
   padding: 130px; /* Add padding */
   padding-top: 0px;
   padding-bottom: 0px;
-  font-family: 'Inter', sans-serif;
-  color: white;
+  font-family: var(--primary-font);
+  color: var(--white);
   border-radius: 10px; /* Add border radius */
 }
 
@@ -635,7 +623,7 @@ body {
 }
 
 .guidance-doc .important {
-  color: #8B58CE;
+  color: var(--highlight-purple);
 }
 
 .guidance-doc .example {
@@ -645,11 +633,11 @@ body {
 
 .guidance-doc .trade-off {
   font-weight: 600;
-  color: #DDFF61;
+  color: var(--highlight-yellow);
 }
 
 .red {
-  color: #D04C4C;
+  color: var(--brand-red);
 }
 
 .guidance-doc-image {
@@ -658,7 +646,6 @@ body {
   margin: 0 auto 20px auto;
   border-radius: 10px;
 }
-
 
 .sigmoid-image {
   display: block;

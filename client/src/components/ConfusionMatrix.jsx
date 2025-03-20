@@ -80,37 +80,37 @@ const ConfusionMatrix = () => {
         <div className="metrics">
           <div className="metric-item">
               <span className="metric-name">Accuracy ↑</span>
-              <span className={determineColor('accuracy', 100 * accuracy)}>
+              <span className={determineColor('accuracy', 100 * accuracy) + " bold"}>
                 {(100 * accuracy).toFixed(2)}%
               </span>
           </div>
           <div className="metric-item">
               <span className="metric-name">Precision ↑:</span>
-              <span className={determineColor('precision', 100 * precision)}>
+              <span className={determineColor('precision', 100 * precision) + " bold"}>
               {(100 * precision).toFixed(2)}%
               </span>
           </div>
           <div className="metric-item">
-              <span className="metric-name">Recall ↑:</span>
-              <span className={determineColor('recall', 100 * recall)}>
+              <span className="metric-name bold">Recall ↑:</span>
+              <span className={determineColor('recall', 100 * recall) + " bold"}>
               {(100 * recall).toFixed(2)}%
               </span>
           </div>
           <div className="metric-item">
               <span className="metric-name">F1 Score ↑:</span>
-              <span className={determineColor('f1score', 100 * f1Score)}>
+              <span className={determineColor('f1score', 100 * f1Score) + " bold"}>
               {(100 * f1Score).toFixed(2)}%
               </span>
           </div>
           <div className="metric-item">
               <span className="metric-name">FPR ↓:</span>
-              <span className={determineColor('fpr', 100 * fpr)}>
+              <span className={determineColor('fpr', 100 * fpr) + " bold"}>
               {(100 * fpr).toFixed(2)}%
               </span>
           </div>
           <div className="metric-item">
               <span className="metric-name">FNR ↓:</span>
-              <span className={determineColor('fnr', 100 * fnr)}>
+              <span className={determineColor('fnr', 100 * fnr) + " bold"}>
               {(100 * fnr).toFixed(2)}%
               </span>
           </div>
