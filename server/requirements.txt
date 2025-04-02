@@ -1,0 +1,10 @@
+fastapi==0.115.12
+imbalanced_learn==0.13.0
+imblearn==0.0
+matplotlib==3.10.1
+names==0.3.0
+numpy==2.2.4
+pandas==2.2.3
+scikit_learn==1.6.1
+torch==2.5.1
+torch==2.6.0
