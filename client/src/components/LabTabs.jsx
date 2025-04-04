@@ -33,6 +33,7 @@ const LabTabs = () => {
             <Tab label="Performance" value="3" className="custom-tab" />
             <Tab label="Models" value="4" className="custom-tab" />
             <Tab label="Guidance" value="5" className="custom-tab" />
+            <Tab label="Guidance" value="6" className="custom-tab" />
           </TabList>
         </Box>
 
@@ -75,6 +76,10 @@ const LabTabs = () => {
         </TabPanel>
 
         <TabPanel value="5">
+          <GuidanceDoc />
+        </TabPanel>
+
+        <TabPanel value="6">
           <GuidanceDoc />
         </TabPanel>
       </TabContext>
