@@ -5,7 +5,7 @@ import time
 import matplotlib.pyplot as plt
 
 
-from data import load_train_data, load_test_data, load_daywise_data
+from data import *
 from network import NeuralNet
 from evaluate import evaluate_dl, evaluate_single
 from train import train_model
@@ -22,6 +22,66 @@ def train():
 
     torch.manual_seed(1)    
     train_dl = load_train_data()
+
+    input_size = train_dl.dataset.tensors[0].shape[-1]
+
+    model = NeuralNet(input_size, 2)
+
+    train_model(model, train_dl)
+
+    test_dl = load_test_data()
+    evaluate_dl(model, test_dl)
+
+
+def train_low():
+
+    torch.manual_seed(1)    
+    train_dl = load_low_risk_data()
+    print("started training low risk")
+
+    input_size = train_dl.dataset.tensors[0].shape[-1]
+
+    model = NeuralNet(input_size, 2)
+
+    train_model(model, train_dl)
+
+    test_dl = load_test_data()
+    evaluate_dl(model, test_dl)
+
+
+def train_medium():
+
+    torch.manual_seed(1)    
+    train_dl = load_medium_risk_data()
+
+    input_size = train_dl.dataset.tensors[0].shape[-1]
+
+    model = NeuralNet(input_size, 2)
+
+    train_model(model, train_dl)
+
+    test_dl = load_test_data()
+    evaluate_dl(model, test_dl)
+
+
+def train_high():
+
+    torch.manual_seed(1)    
+    train_dl = load_high_risk_data()
+
+    input_size = train_dl.dataset.tensors[0].shape[-1]
+
+    model = NeuralNet(input_size, 2)
+
+    train_model(model, train_dl, config={'class_balance': 0.08})
+
+    test_dl = load_test_data()
+    evaluate_dl(model, test_dl)
+
+def train_very_high():
+
+    torch.manual_seed(1)    
+    train_dl = load_very_high_risk_data()
 
     input_size = train_dl.dataset.tensors[0].shape[-1]
 
@@ -73,6 +133,9 @@ def eval_single(idx):
 
     model.load_state_dict(torch.load(MODEL_PATH))
 
+    if torch.cuda.is_available():
+        single_transaction = single_transaction.cuda()
+
     start = time.perf_counter()
     results = evaluate_single(model, single_transaction)
     end = time.perf_counter()
@@ -104,6 +167,9 @@ def compute_average_inference_time():
 
     model.load_state_dict(torch.load(MODEL_PATH))
 
+    if torch.cuda.is_available():
+        single_transaction = single_transaction.cuda()
+
     times = []
     for idx in range(1000):
 
@@ -123,7 +189,8 @@ def compute_average_inference_time():
 
 
 if __name__ == "__main__":
-
+    
+    print(torch.cuda.is_available())
     # train()
 
     # eval()
@@ -134,4 +201,4 @@ if __name__ == "__main__":
 
     # compute_average_inference_time()
 
-    compute_correlation()
+    train_very_high()

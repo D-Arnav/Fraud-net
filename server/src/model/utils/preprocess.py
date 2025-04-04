@@ -3,8 +3,7 @@ import torch
 from torch.utils.data import DataLoader, TensorDataset
 
 
-
-def preprocess_data(df, get_frame=False):
+def preprocess_data(df, get_frame=False, get_merchant=False):
     """
     Preprocess the data for model training / inference
     """
@@ -15,8 +14,9 @@ def preprocess_data(df, get_frame=False):
 
     METADATA_PATH = 'src/data/metadata.json'
 
-    metadata = pd.read_json(METADATA_PATH) 
-    transform = metadata['transform'] # Load the transformation metadata
+    merchant = df['Merchant'].copy() if get_merchant else None
+    metadata = pd.read_json(METADATA_PATH)
+    transform = metadata['transform']  # Load the transformation metadata
 
     # Drop and rename columns
     df = df.drop(columns=transform['drop_columns'])
@@ -26,7 +26,7 @@ def preprocess_data(df, get_frame=False):
     df['AMOUNT'] = df['AMOUNT'].str.replace(',', '.').astype(float)
     df['FRAUD'] = df['FRAUD'].apply(lambda x: 1 if pd.notna(x) else 0)
 
-    # Convert Categorial columns to one-hot encodings
+    # Convert Categorical columns to one-hot encodings
     for col in transform['encodings']:
         df[col] = df[col].replace(transform['encodings'][col])
         df[col] = df[col].apply(
@@ -36,11 +36,12 @@ def preprocess_data(df, get_frame=False):
         df[col] = pd.Categorical(df[col], categories=all_categories)
 
     df = pd.get_dummies(df, columns=transform['encodings'].keys())
-    
+
     # Set the correct order of columns
     df = df[transform['order']]
 
-    if get_frame: return df
+    if get_frame:
+        return df
 
     X = df.drop(columns=['FRAUD']).values
     y = df['FRAUD'].values
@@ -48,7 +49,25 @@ def preprocess_data(df, get_frame=False):
     X = torch.tensor(X.astype(float)).float()
     y = torch.tensor(y.astype(float)).float()
 
-    dataset = TensorDataset(X, y)
+    if get_merchant:
+        merchant = merchant.apply(string_to_int).values.astype('int64')
+        dataset = TensorDataset(X, y, torch.tensor(merchant, dtype=torch.int64))
+    else:
+        dataset = TensorDataset(X, y)
+
     dl = DataLoader(dataset, batch_size=config['batch_size'], shuffle=True)
 
     return dl
+
+
+def string_to_int(s):
+    """
+    Convert a string to an integer using base-256 encoding.
+    """
+    if not isinstance(s, str):
+        return 0
+    result = 0
+    for char in s:
+        result = result * 256 + ord(char)
+    return result
+
