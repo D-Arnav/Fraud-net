@@ -32,6 +32,7 @@
   --highlight-yellow: #ffc107;
   color: var(--white) !important;
 }
+
 body {
   margin: 20px 80px 15px 80px;
   padding: 0;
