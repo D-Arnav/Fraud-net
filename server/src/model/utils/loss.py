@@ -39,7 +39,8 @@ class FocalLoss(nn.Module):
         if targets.dim() == 1:
             targets = F.one_hot(targets, num_classes=inputs.size(1)).float()
 
-        cross_entropy = F.cross_entropy(prob, targets, weight=torch.tensor([self.alpha, 1-self.alpha]))
+        weight = torch.tensor([self.alpha, 1 - self.alpha], device=inputs.device)
+        cross_entropy = F.cross_entropy(prob, targets, weight=weight)
                                                             
         loss = self.alpha * (1 - prob) ** self.gamma * cross_entropy
         

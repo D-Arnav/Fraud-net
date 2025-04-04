@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 from data import load_train_data
 from preprocess import preprocess_data
+import pandas as pd
 
 def compute_correlation():
     train_df = load_train_data(get_frame=True)
@@ -24,3 +25,19 @@ def compute_correlation():
     plt.show()
     for feature, correlation in top_20_correlation.items():
         print(f"{feature}: {correlation:.2%}")
+
+
+def create_router_dict():
+
+    ROUTER_SHEET_PATH = "src/data/risk_category_mapping.csv"
+
+    router_df = pd.read_csv(ROUTER_SHEET_PATH, encoding='latin1')
+    
+    router_dict = dict(zip(router_df["Merchant"], router_df["Category"]))
+    
+    return router_dict
+
+
+def assess_merchant_risk_category(router_dict, merchant):
+
+    return router_dict.get(merchant, "Unknown Risk")  # TODO: Implement Fallback

@@ -2,7 +2,7 @@ import torch
 from sklearn.metrics import confusion_matrix
 import numpy as np
 
-
+from utils import create_router_dict, assess_merchant_risk_category
 
 
 def evaluate_dl(model, dl):
@@ -16,6 +16,8 @@ def evaluate_dl(model, dl):
 
     with torch.no_grad():
         for X, y in dl:
+            if torch.cuda.is_available():
+                X, y = X.cuda(), y.cuda()
             outputs = model(X)
             _, predicted = torch.max(outputs, 1)
 
@@ -26,11 +28,11 @@ def evaluate_dl(model, dl):
 
     tp, fp, fn, tn = cm[1][1].item(), cm[0][1].item(), cm[1][0].item(), cm[0][0].item()
 
-    precision = tp / (tp + fp)
-    recall = tp / (tp + fn)
-    false_positive_rate = fp / (fp + tn)
-    false_negative_rate = fn / (fn + tp)
-    accuracy = (tp + tn) / (tp + tn + fp + fn)
+    precision = tp / (tp + fp + 1e-10)
+    recall = tp / (tp + fn + 1e-10)
+    false_positive_rate = fp / (fp + tn + 1e-10)
+    false_negative_rate = fn / (fn + tp + 1e-10)
+    accuracy = (tp + tn) / (tp + tn + fp + fn + 1e-10)
     f1_score = 2 * (precision * recall) / (precision + recall + 1e-10)
 
     results_print = "\n" + \
@@ -65,6 +67,9 @@ def evaluate_single(model, single_transaction):
     
     model.eval()
 
+    if torch.cuda.is_available():
+        single_transaction = single_transaction.cuda()
+
     with torch.no_grad():
         output = model(single_transaction)
         output = torch.nn.functional.softmax(output, dim=0)
@@ -77,4 +82,22 @@ def evaluate_single(model, single_transaction):
 
     print(results)
 
-    return results   
+    return results
+
+
+def evaluate_moe_model(models, dl):
+
+    router_dict = create_router_dict()
+
+    with torch.no_grad():
+        for X, y in dl:
+            if torch.cuda.is_available():
+                X, y = X.cuda(), y.cuda()
+            outputs = torch.stack([model(X) for model in models])
+            output = outputs.mean(dim=0)
+            _, predicted = torch.max(output, 1)
+
+            for i in range(len(X)):
+                merchant = X[i][0]
+                risk_category = assess_merchant_risk_category(router_dict, merchant)
+                print(f"Merchant: {merchant}, Risk Category: {risk_category}, Predicted: {predicted[i].item()}")
