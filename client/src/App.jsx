@@ -10,7 +10,7 @@ import { AppContext } from './context/AppContext';
 
 function App() {
 
-  const { index, setIndex, transaction, setTransaction, resultsTable, setResultsTable, dailyViewTable, setDailyViewTable, selectedDate, setSelectedDate, theme, setTheme } = useContext(AppContext);
+  const { index, setIndex, transaction, setTransaction, resultsTable, setResultsTable, dailyViewTable, setDailyViewTable, selectedDate, setSelectedDate, merchant, setMerchant, theme, setTheme } = useContext(AppContext);
 
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));

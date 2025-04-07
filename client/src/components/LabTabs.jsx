@@ -14,6 +14,7 @@ import ConfusionMatrix from "./ConfusionMatrix";
 import TopThing from "./TopThing";
 import DownloadButton from "./DownloadButton";
 import GuidanceDoc from "./GuidanceDoc";
+import Merchant from "./Merchant";
 import Models from "./Models";
 
 const LabTabs = () => {
@@ -33,7 +34,7 @@ const LabTabs = () => {
             <Tab label="Performance" value="3" className="custom-tab" />
             <Tab label="Models" value="4" className="custom-tab" />
             <Tab label="Guidance" value="5" className="custom-tab" />
-            <Tab label="Guidance" value="6" className="custom-tab" />
+            <Tab label="Merchant" value="6" className="custom-tab" />
           </TabList>
         </Box>
 
@@ -80,7 +81,7 @@ const LabTabs = () => {
         </TabPanel>
 
         <TabPanel value="6">
-          <GuidanceDoc />
+          <Merchant />
         </TabPanel>
       </TabContext>
     </Box>

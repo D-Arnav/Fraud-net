@@ -654,3 +654,33 @@ body {
   margin: 0 auto 20px auto;
   border-radius: 10px;
 }
+
+/* Search Section */
+.search_section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0px 25px 10px 25px;
+  padding: 0px 20px 0px 20px;
+}
+
+.search-title {
+  font-family: var(--secondary-font);
+  font-size: 25px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.search_section input {
+  background: #1a1a1a;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  width: 250px;
+  outline: none;
+}
+
+.search_section input::placeholder {
+  color: #888;
+}

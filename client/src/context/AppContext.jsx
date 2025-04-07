@@ -25,6 +25,8 @@ export const AppProvider = ({ children }) => {
 
     const [selectedDate, setSelectedDate] = useState(1);
 
+    const[merchant, setMerchant] = useState([]);
+
     const [theme, setTheme] = useState('light');
 
     return (
@@ -35,6 +37,7 @@ export const AppProvider = ({ children }) => {
                 resultsTable, setResultsTable,
                 dailyViewTable, setDailyViewTable,
                 selectedDate, setSelectedDate,
+                merchant, setMerchant,
                 theme, setTheme
             }}
         >
