@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -6,14 +6,26 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { AppContext } from '../context/AppContext';
 import Searchbar from './Searchbar';
 
-export default function Merchant() {
-  const { filteredMerchant, setSearchQuery } = useContext(AppContext); // Use filtered data and search setter
+// Temporary mock AppContext for debugging
+const MockAppContext = React.createContext();
+
+const dummyData = [
+  { merchant: 'Merchant A', num_legitimate: 120, num_fraudulent: 5, precision: 0.96, recall: 0.92, false_negative_rate: 0.08, false_positive_rate: 0.04 },
+  { merchant: 'Merchant B', num_legitimate: 80, num_fraudulent: 20, precision: 0.80, recall: 0.75, false_negative_rate: 0.25, false_positive_rate: 0.20 },
+  { merchant: 'Merchant C', num_legitimate: 150, num_fraudulent: 10, precision: 0.94, recall: 0.90, false_negative_rate: 0.10, false_positive_rate: 0.06 },
+  { merchant: 'Merchant D', num_legitimate: 50, num_fraudulent: 30, precision: 0.62, recall: 0.60, false_negative_rate: 0.40, false_positive_rate: 0.38 },
+];
+
+export default function MerchantDummy() {
+  const [searchQuery, setSearchQuery] = useState('');
+  const filteredMerchant = dummyData.filter((row) =>
+    row.merchant.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
-    <>
+    <MockAppContext.Provider value={{ filteredMerchant, setSearchQuery }}>
       <div className="search_section">
         <h3 className="search-title">Merchant Group</h3>
         <Searchbar onSearch={setSearchQuery} />
@@ -46,6 +58,6 @@ export default function Merchant() {
           </TableBody>
         </Table>
       </TableContainer>
-    </>
+    </MockAppContext.Provider>
   );
 }
