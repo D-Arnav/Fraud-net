@@ -26,23 +26,23 @@ export default function Results() {
         <Table className="result-table" size="small" aria-label="simple table">
         <TableHead>
         <TableRow className="table-header"> 
-            <TableCell align="center"><b>S.No</b></TableCell>
+            <TableCell align="center"><b>S.No.</b></TableCell>
             <TableCell align="center"><b>Date</b></TableCell>
             <TableCell align="center"><b>Payment ID</b></TableCell>
-            <TableCell align="center"><b>Predicted Status</b></TableCell>
-            <TableCell align="center"><b>Confidence Score</b></TableCell>
+            <TableCell align="center"><b>Recommendation</b></TableCell>
+            <TableCell align="center"><b>Probability of Fraud</b></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
             { resultsTable.map((row) => (
             <TableRow key={row.sno} className="table-row">
-                <TableCell align="center">{row.serial}</TableCell>
-                <TableCell align="center">{row.date}</TableCell>
-                <TableCell align="center">{row.payment_id}</TableCell>
+                <TableCell align="center">{row["S.No."]}</TableCell>
+                <TableCell align="center">{row["Date"]}</TableCell>
+                <TableCell align="center">{row["PaymentID"]}</TableCell>
                 <TableCell align="center">
-                  <span className={row.predicted == 'Legitimate' ? 'green bold' : 'red bold'}>{row.predicted}</span>
+                  <span className={row["Recommendation"] == 'Accept' ? 'green bold' : 'red bold'}>{row["Recommendation"]}</span>
                 </TableCell>
-                <TableCell align="center">{row.confidence}</TableCell>
+                <TableCell align="center">{row["Prob Fraud"]}</TableCell>
             </TableRow>
             ))}
         </TableBody>    

@@ -11,6 +11,8 @@ import { AppContext } from '../context/AppContext';
 import determineColor from '../utils/determineColor';
 import downloadTable from '../utils/downloadTable';
 
+
+
 export default function DailyView() {
 
   const { dailyViewTable } = useContext(AppContext);
@@ -37,25 +39,25 @@ export default function DailyView() {
               {dailyViewTable.map((row, index) => (
                 <TableRow key={index} className="table-row">
                   <TableCell align="center">
-                    <span>{row.date}</span>
+                    <span>{row["Date"]}</span>
                   </TableCell>
                   <TableCell align="center">
-                    <span>{row.num_legitimate}</span>
+                    <span>{row["# Legitimate"]}</span>
                   </TableCell>
                   <TableCell align="center">
-                    <span>{row.num_fraudulent}</span>
+                    <span>{row["# Fraudulent"]}</span>
                   </TableCell>
                   <TableCell align="center">
-                    <span className={determineColor('precision', 100 * row.precision) + " bold"}>{(100 * row.precision).toFixed(2)}%</span>
+                    <span className={determineColor("Precision", row["Precision"])}>{row["Precision"]}%</span>
                   </TableCell>
                   <TableCell align="center">
-                    <span className={determineColor('recall', 100 * row.recall) + " bold"}>{(100 * row.recall).toFixed(2)}%</span>
+                    <span className={determineColor("Recall", row["Recall"])}>{row["Recall"]}%</span>
                   </TableCell>
                   <TableCell align="center">
-                    <span className={determineColor('fnr', 100 * row.false_negative_rate) + " bold"}>{(row.false_negative_rate * 100).toFixed(2)}%</span>
+                    <span className={determineColor("FNR", row["FNR"])}>{row["FNR"]}%</span>
                   </TableCell>
                   <TableCell align="center">
-                    <span className={determineColor('fpr', 100 * row.false_positive_rate) + " bold"}>{(row.false_positive_rate * 100).toFixed(2)}%</span>
+                    <span className={determineColor("FPR", row["FPR"])}>{row["FPR"]}%</span>
                   </TableCell>
                 </TableRow>
               ))}

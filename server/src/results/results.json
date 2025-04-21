@@ -1,0 +1,4601 @@
+[
+    {
+        "merchant": "Comewel Limited",
+        "num_legitimate": 39227,
+        "num_fraudulent": 117,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Service Development Limited",
+        "num_legitimate": 395,
+        "num_fraudulent": 5,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "LCI LTD",
+        "num_legitimate": 349568,
+        "num_fraudulent": 27,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Technius Ltd",
+        "num_legitimate": 47536,
+        "num_fraudulent": 119,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "VFWW_UK in PK",
+        "num_legitimate": 768,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Pear 15 Ltd.",
+        "num_legitimate": 273,
+        "num_fraudulent": 6,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "GTFLIX TV sro",
+        "num_legitimate": 7840,
+        "num_fraudulent": 48,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Webprocessing sro",
+        "num_legitimate": 42147,
+        "num_fraudulent": 130,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Pine Valley Ltd",
+        "num_legitimate": 211,
+        "num_fraudulent": 11,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.037914691943127965,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "VFWW_UK in South Africa",
+        "num_legitimate": 351,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Nexia Ltd. - nexaiwriter.com",
+        "num_legitimate": 296,
+        "num_fraudulent": 10,
+        "precision": 0.1111111111111111,
+        "recall": 0.1,
+        "false_positive_rate": 0.02702702702702703,
+        "false_negative_rate": 0.9
+    },
+    {
+        "merchant": "Flow Systems Limited",
+        "num_legitimate": 280,
+        "num_fraudulent": 39,
+        "precision": 0.1452991452991453,
+        "recall": 0.8717948717948718,
+        "false_positive_rate": 0.7142857142857143,
+        "false_negative_rate": 0.1282051282051282
+    },
+    {
+        "merchant": "Bridgemaze Partners sro",
+        "num_legitimate": 17357,
+        "num_fraudulent": 53,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Tobermill Marketing Ltd.",
+        "num_legitimate": 310,
+        "num_fraudulent": 7,
+        "precision": 0.16666666666666666,
+        "recall": 0.14285714285714285,
+        "false_positive_rate": 0.016129032258064516,
+        "false_negative_rate": 0.8571428571428571
+    },
+    {
+        "merchant": "VFWW_Austria in PAKISTAN",
+        "num_legitimate": 189,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Sandy River Heights Ltd.",
+        "num_legitimate": 172,
+        "num_fraudulent": 7,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Lambley Ventures Ltd.",
+        "num_legitimate": 254,
+        "num_fraudulent": 3,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.007874015748031496,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Wood and Water Ltd.",
+        "num_legitimate": 295,
+        "num_fraudulent": 4,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Denga Digital",
+        "num_legitimate": 472,
+        "num_fraudulent": 5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.00847457627118644,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Meet Us Media",
+        "num_legitimate": 268,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Digital Innovation Network SP Z O. O.",
+        "num_legitimate": 1671,
+        "num_fraudulent": 0,
+        "precision": 0.0,
+        "recall": 0,
+        "false_positive_rate": 0.0005984440454817474,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "GUNWALE LIMITED - webuildery.com",
+        "num_legitimate": 96,
+        "num_fraudulent": 16,
+        "precision": 0.16666666666666666,
+        "recall": 0.0625,
+        "false_positive_rate": 0.052083333333333336,
+        "false_negative_rate": 0.9375
+    },
+    {
+        "merchant": "Long Lost Ltd",
+        "num_legitimate": 205,
+        "num_fraudulent": 10,
+        "precision": 0.2222222222222222,
+        "recall": 0.2,
+        "false_positive_rate": 0.03414634146341464,
+        "false_negative_rate": 0.8
+    },
+    {
+        "merchant": "Fitschigogerl",
+        "num_legitimate": 257,
+        "num_fraudulent": 1,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "VFWW_Equatorial Guinea  Evisa",
+        "num_legitimate": 126,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Notten Limited",
+        "num_legitimate": 316,
+        "num_fraudulent": 5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.006329113924050633,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "VFWW_UKVI in Czech",
+        "num_legitimate": 102,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFS UK_Slovakia in US",
+        "num_legitimate": 182,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Santevida s.r.o - webuildix",
+        "num_legitimate": 285,
+        "num_fraudulent": 9,
+        "precision": 0.12195121951219512,
+        "recall": 0.5555555555555556,
+        "false_positive_rate": 0.12631578947368421,
+        "false_negative_rate": 0.4444444444444444
+    },
+    {
+        "merchant": "K.R. Strategic Marketing Ltd_7273",
+        "num_legitimate": 394,
+        "num_fraudulent": 62,
+        "precision": 0.3671875,
+        "recall": 0.7580645161290323,
+        "false_positive_rate": 0.20558375634517767,
+        "false_negative_rate": 0.24193548387096775
+    },
+    {
+        "merchant": "Kubikoff Investments Ltd.",
+        "num_legitimate": 327,
+        "num_fraudulent": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.039755351681957186,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Amigon Advertising Limited",
+        "num_legitimate": 1473,
+        "num_fraudulent": 202,
+        "precision": 0.16794731064763996,
+        "recall": 0.7574257425742574,
+        "false_positive_rate": 0.5145960624575696,
+        "false_negative_rate": 0.24257425742574257
+    },
+    {
+        "merchant": "Hello World SAS",
+        "num_legitimate": 667,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Metric Index Ltd.",
+        "num_legitimate": 290,
+        "num_fraudulent": 8,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Bounce Marketing Limited - neonpulse.vip",
+        "num_legitimate": 30,
+        "num_fraudulent": 15,
+        "precision": 0.45161290322580644,
+        "recall": 0.9333333333333333,
+        "false_positive_rate": 0.5666666666666667,
+        "false_negative_rate": 0.06666666666666667
+    },
+    {
+        "merchant": "Flashing Forward Limited",
+        "num_legitimate": 385,
+        "num_fraudulent": 11,
+        "precision": 0.07142857142857142,
+        "recall": 0.09090909090909091,
+        "false_positive_rate": 0.033766233766233764,
+        "false_negative_rate": 0.9090909090909091
+    },
+    {
+        "merchant": "Granity Entertainment DAC",
+        "num_legitimate": 3037,
+        "num_fraudulent": 3,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Juniper15 Ltd_7273",
+        "num_legitimate": 256,
+        "num_fraudulent": 35,
+        "precision": 0.21428571428571427,
+        "recall": 0.7714285714285715,
+        "false_positive_rate": 0.38671875,
+        "false_negative_rate": 0.22857142857142856
+    },
+    {
+        "merchant": "VFWW_UKVI in Moldova",
+        "num_legitimate": 92,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Viable Growth LTD - matesandpals",
+        "num_legitimate": 114,
+        "num_fraudulent": 6,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "CHG Records Limited",
+        "num_legitimate": 58,
+        "num_fraudulent": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.08620689655172414,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Solastech Ltd.",
+        "num_legitimate": 281,
+        "num_fraudulent": 4,
+        "precision": 0.14285714285714285,
+        "recall": 0.25,
+        "false_positive_rate": 0.021352313167259787,
+        "false_negative_rate": 0.75
+    },
+    {
+        "merchant": "Antelaria Limited- Learnerhut",
+        "num_legitimate": 153,
+        "num_fraudulent": 8,
+        "precision": 0.25,
+        "recall": 0.375,
+        "false_positive_rate": 0.058823529411764705,
+        "false_negative_rate": 0.625
+    },
+    {
+        "merchant": "K.S. Freedom Digital Ltd_7273",
+        "num_legitimate": 368,
+        "num_fraudulent": 40,
+        "precision": 0.336734693877551,
+        "recall": 0.825,
+        "false_positive_rate": 0.1766304347826087,
+        "false_negative_rate": 0.175
+    },
+    {
+        "merchant": "Overwillow Ltd - MCC 7273",
+        "num_legitimate": 165,
+        "num_fraudulent": 34,
+        "precision": 0.2808988764044944,
+        "recall": 0.7352941176470589,
+        "false_positive_rate": 0.3878787878787879,
+        "false_negative_rate": 0.2647058823529412
+    },
+    {
+        "merchant": "Cotopaxi Media ltd -Edmonmedia",
+        "num_legitimate": 102,
+        "num_fraudulent": 5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.058823529411764705,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Dombrossa Trading Ltd_7273",
+        "num_legitimate": 384,
+        "num_fraudulent": 44,
+        "precision": 0.25190839694656486,
+        "recall": 0.75,
+        "false_positive_rate": 0.2552083333333333,
+        "false_negative_rate": 0.25
+    },
+    {
+        "merchant": "Betconnect",
+        "num_legitimate": 730,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Superfest Limited",
+        "num_legitimate": 719,
+        "num_fraudulent": 60,
+        "precision": 0.12030075187969924,
+        "recall": 0.8,
+        "false_positive_rate": 0.48817802503477054,
+        "false_negative_rate": 0.2
+    },
+    {
+        "merchant": "PKR",
+        "num_legitimate": 6699,
+        "num_fraudulent": 3,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Juniper15 Ltd.",
+        "num_legitimate": 333,
+        "num_fraudulent": 4,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "ZEWALK LIMITED",
+        "num_legitimate": 544,
+        "num_fraudulent": 45,
+        "precision": 0.11320754716981132,
+        "recall": 0.5333333333333333,
+        "false_positive_rate": 0.34558823529411764,
+        "false_negative_rate": 0.4666666666666667
+    },
+    {
+        "merchant": "VFWW_GreeceinUK",
+        "num_legitimate": 1423,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Nexia Ltd. - nexbudgetplan.com",
+        "num_legitimate": 268,
+        "num_fraudulent": 16,
+        "precision": 0.2222222222222222,
+        "recall": 0.125,
+        "false_positive_rate": 0.026119402985074626,
+        "false_negative_rate": 0.875
+    },
+    {
+        "merchant": "GIRASAL LIMITED - MarketMavenX",
+        "num_legitimate": 185,
+        "num_fraudulent": 7,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.08648648648648649,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "K.R. North Clause Ltd_7273",
+        "num_legitimate": 362,
+        "num_fraudulent": 57,
+        "precision": 0.2839506172839506,
+        "recall": 0.8070175438596491,
+        "false_positive_rate": 0.32044198895027626,
+        "false_negative_rate": 0.19298245614035087
+    },
+    {
+        "merchant": "SmartResearch s.r.o",
+        "num_legitimate": 3854,
+        "num_fraudulent": 3,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Crescent Marketing Ltd - freeformcinema.com",
+        "num_legitimate": 35,
+        "num_fraudulent": 9,
+        "precision": 0.19444444444444445,
+        "recall": 0.7777777777777778,
+        "false_positive_rate": 0.8285714285714286,
+        "false_negative_rate": 0.2222222222222222
+    },
+    {
+        "merchant": "Dice Blonde LTD_7273",
+        "num_legitimate": 256,
+        "num_fraudulent": 30,
+        "precision": 0.20634920634920634,
+        "recall": 0.8666666666666667,
+        "false_positive_rate": 0.390625,
+        "false_negative_rate": 0.13333333333333333
+    },
+    {
+        "merchant": "K.R. North Clause Ltd.",
+        "num_legitimate": 287,
+        "num_fraudulent": 14,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Sunshine Cruise_ATOL Sales",
+        "num_legitimate": 210,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Jalloh Enterprise",
+        "num_legitimate": 874,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Proven B.V.",
+        "num_legitimate": 16,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UKVI in Germany",
+        "num_legitimate": 1096,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Davenport PR LTD 7273",
+        "num_legitimate": 267,
+        "num_fraudulent": 30,
+        "precision": 0.17,
+        "recall": 0.5666666666666667,
+        "false_positive_rate": 0.31086142322097376,
+        "false_negative_rate": 0.43333333333333335
+    },
+    {
+        "merchant": "INOVATECH SOLUTIONS EOOD",
+        "num_legitimate": 656,
+        "num_fraudulent": 14,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Entorvert Limited - retrozap.games",
+        "num_legitimate": 28,
+        "num_fraudulent": 19,
+        "precision": 0.4473684210526316,
+        "recall": 0.8947368421052632,
+        "false_positive_rate": 0.75,
+        "false_negative_rate": 0.10526315789473684
+    },
+    {
+        "merchant": "June Plum Ltd",
+        "num_legitimate": 305,
+        "num_fraudulent": 13,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "VFS UK_ Netherland in UK",
+        "num_legitimate": 529,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Jugis Management Limited",
+        "num_legitimate": 274,
+        "num_fraudulent": 3,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Exotic Media Limited",
+        "num_legitimate": 488,
+        "num_fraudulent": 59,
+        "precision": 0.1377952755905512,
+        "recall": 0.5932203389830508,
+        "false_positive_rate": 0.4487704918032787,
+        "false_negative_rate": 0.4067796610169492
+    },
+    {
+        "merchant": "VFWW_UKVI in Sweden",
+        "num_legitimate": 98,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UKVI in Slovenia",
+        "num_legitimate": 14,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Kelmon Ltd",
+        "num_legitimate": 54,
+        "num_fraudulent": 0,
+        "precision": 0.0,
+        "recall": 0,
+        "false_positive_rate": 0.018518518518518517,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Smartwish Consulting Limited",
+        "num_legitimate": 1021,
+        "num_fraudulent": 195,
+        "precision": 0.21158129175946547,
+        "recall": 0.48717948717948717,
+        "false_positive_rate": 0.346718903036239,
+        "false_negative_rate": 0.5128205128205128
+    },
+    {
+        "merchant": "BENTCORD LIMITED - toneuphub.co",
+        "num_legitimate": 236,
+        "num_fraudulent": 7,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "AVA Developments LTD",
+        "num_legitimate": 310,
+        "num_fraudulent": 6,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Redjoker Ltd.",
+        "num_legitimate": 292,
+        "num_fraudulent": 3,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.03424657534246575,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "FLIXILY LIMITED - gamerdev",
+        "num_legitimate": 365,
+        "num_fraudulent": 25,
+        "precision": 0.11864406779661017,
+        "recall": 0.28,
+        "false_positive_rate": 0.14246575342465753,
+        "false_negative_rate": 0.72
+    },
+    {
+        "merchant": "MUNDO LIMPIO s.r.o - Gogooamuse",
+        "num_legitimate": 90,
+        "num_fraudulent": 6,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.06666666666666667,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "VFWW_UKVI in Italy",
+        "num_legitimate": 321,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UK in US",
+        "num_legitimate": 1398,
+        "num_fraudulent": 1,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Cotopaxi Media ltd - Reloveplay",
+        "num_legitimate": 96,
+        "num_fraudulent": 6,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.07291666666666667,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "TRANVALIA MARKET S.L.",
+        "num_legitimate": 273,
+        "num_fraudulent": 23,
+        "precision": 0.1282051282051282,
+        "recall": 0.21739130434782608,
+        "false_positive_rate": 0.12454212454212454,
+        "false_negative_rate": 0.782608695652174
+    },
+    {
+        "merchant": "Azaelgoup LTD_7273",
+        "num_legitimate": 251,
+        "num_fraudulent": 28,
+        "precision": 0.21568627450980393,
+        "recall": 0.7857142857142857,
+        "false_positive_rate": 0.3187250996015936,
+        "false_negative_rate": 0.21428571428571427
+    },
+    {
+        "merchant": "Santevida s.r.o - investerix",
+        "num_legitimate": 196,
+        "num_fraudulent": 10,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.14795918367346939,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "TGSL SOLUTIONS LIMITED_PayOn",
+        "num_legitimate": 781,
+        "num_fraudulent": 14,
+        "precision": 0.03333333333333333,
+        "recall": 0.14285714285714285,
+        "false_positive_rate": 0.07426376440460948,
+        "false_negative_rate": 0.8571428571428571
+    },
+    {
+        "merchant": "Tippland GmbH",
+        "num_legitimate": 1480,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UKVI in Switzerland",
+        "num_legitimate": 301,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Ordos Media Ltd - Bookshedshop",
+        "num_legitimate": 31,
+        "num_fraudulent": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0967741935483871,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "VFWW_UKVI in Netherlands",
+        "num_legitimate": 405,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "K.R. Strategic Marketing Ltd.",
+        "num_legitimate": 226,
+        "num_fraudulent": 4,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.02654867256637168,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "VFWW_Netherlands in PK",
+        "num_legitimate": 177,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Sunshine Cruise_Agent Sales",
+        "num_legitimate": 306,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_Denmark in Ireland",
+        "num_legitimate": 149,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Titan Connect",
+        "num_legitimate": 305,
+        "num_fraudulent": 10,
+        "precision": 0.3333333333333333,
+        "recall": 0.1,
+        "false_positive_rate": 0.006557377049180328,
+        "false_negative_rate": 0.9
+    },
+    {
+        "merchant": "CB Media Limited_5967",
+        "num_legitimate": 97,
+        "num_fraudulent": 3,
+        "precision": 0.08333333333333333,
+        "recall": 0.3333333333333333,
+        "false_positive_rate": 0.1134020618556701,
+        "false_negative_rate": 0.6666666666666666
+    },
+    {
+        "merchant": "Crescent Marketing Ltd - gameindigo.cloud",
+        "num_legitimate": 39,
+        "num_fraudulent": 8,
+        "precision": 0.2,
+        "recall": 1.0,
+        "false_positive_rate": 0.8205128205128205,
+        "false_negative_rate": 0.0
+    },
+    {
+        "merchant": "VFWW_Swiss in Pakistan",
+        "num_legitimate": 70,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UKVI in Malta",
+        "num_legitimate": 36,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Foxtrot Internet Limited - tacticplay.net",
+        "num_legitimate": 38,
+        "num_fraudulent": 8,
+        "precision": 0.14705882352941177,
+        "recall": 0.625,
+        "false_positive_rate": 0.7631578947368421,
+        "false_negative_rate": 0.375
+    },
+    {
+        "merchant": "VFWW_UKVI in Lithuania",
+        "num_legitimate": 96,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UKVI in Albania",
+        "num_legitimate": 487,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "United Ads ltd - Marketing (Tellermail)",
+        "num_legitimate": 231,
+        "num_fraudulent": 17,
+        "precision": 0.072992700729927,
+        "recall": 0.5882352941176471,
+        "false_positive_rate": 0.5497835497835498,
+        "false_negative_rate": 0.4117647058823529
+    },
+    {
+        "merchant": "Scriben Services Limited",
+        "num_legitimate": 537,
+        "num_fraudulent": 49,
+        "precision": 0.125,
+        "recall": 0.42857142857142855,
+        "false_positive_rate": 0.2737430167597765,
+        "false_negative_rate": 0.5714285714285714
+    },
+    {
+        "merchant": "Interlist LTD",
+        "num_legitimate": 285,
+        "num_fraudulent": 12,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.028070175438596492,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Erasure Integral Ltd - MCC 7273.",
+        "num_legitimate": 132,
+        "num_fraudulent": 12,
+        "precision": 0.17142857142857143,
+        "recall": 0.5,
+        "false_positive_rate": 0.2196969696969697,
+        "false_negative_rate": 0.5
+    },
+    {
+        "merchant": "FBP Media S.R.O._Daopay",
+        "num_legitimate": 162,
+        "num_fraudulent": 5,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Putus Ltd.",
+        "num_legitimate": 187,
+        "num_fraudulent": 6,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "ENGOLD LIMITED - irmaxx",
+        "num_legitimate": 328,
+        "num_fraudulent": 12,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Arpro SAGL",
+        "num_legitimate": 133,
+        "num_fraudulent": 5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.007518796992481203,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Echo Digital Limited",
+        "num_legitimate": 622,
+        "num_fraudulent": 16,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "DaToRo Media B.V.",
+        "num_legitimate": 412,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "United Ads ltd - Games - PlayAllDay",
+        "num_legitimate": 231,
+        "num_fraudulent": 22,
+        "precision": 0.09251101321585903,
+        "recall": 0.9545454545454546,
+        "false_positive_rate": 0.8917748917748918,
+        "false_negative_rate": 0.045454545454545456
+    },
+    {
+        "merchant": "VF Services (UK) Ltd \ufffd Suriname \ufffd Cards",
+        "num_legitimate": 878,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Sunbittern Investments Ltd.",
+        "num_legitimate": 251,
+        "num_fraudulent": 8,
+        "precision": 0.1111111111111111,
+        "recall": 0.25,
+        "false_positive_rate": 0.06374501992031872,
+        "false_negative_rate": 0.75
+    },
+    {
+        "merchant": "ADM Software Limited",
+        "num_legitimate": 120,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Innospark Media",
+        "num_legitimate": 341,
+        "num_fraudulent": 4,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Quad Strategy Ltd.",
+        "num_legitimate": 253,
+        "num_fraudulent": 2,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Hight LTD",
+        "num_legitimate": 291,
+        "num_fraudulent": 9,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Esplanade Online Ltd _7273",
+        "num_legitimate": 137,
+        "num_fraudulent": 43,
+        "precision": 0.4375,
+        "recall": 0.813953488372093,
+        "false_positive_rate": 0.3284671532846715,
+        "false_negative_rate": 0.18604651162790697
+    },
+    {
+        "merchant": "Masmelo Management Ltd.",
+        "num_legitimate": 292,
+        "num_fraudulent": 8,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.05136986301369863,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "VFS UK_Iceland in UK",
+        "num_legitimate": 436,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "GIRASAL LIMITED - BizAcademyX",
+        "num_legitimate": 186,
+        "num_fraudulent": 13,
+        "precision": 0.07692307692307693,
+        "recall": 0.15384615384615385,
+        "false_positive_rate": 0.12903225806451613,
+        "false_negative_rate": 0.8461538461538461
+    },
+    {
+        "merchant": "GIRASAL LIMITED - recipes-chef",
+        "num_legitimate": 275,
+        "num_fraudulent": 10,
+        "precision": 0.03571428571428571,
+        "recall": 0.1,
+        "false_positive_rate": 0.09818181818181818,
+        "false_negative_rate": 0.9
+    },
+    {
+        "merchant": "Grizzly Empire Limited",
+        "num_legitimate": 734,
+        "num_fraudulent": 2,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Alliance Park Ltd.",
+        "num_legitimate": 298,
+        "num_fraudulent": 9,
+        "precision": 0.2222222222222222,
+        "recall": 0.2222222222222222,
+        "false_positive_rate": 0.02348993288590604,
+        "false_negative_rate": 0.7777777777777778
+    },
+    {
+        "merchant": "Westamerica LTD",
+        "num_legitimate": 225,
+        "num_fraudulent": 4,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Pochemu LTD",
+        "num_legitimate": 573,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "United Ads ltd - Marketing (Bullere)",
+        "num_legitimate": 197,
+        "num_fraudulent": 22,
+        "precision": 0.15441176470588236,
+        "recall": 0.9545454545454546,
+        "false_positive_rate": 0.583756345177665,
+        "false_negative_rate": 0.045454545454545456
+    },
+    {
+        "merchant": "VFWW_UKVI in Mexico",
+        "num_legitimate": 61,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Azula Services Limited 7273",
+        "num_legitimate": 262,
+        "num_fraudulent": 41,
+        "precision": 0.19014084507042253,
+        "recall": 0.6585365853658537,
+        "false_positive_rate": 0.4389312977099237,
+        "false_negative_rate": 0.34146341463414637
+    },
+    {
+        "merchant": "VFWW_JapaninPakistan",
+        "num_legitimate": 350,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "ElectraWorks Maple LTD",
+        "num_legitimate": 1966,
+        "num_fraudulent": 3,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "MUNDO LIMPIO s.r.o - Mypoppybooks",
+        "num_legitimate": 112,
+        "num_fraudulent": 6,
+        "precision": 0.07692307692307693,
+        "recall": 0.16666666666666666,
+        "false_positive_rate": 0.10714285714285714,
+        "false_negative_rate": 0.8333333333333334
+    },
+    {
+        "merchant": "Petily Limited",
+        "num_legitimate": 219,
+        "num_fraudulent": 9,
+        "precision": 0.15384615384615385,
+        "recall": 0.2222222222222222,
+        "false_positive_rate": 0.0502283105022831,
+        "false_negative_rate": 0.7777777777777778
+    },
+    {
+        "merchant": "K.S. Freedom Digital Ltd.",
+        "num_legitimate": 301,
+        "num_fraudulent": 12,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.009966777408637873,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "June Plum Ltd_7273",
+        "num_legitimate": 276,
+        "num_fraudulent": 31,
+        "precision": 0.17647058823529413,
+        "recall": 0.8709677419354839,
+        "false_positive_rate": 0.45652173913043476,
+        "false_negative_rate": 0.12903225806451613
+    },
+    {
+        "merchant": "Antelaria Limited- Tropicalspice",
+        "num_legitimate": 132,
+        "num_fraudulent": 5,
+        "precision": 0.10526315789473684,
+        "recall": 0.4,
+        "false_positive_rate": 0.12878787878787878,
+        "false_negative_rate": 0.6
+    },
+    {
+        "merchant": "Chedderton Limited_7273",
+        "num_legitimate": 267,
+        "num_fraudulent": 29,
+        "precision": 0.1308411214953271,
+        "recall": 0.4827586206896552,
+        "false_positive_rate": 0.34831460674157305,
+        "false_negative_rate": 0.5172413793103449
+    },
+    {
+        "merchant": "VFWW_Belgium in Pakistan",
+        "num_legitimate": 211,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "WebAgency Services",
+        "num_legitimate": 77,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Eltonomie Limited",
+        "num_legitimate": 332,
+        "num_fraudulent": 4,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0030120481927710845,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Goodtimesahead Sp. z.o.o.",
+        "num_legitimate": 265,
+        "num_fraudulent": 20,
+        "precision": 0.1951219512195122,
+        "recall": 0.4,
+        "false_positive_rate": 0.12452830188679245,
+        "false_negative_rate": 0.6
+    },
+    {
+        "merchant": "S.J. Technology Galaxy Ltd.",
+        "num_legitimate": 324,
+        "num_fraudulent": 7,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.012345679012345678,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "MUNDO LIMPIO s.r.o - Thelistenloud",
+        "num_legitimate": 88,
+        "num_fraudulent": 4,
+        "precision": 0.061224489795918366,
+        "recall": 0.75,
+        "false_positive_rate": 0.5227272727272727,
+        "false_negative_rate": 0.25
+    },
+    {
+        "merchant": "Erasure Integral Ltd.",
+        "num_legitimate": 350,
+        "num_fraudulent": 7,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.005714285714285714,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Santevida s.r.o - ledgeria",
+        "num_legitimate": 207,
+        "num_fraudulent": 10,
+        "precision": 0.10526315789473684,
+        "recall": 0.4,
+        "false_positive_rate": 0.1642512077294686,
+        "false_negative_rate": 0.6
+    },
+    {
+        "merchant": "COVE FLOW LIMITED - aiwritix.com",
+        "num_legitimate": 244,
+        "num_fraudulent": 16,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.02459016393442623,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "VFWW_UK in Canada",
+        "num_legitimate": 426,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Creative Network Alliance SP.Z.O.O",
+        "num_legitimate": 1231,
+        "num_fraudulent": 8,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "ClickHere Ltd",
+        "num_legitimate": 276,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Astellar Tech Ltd SRL",
+        "num_legitimate": 54,
+        "num_fraudulent": 7,
+        "precision": 0.16666666666666666,
+        "recall": 0.7142857142857143,
+        "false_positive_rate": 0.46296296296296297,
+        "false_negative_rate": 0.2857142857142857
+    },
+    {
+        "merchant": "United Ads ltd - Marketing (Cintermo)",
+        "num_legitimate": 241,
+        "num_fraudulent": 20,
+        "precision": 0.08771929824561403,
+        "recall": 0.75,
+        "false_positive_rate": 0.6473029045643154,
+        "false_negative_rate": 0.25
+    },
+    {
+        "merchant": "BENTCORD LIMITED - www.yumlicious.co",
+        "num_legitimate": 318,
+        "num_fraudulent": 17,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.025157232704402517,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Esourcetek Ltd_PayOn",
+        "num_legitimate": 254,
+        "num_fraudulent": 8,
+        "precision": 0.21739130434782608,
+        "recall": 0.625,
+        "false_positive_rate": 0.07086614173228346,
+        "false_negative_rate": 0.375
+    },
+    {
+        "merchant": "Exatech Ltd",
+        "num_legitimate": 188,
+        "num_fraudulent": 11,
+        "precision": 0.07865168539325842,
+        "recall": 0.6363636363636364,
+        "false_positive_rate": 0.43617021276595747,
+        "false_negative_rate": 0.36363636363636365
+    },
+    {
+        "merchant": "Gravison Spolka",
+        "num_legitimate": 89,
+        "num_fraudulent": 7,
+        "precision": 0.1111111111111111,
+        "recall": 0.7142857142857143,
+        "false_positive_rate": 0.449438202247191,
+        "false_negative_rate": 0.2857142857142857
+    },
+    {
+        "merchant": "Crescent Marketing Ltd - mastersim.club",
+        "num_legitimate": 33,
+        "num_fraudulent": 8,
+        "precision": 0.26666666666666666,
+        "recall": 1.0,
+        "false_positive_rate": 0.6666666666666666,
+        "false_negative_rate": 0.0
+    },
+    {
+        "merchant": "Maunaloa Limited",
+        "num_legitimate": 104,
+        "num_fraudulent": 3,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Melemele Limited - gamemastery.app",
+        "num_legitimate": 60,
+        "num_fraudulent": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.2,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Omni Protection Ltd",
+        "num_legitimate": 197,
+        "num_fraudulent": 13,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.005076142131979695,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Antelaria Limited - thesmartbell",
+        "num_legitimate": 124,
+        "num_fraudulent": 9,
+        "precision": 0.16666666666666666,
+        "recall": 0.8888888888888888,
+        "false_positive_rate": 0.3225806451612903,
+        "false_negative_rate": 0.1111111111111111
+    },
+    {
+        "merchant": "Perfection Skill LTD- MCC 5967",
+        "num_legitimate": 26,
+        "num_fraudulent": 3,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Global Solutions B.V.",
+        "num_legitimate": 345,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Arid Media Ltd - Unmusiks",
+        "num_legitimate": 73,
+        "num_fraudulent": 4,
+        "precision": 0.14285714285714285,
+        "recall": 0.25,
+        "false_positive_rate": 0.0821917808219178,
+        "false_negative_rate": 0.75
+    },
+    {
+        "merchant": "Aurora Technical Ltd 7273",
+        "num_legitimate": 251,
+        "num_fraudulent": 43,
+        "precision": 0.1956521739130435,
+        "recall": 0.627906976744186,
+        "false_positive_rate": 0.44223107569721115,
+        "false_negative_rate": 0.37209302325581395
+    },
+    {
+        "merchant": "BENTCORD LIMITED - www.bookblitz.co",
+        "num_legitimate": 233,
+        "num_fraudulent": 10,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.017167381974248927,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "GIRASAL LIMITED - FitFusionU",
+        "num_legitimate": 238,
+        "num_fraudulent": 10,
+        "precision": 0.2,
+        "recall": 0.3,
+        "false_positive_rate": 0.05042016806722689,
+        "false_negative_rate": 0.7
+    },
+    {
+        "merchant": "Wonderweb LTD_PayOn",
+        "num_legitimate": 317,
+        "num_fraudulent": 2,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "MIRRANA CORP. s.r.o.",
+        "num_legitimate": 336,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "COVE FLOW LIMITED - webrody.com",
+        "num_legitimate": 186,
+        "num_fraudulent": 10,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.016129032258064516,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Gunwale Limited - budgetinery",
+        "num_legitimate": 103,
+        "num_fraudulent": 11,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.019417475728155338,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Amic range LTD - silverfeelings",
+        "num_legitimate": 164,
+        "num_fraudulent": 1,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "A.T. Synergy Scope Ltd",
+        "num_legitimate": 506,
+        "num_fraudulent": 17,
+        "precision": 0.02702702702702703,
+        "recall": 0.058823529411764705,
+        "false_positive_rate": 0.07114624505928854,
+        "false_negative_rate": 0.9411764705882353
+    },
+    {
+        "merchant": "Gunwale Limited-resumenery",
+        "num_legitimate": 182,
+        "num_fraudulent": 14,
+        "precision": 0.07692307692307693,
+        "recall": 0.07142857142857142,
+        "false_positive_rate": 0.06593406593406594,
+        "false_negative_rate": 0.9285714285714286
+    },
+    {
+        "merchant": "Straight Away Ltd.",
+        "num_legitimate": 299,
+        "num_fraudulent": 3,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "WhaleMember",
+        "num_legitimate": 218,
+        "num_fraudulent": 2,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Alliance Park LTD 7273",
+        "num_legitimate": 221,
+        "num_fraudulent": 25,
+        "precision": 0.17475728155339806,
+        "recall": 0.72,
+        "false_positive_rate": 0.38461538461538464,
+        "false_negative_rate": 0.28
+    },
+    {
+        "merchant": "Phased Solutions Ltd",
+        "num_legitimate": 244,
+        "num_fraudulent": 6,
+        "precision": 0.07142857142857142,
+        "recall": 0.16666666666666666,
+        "false_positive_rate": 0.05327868852459016,
+        "false_negative_rate": 0.8333333333333334
+    },
+    {
+        "merchant": "VFS UK_Norway in UK",
+        "num_legitimate": 200,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Ordos Media Ltd - Themediaclan",
+        "num_legitimate": 34,
+        "num_fraudulent": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.08823529411764706,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "United Ads ltd - Marketing (Promailguru)",
+        "num_legitimate": 182,
+        "num_fraudulent": 18,
+        "precision": 0.10869565217391304,
+        "recall": 0.8333333333333334,
+        "false_positive_rate": 0.6758241758241759,
+        "false_negative_rate": 0.16666666666666666
+    },
+    {
+        "merchant": "Antelaria Limited- Oneprograms",
+        "num_legitimate": 126,
+        "num_fraudulent": 10,
+        "precision": 0.16129032258064516,
+        "recall": 1.0,
+        "false_positive_rate": 0.4126984126984127,
+        "false_negative_rate": 0.0
+    },
+    {
+        "merchant": "VFWW_UKVI in Vietnam",
+        "num_legitimate": 317,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "GUNWALE LIMITED - techskillery.com",
+        "num_legitimate": 103,
+        "num_fraudulent": 17,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.009708737864077669,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Hight LTD - MCC 7273",
+        "num_legitimate": 171,
+        "num_fraudulent": 16,
+        "precision": 0.15789473684210525,
+        "recall": 0.75,
+        "false_positive_rate": 0.3742690058479532,
+        "false_negative_rate": 0.25
+    },
+    {
+        "merchant": "TomRocket",
+        "num_legitimate": 163,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Manshill Investments Ltd.",
+        "num_legitimate": 268,
+        "num_fraudulent": 6,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "VFWW_UKVI in Montenegro",
+        "num_legitimate": 43,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_Netherlands in Ireland",
+        "num_legitimate": 145,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Viable Growth LTD - asiansgosocial",
+        "num_legitimate": 184,
+        "num_fraudulent": 4,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "VFWW_UKVI in Denmark",
+        "num_legitimate": 145,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Amic range LTD - linknewpeople",
+        "num_legitimate": 133,
+        "num_fraudulent": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.11278195488721804,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Winchester Solutions Ltd.",
+        "num_legitimate": 253,
+        "num_fraudulent": 5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.003952569169960474,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "ENGOLD LIMITED - webbmaxx",
+        "num_legitimate": 329,
+        "num_fraudulent": 14,
+        "precision": 0.16666666666666666,
+        "recall": 0.07142857142857142,
+        "false_positive_rate": 0.015197568389057751,
+        "false_negative_rate": 0.9285714285714286
+    },
+    {
+        "merchant": "Breaux Bridge Ltd.",
+        "num_legitimate": 252,
+        "num_fraudulent": 4,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.007936507936507936,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Cotopaxi Media ltd - Gruntmuzic",
+        "num_legitimate": 71,
+        "num_fraudulent": 4,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.056338028169014086,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "COVE FLOW LIMITED - cvworkr.com",
+        "num_legitimate": 67,
+        "num_fraudulent": 3,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.014925373134328358,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "VFWW_UKVI in Ecuador",
+        "num_legitimate": 63,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Nexia Ltd. - nexcodecourse.com",
+        "num_legitimate": 346,
+        "num_fraudulent": 20,
+        "precision": 0.2,
+        "recall": 0.1,
+        "false_positive_rate": 0.023121387283236993,
+        "false_negative_rate": 0.9
+    },
+    {
+        "merchant": "Azaelgoup LTD",
+        "num_legitimate": 318,
+        "num_fraudulent": 4,
+        "precision": 0.5,
+        "recall": 0.25,
+        "false_positive_rate": 0.0031446540880503146,
+        "false_negative_rate": 0.75
+    },
+    {
+        "merchant": "AVA Developments LTD 7273",
+        "num_legitimate": 277,
+        "num_fraudulent": 43,
+        "precision": 0.21904761904761905,
+        "recall": 0.5348837209302325,
+        "false_positive_rate": 0.296028880866426,
+        "false_negative_rate": 0.46511627906976744
+    },
+    {
+        "merchant": "Propriety Scope Ltd.",
+        "num_legitimate": 186,
+        "num_fraudulent": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.043010752688172046,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Alvorada Pitoresca LDA",
+        "num_legitimate": 169,
+        "num_fraudulent": 5,
+        "precision": 0.038461538461538464,
+        "recall": 0.4,
+        "false_positive_rate": 0.2958579881656805,
+        "false_negative_rate": 0.6
+    },
+    {
+        "merchant": "VFS UK_South Africa in UK",
+        "num_legitimate": 140,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UKVI in KSA",
+        "num_legitimate": 295,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Gameplan Marketing Limited - funexus",
+        "num_legitimate": 40,
+        "num_fraudulent": 14,
+        "precision": 0.29545454545454547,
+        "recall": 0.9285714285714286,
+        "false_positive_rate": 0.775,
+        "false_negative_rate": 0.07142857142857142
+    },
+    {
+        "merchant": "Istominia Ltd Sp. Z.o.o.",
+        "num_legitimate": 242,
+        "num_fraudulent": 14,
+        "precision": 0.05952380952380952,
+        "recall": 0.35714285714285715,
+        "false_positive_rate": 0.32644628099173556,
+        "false_negative_rate": 0.6428571428571429
+    },
+    {
+        "merchant": "Novizard Division KFT",
+        "num_legitimate": 143,
+        "num_fraudulent": 11,
+        "precision": 0.15789473684210525,
+        "recall": 0.2727272727272727,
+        "false_positive_rate": 0.11188811188811189,
+        "false_negative_rate": 0.7272727272727273
+    },
+    {
+        "merchant": "VFWW_UKVI in Spain",
+        "num_legitimate": 354,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "KAHLI Media ltd - Theleafmedia",
+        "num_legitimate": 31,
+        "num_fraudulent": 0,
+        "precision": 0.0,
+        "recall": 0,
+        "false_positive_rate": 0.1935483870967742,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Arid Media Ltd - Teekmediaz",
+        "num_legitimate": 73,
+        "num_fraudulent": 1,
+        "precision": 0.08333333333333333,
+        "recall": 1.0,
+        "false_positive_rate": 0.1506849315068493,
+        "false_negative_rate": 0.0
+    },
+    {
+        "merchant": "Mcallum Services Ltd.",
+        "num_legitimate": 198,
+        "num_fraudulent": 8,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.010101010101010102,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "VFWW_UKVI in Ireland",
+        "num_legitimate": 265,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "High Temple Limited",
+        "num_legitimate": 399,
+        "num_fraudulent": 62,
+        "precision": 0.23076923076923078,
+        "recall": 0.7741935483870968,
+        "false_positive_rate": 0.40100250626566414,
+        "false_negative_rate": 0.22580645161290322
+    },
+    {
+        "merchant": "esmale",
+        "num_legitimate": 484,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Diamond Flash Limited",
+        "num_legitimate": 234,
+        "num_fraudulent": 9,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.01282051282051282,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Dice Blonde Ltd",
+        "num_legitimate": 283,
+        "num_fraudulent": 7,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0035335689045936395,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Arid Media Ltd - Sosoplays",
+        "num_legitimate": 71,
+        "num_fraudulent": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.08450704225352113,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "VFS UK_Italy in UK",
+        "num_legitimate": 143,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UKVI in Cyprus North",
+        "num_legitimate": 33,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "COVE FLOW LIMITED - finress.com",
+        "num_legitimate": 104,
+        "num_fraudulent": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.019230769230769232,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "VFS UK_Portugal in UK",
+        "num_legitimate": 595,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Esplanade Online Ltd.",
+        "num_legitimate": 272,
+        "num_fraudulent": 14,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.007352941176470588,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Azaelgoup LTD - MCC 5967",
+        "num_legitimate": 21,
+        "num_fraudulent": 3,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Long Lost LTD - MCC 7273",
+        "num_legitimate": 167,
+        "num_fraudulent": 25,
+        "precision": 0.20930232558139536,
+        "recall": 0.72,
+        "false_positive_rate": 0.40718562874251496,
+        "false_negative_rate": 0.28
+    },
+    {
+        "merchant": "VFWW_UKVI in France",
+        "num_legitimate": 283,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Sonceto Development Limited",
+        "num_legitimate": 242,
+        "num_fraudulent": 2,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "ENGOLD LIMITED - cvmaxx",
+        "num_legitimate": 351,
+        "num_fraudulent": 14,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.008547008547008548,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Cursoinos Empresa SL",
+        "num_legitimate": 345,
+        "num_fraudulent": 20,
+        "precision": 0.11304347826086956,
+        "recall": 0.65,
+        "false_positive_rate": 0.2956521739130435,
+        "false_negative_rate": 0.35
+    },
+    {
+        "merchant": "VFS UK_Denmark in UK",
+        "num_legitimate": 172,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Emgan Limited",
+        "num_legitimate": 670,
+        "num_fraudulent": 66,
+        "precision": 0.2857142857142857,
+        "recall": 0.6363636363636364,
+        "false_positive_rate": 0.15671641791044777,
+        "false_negative_rate": 0.36363636363636365
+    },
+    {
+        "merchant": "Amic range LTD - blackheartspot",
+        "num_legitimate": 95,
+        "num_fraudulent": 12,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.031578947368421054,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Viable Growth LTD - yoblackmate",
+        "num_legitimate": 61,
+        "num_fraudulent": 2,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Oxymoron AG",
+        "num_legitimate": 140,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_Ireland in PK",
+        "num_legitimate": 215,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Selfide Limited",
+        "num_legitimate": 325,
+        "num_fraudulent": 6,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.006153846153846154,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Upsell Ltd",
+        "num_legitimate": 154,
+        "num_fraudulent": 11,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.006493506493506494,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Chedderton Limited",
+        "num_legitimate": 300,
+        "num_fraudulent": 9,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Digilyte Limited - eattc.net",
+        "num_legitimate": 78,
+        "num_fraudulent": 4,
+        "precision": 0.07407407407407407,
+        "recall": 0.5,
+        "false_positive_rate": 0.32051282051282054,
+        "false_negative_rate": 0.5
+    },
+    {
+        "merchant": "Rosebud Hills Ltd",
+        "num_legitimate": 343,
+        "num_fraudulent": 5,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "iMedia888 GmbH_5967",
+        "num_legitimate": 110,
+        "num_fraudulent": 1,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Santevida s.r.o - cvbuildix",
+        "num_legitimate": 272,
+        "num_fraudulent": 20,
+        "precision": 0.14705882352941177,
+        "recall": 0.25,
+        "false_positive_rate": 0.10661764705882353,
+        "false_negative_rate": 0.75
+    },
+    {
+        "merchant": "VFS UK_Sweden in UK",
+        "num_legitimate": 181,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_Norway in PAKISTAN",
+        "num_legitimate": 124,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UKVI in Colombia",
+        "num_legitimate": 302,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Foxtrot Internet Limited - quantumflicks.net",
+        "num_legitimate": 32,
+        "num_fraudulent": 10,
+        "precision": 0.47619047619047616,
+        "recall": 1.0,
+        "false_positive_rate": 0.34375,
+        "false_negative_rate": 0.0
+    },
+    {
+        "merchant": "Legal Web Solutions Ltd",
+        "num_legitimate": 468,
+        "num_fraudulent": 6,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.002136752136752137,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "BENTCORD LIMITED - meditatejoy.co",
+        "num_legitimate": 242,
+        "num_fraudulent": 9,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Empire Oriole Ltd.",
+        "num_legitimate": 248,
+        "num_fraudulent": 7,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.004032258064516129,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Rocket UK LImited",
+        "num_legitimate": 300,
+        "num_fraudulent": 3,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "VFS UK_Lithuania in UK",
+        "num_legitimate": 21,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Digotech Limited - bbook.space",
+        "num_legitimate": 240,
+        "num_fraudulent": 43,
+        "precision": 0.1659919028340081,
+        "recall": 0.9534883720930233,
+        "false_positive_rate": 0.8583333333333333,
+        "false_negative_rate": 0.046511627906976744
+    },
+    {
+        "merchant": "VFWW_UKVI in Qatar",
+        "num_legitimate": 162,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Social Pulse Ltd",
+        "num_legitimate": 64,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_Australia in Lebanon",
+        "num_legitimate": 92,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Etor LTD",
+        "num_legitimate": 329,
+        "num_fraudulent": 17,
+        "precision": 0.0759493670886076,
+        "recall": 0.35294117647058826,
+        "false_positive_rate": 0.22188449848024316,
+        "false_negative_rate": 0.6470588235294118
+    },
+    {
+        "merchant": "Appspartner B.V.",
+        "num_legitimate": 463,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Ownisol Limited",
+        "num_legitimate": 312,
+        "num_fraudulent": 9,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Midgarth Rare Sync Ltd",
+        "num_legitimate": 331,
+        "num_fraudulent": 7,
+        "precision": 0.06666666666666667,
+        "recall": 0.14285714285714285,
+        "false_positive_rate": 0.04229607250755287,
+        "false_negative_rate": 0.8571428571428571
+    },
+    {
+        "merchant": "Interlist LTD_7273",
+        "num_legitimate": 185,
+        "num_fraudulent": 33,
+        "precision": 0.2696629213483146,
+        "recall": 0.7272727272727273,
+        "false_positive_rate": 0.35135135135135137,
+        "false_negative_rate": 0.2727272727272727
+    },
+    {
+        "merchant": "Cargo Media",
+        "num_legitimate": 238,
+        "num_fraudulent": 2,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Reel Me Ltd",
+        "num_legitimate": 56,
+        "num_fraudulent": 3,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "VFWW_UKVI in Greece",
+        "num_legitimate": 45,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Totem Core Limited",
+        "num_legitimate": 18,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Bounce Marketing Limited - puffaroo.cloud",
+        "num_legitimate": 40,
+        "num_fraudulent": 9,
+        "precision": 0.23809523809523808,
+        "recall": 0.5555555555555556,
+        "false_positive_rate": 0.4,
+        "false_negative_rate": 0.4444444444444444
+    },
+    {
+        "merchant": "VFWW_RO in US",
+        "num_legitimate": 177,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UKVI in Venezuela",
+        "num_legitimate": 27,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Addrestic Ltd",
+        "num_legitimate": 477,
+        "num_fraudulent": 29,
+        "precision": 0.15625,
+        "recall": 0.1724137931034483,
+        "false_positive_rate": 0.05660377358490566,
+        "false_negative_rate": 0.8275862068965517
+    },
+    {
+        "merchant": "ALPINE WAY GLOBAL LIMITED - devgames365.com",
+        "num_legitimate": 28,
+        "num_fraudulent": 1,
+        "precision": 0.09090909090909091,
+        "recall": 1.0,
+        "false_positive_rate": 0.35714285714285715,
+        "false_negative_rate": 0.0
+    },
+    {
+        "merchant": "SOXCRAFT LIMITED",
+        "num_legitimate": 62,
+        "num_fraudulent": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.3387096774193548,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Empire Oriole Ltd - MCC 7273",
+        "num_legitimate": 183,
+        "num_fraudulent": 34,
+        "precision": 0.2857142857142857,
+        "recall": 0.7058823529411765,
+        "false_positive_rate": 0.32786885245901637,
+        "false_negative_rate": 0.29411764705882354
+    },
+    {
+        "merchant": "VFWW_UKVI in Cyprus South",
+        "num_legitimate": 73,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "BLINDSCOPE LIMITED",
+        "num_legitimate": 646,
+        "num_fraudulent": 43,
+        "precision": 0.08292682926829269,
+        "recall": 0.3953488372093023,
+        "false_positive_rate": 0.29102167182662536,
+        "false_negative_rate": 0.6046511627906976
+    },
+    {
+        "merchant": "Overwillow Ltd.",
+        "num_legitimate": 313,
+        "num_fraudulent": 4,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Viable Growth LTD - youthshipclub",
+        "num_legitimate": 60,
+        "num_fraudulent": 2,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "VINTAGE Zone s.r.o - Playlymedia",
+        "num_legitimate": 136,
+        "num_fraudulent": 11,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.08088235294117647,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Snow Valley Ltd.",
+        "num_legitimate": 187,
+        "num_fraudulent": 3,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0053475935828877,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Vibrant Headway S.R.L.",
+        "num_legitimate": 28,
+        "num_fraudulent": 4,
+        "precision": 0.1111111111111111,
+        "recall": 0.5,
+        "false_positive_rate": 0.5714285714285714,
+        "false_negative_rate": 0.5
+    },
+    {
+        "merchant": "TOLL BERRY LIMITED - resumaza.com",
+        "num_legitimate": 42,
+        "num_fraudulent": 4,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.047619047619047616,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "VINTAGE Zone s.r.o - Thespyreads",
+        "num_legitimate": 109,
+        "num_fraudulent": 5,
+        "precision": 0.07142857142857142,
+        "recall": 0.2,
+        "false_positive_rate": 0.11926605504587157,
+        "false_negative_rate": 0.8
+    },
+    {
+        "merchant": "ENGOLD LIMITED - walletmaxx",
+        "num_legitimate": 307,
+        "num_fraudulent": 15,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Bounce Marketing Limited - flickaroo.stream",
+        "num_legitimate": 34,
+        "num_fraudulent": 15,
+        "precision": 0.32432432432432434,
+        "recall": 0.8,
+        "false_positive_rate": 0.7352941176470589,
+        "false_negative_rate": 0.2
+    },
+    {
+        "merchant": "BENTCORD LIMITED - techtutorx.com",
+        "num_legitimate": 173,
+        "num_fraudulent": 5,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Venture Tech Ltd MCC 7379",
+        "num_legitimate": 12,
+        "num_fraudulent": 1,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Holmium Limited",
+        "num_legitimate": 231,
+        "num_fraudulent": 13,
+        "precision": 0.125,
+        "recall": 0.07692307692307693,
+        "false_positive_rate": 0.030303030303030304,
+        "false_negative_rate": 0.9230769230769231
+    },
+    {
+        "merchant": "Omni Protection Ltd. - MCC 7273",
+        "num_legitimate": 168,
+        "num_fraudulent": 21,
+        "precision": 0.19444444444444445,
+        "recall": 0.6666666666666666,
+        "false_positive_rate": 0.34523809523809523,
+        "false_negative_rate": 0.3333333333333333
+    },
+    {
+        "merchant": "Venture Tech LTD",
+        "num_legitimate": 294,
+        "num_fraudulent": 11,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Jadeite Limited",
+        "num_legitimate": 297,
+        "num_fraudulent": 5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.003367003367003367,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "ENGOLD LIMITED - codesmaxx",
+        "num_legitimate": 99,
+        "num_fraudulent": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.030303030303030304,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Lotus Internet Ltd - gltchwrld",
+        "num_legitimate": 44,
+        "num_fraudulent": 9,
+        "precision": 0.23809523809523808,
+        "recall": 0.5555555555555556,
+        "false_positive_rate": 0.36363636363636365,
+        "false_negative_rate": 0.4444444444444444
+    },
+    {
+        "merchant": "Perfection Skill Ltd",
+        "num_legitimate": 280,
+        "num_fraudulent": 6,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.007142857142857143,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Dombrossa Trading Ltd.",
+        "num_legitimate": 310,
+        "num_fraudulent": 12,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Artemisa 3000 Tech Solutions_Segpay_Bill1st",
+        "num_legitimate": 154,
+        "num_fraudulent": 3,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Bookstorm Ltd",
+        "num_legitimate": 131,
+        "num_fraudulent": 7,
+        "precision": 0.1111111111111111,
+        "recall": 0.7142857142857143,
+        "false_positive_rate": 0.3053435114503817,
+        "false_negative_rate": 0.2857142857142857
+    },
+    {
+        "merchant": "Ionel Cristian Uifelean",
+        "num_legitimate": 46,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UKVI in Norway",
+        "num_legitimate": 65,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFS UK_Hungary in UK",
+        "num_legitimate": 54,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Davenport PR Ltd.",
+        "num_legitimate": 284,
+        "num_fraudulent": 5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.007042253521126761,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "HC Media s.r.o._Daopay",
+        "num_legitimate": 40,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Zone 8 Media Limited",
+        "num_legitimate": 164,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Arjaloz Ltd",
+        "num_legitimate": 20,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Entorvert Limited - HopQuest.fun",
+        "num_legitimate": 33,
+        "num_fraudulent": 9,
+        "precision": 0.28125,
+        "recall": 1.0,
+        "false_positive_rate": 0.696969696969697,
+        "false_negative_rate": 0.0
+    },
+    {
+        "merchant": "TOLL BERRY LIMITED - investmaza.com",
+        "num_legitimate": 53,
+        "num_fraudulent": 3,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.03773584905660377,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Devpulse Hungary KFT",
+        "num_legitimate": 220,
+        "num_fraudulent": 12,
+        "precision": 0.1702127659574468,
+        "recall": 0.6666666666666666,
+        "false_positive_rate": 0.17727272727272728,
+        "false_negative_rate": 0.3333333333333333
+    },
+    {
+        "merchant": "MUNDO LIMPIO s.r.o - Thelimemedia",
+        "num_legitimate": 84,
+        "num_fraudulent": 2,
+        "precision": 0.0196078431372549,
+        "recall": 0.5,
+        "false_positive_rate": 0.5952380952380952,
+        "false_negative_rate": 0.5
+    },
+    {
+        "merchant": "Digotech Limited - boxgame.pro",
+        "num_legitimate": 70,
+        "num_fraudulent": 6,
+        "precision": 0.13333333333333333,
+        "recall": 1.0,
+        "false_positive_rate": 0.5571428571428572,
+        "false_negative_rate": 0.0
+    },
+    {
+        "merchant": "Nexia Ltd. - nexwebbuild.com",
+        "num_legitimate": 77,
+        "num_fraudulent": 7,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "UKVI in Japan",
+        "num_legitimate": 181,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "InterMaxGroup AG_5967",
+        "num_legitimate": 279,
+        "num_fraudulent": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.017921146953405017,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Bounce Marketing Limited - craniumzap",
+        "num_legitimate": 38,
+        "num_fraudulent": 17,
+        "precision": 0.32142857142857145,
+        "recall": 0.5294117647058824,
+        "false_positive_rate": 0.5,
+        "false_negative_rate": 0.47058823529411764
+    },
+    {
+        "merchant": "VFWW_UKVI in Bosnia & Herzegovina",
+        "num_legitimate": 39,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "GIRASAL LIMITED - BookByteHub",
+        "num_legitimate": 214,
+        "num_fraudulent": 3,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.04205607476635514,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Dominion Entertainment",
+        "num_legitimate": 5,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Ordos Media Ltd - Cirquemusic",
+        "num_legitimate": 32,
+        "num_fraudulent": 2,
+        "precision": 0.1111111111111111,
+        "recall": 1.0,
+        "false_positive_rate": 0.5,
+        "false_negative_rate": 0.0
+    },
+    {
+        "merchant": "Colibri Digital Ltd",
+        "num_legitimate": 36,
+        "num_fraudulent": 1,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "VFWW_UKVI in Austria",
+        "num_legitimate": 129,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Azula Services Limited",
+        "num_legitimate": 236,
+        "num_fraudulent": 7,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.00847457627118644,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Ambassador Cruise Line",
+        "num_legitimate": 18,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Amic range LTD - latinocontact",
+        "num_legitimate": 82,
+        "num_fraudulent": 5,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Niori Holding Ltd.",
+        "num_legitimate": 309,
+        "num_fraudulent": 6,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.061488673139158574,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "VINTAGE Zone s.r.o - Netplayrogue",
+        "num_legitimate": 135,
+        "num_fraudulent": 10,
+        "precision": 0.07368421052631578,
+        "recall": 0.7,
+        "false_positive_rate": 0.6518518518518519,
+        "false_negative_rate": 0.3
+    },
+    {
+        "merchant": "AVA Developments Ltd_MCC 5967",
+        "num_legitimate": 140,
+        "num_fraudulent": 13,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Actinvite Limited",
+        "num_legitimate": 150,
+        "num_fraudulent": 11,
+        "precision": 0.07272727272727272,
+        "recall": 0.36363636363636365,
+        "false_positive_rate": 0.34,
+        "false_negative_rate": 0.6363636363636364
+    },
+    {
+        "merchant": "Viable Growth LTD - seniorshiphub",
+        "num_legitimate": 98,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Lotus Internet Ltd - snipedown",
+        "num_legitimate": 34,
+        "num_fraudulent": 17,
+        "precision": 0.3783783783783784,
+        "recall": 0.8235294117647058,
+        "false_positive_rate": 0.6764705882352942,
+        "false_negative_rate": 0.17647058823529413
+    },
+    {
+        "merchant": "Aurora Technical Ltd.",
+        "num_legitimate": 296,
+        "num_fraudulent": 2,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "VFWW_UKVI in Portugal",
+        "num_legitimate": 109,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Digilyte Limited - allgamr.pro",
+        "num_legitimate": 72,
+        "num_fraudulent": 8,
+        "precision": 0.06666666666666667,
+        "recall": 0.25,
+        "false_positive_rate": 0.3888888888888889,
+        "false_negative_rate": 0.75
+    },
+    {
+        "merchant": "Entorvert Limited - RecoilRush.cloud",
+        "num_legitimate": 27,
+        "num_fraudulent": 11,
+        "precision": 0.36666666666666664,
+        "recall": 1.0,
+        "false_positive_rate": 0.7037037037037037,
+        "false_negative_rate": 0.0
+    },
+    {
+        "merchant": "SOXCRAFT LIMITED - mybefitter.club.",
+        "num_legitimate": 72,
+        "num_fraudulent": 6,
+        "precision": 0.10638297872340426,
+        "recall": 0.8333333333333334,
+        "false_positive_rate": 0.5833333333333334,
+        "false_negative_rate": 0.16666666666666666
+    },
+    {
+        "merchant": "KAHLI Media ltd - Totalread",
+        "num_legitimate": 34,
+        "num_fraudulent": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.5294117647058824,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Arid Media Ltd - Slamreads",
+        "num_legitimate": 64,
+        "num_fraudulent": 2,
+        "precision": 0.3333333333333333,
+        "recall": 1.0,
+        "false_positive_rate": 0.0625,
+        "false_negative_rate": 0.0
+    },
+    {
+        "merchant": "FLIXILY LIMITED - codekits",
+        "num_legitimate": 134,
+        "num_fraudulent": 9,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.03731343283582089,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Santevida s.r.o - coderix",
+        "num_legitimate": 300,
+        "num_fraudulent": 25,
+        "precision": 0.12244897959183673,
+        "recall": 0.24,
+        "false_positive_rate": 0.14333333333333334,
+        "false_negative_rate": 0.76
+    },
+    {
+        "merchant": "University College London Hospitals NHS Foundation",
+        "num_legitimate": 29,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "PMG Entertainment Limited",
+        "num_legitimate": 51,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Shoee Ltd.",
+        "num_legitimate": 269,
+        "num_fraudulent": 5,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Mcallum Services Ltd - MCC 7273",
+        "num_legitimate": 94,
+        "num_fraudulent": 8,
+        "precision": 0.16666666666666666,
+        "recall": 0.875,
+        "false_positive_rate": 0.3723404255319149,
+        "false_negative_rate": 0.125
+    },
+    {
+        "merchant": "VFS UK_ Austria in UK",
+        "num_legitimate": 77,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Rosebud Hills Ltd - MCC 5967.",
+        "num_legitimate": 21,
+        "num_fraudulent": 7,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "The Athenaeum Hotel",
+        "num_legitimate": 17,
+        "num_fraudulent": 1,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "VFWW_UKVI in Poland",
+        "num_legitimate": 245,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_RSA in Pakistan",
+        "num_legitimate": 42,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Cantilever Digital Limited",
+        "num_legitimate": 15,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "TOLL BERRY LIMITED - finmaza.com",
+        "num_legitimate": 75,
+        "num_fraudulent": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.02666666666666667,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "VFWW_UKVI in New Zealand",
+        "num_legitimate": 35,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Arnaze Online Ireland Ltd 5967",
+        "num_legitimate": 73,
+        "num_fraudulent": 1,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Silverserve Solutions Limited_PayOn",
+        "num_legitimate": 170,
+        "num_fraudulent": 3,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.01764705882352941,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "VFWW_UKVI in Belgium",
+        "num_legitimate": 146,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "TOLL BERRY LIMITED - readmaza.com",
+        "num_legitimate": 104,
+        "num_fraudulent": 2,
+        "precision": 1.0,
+        "recall": 0.5,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.5
+    },
+    {
+        "merchant": "Lotus Internet Ltd - flckrsprts",
+        "num_legitimate": 44,
+        "num_fraudulent": 9,
+        "precision": 0.1282051282051282,
+        "recall": 0.5555555555555556,
+        "false_positive_rate": 0.7727272727272727,
+        "false_negative_rate": 0.4444444444444444
+    },
+    {
+        "merchant": "VFWW_Australia in Iraq",
+        "num_legitimate": 25,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "ALPINE WAY GLOBAL LIMITED - builderr.net",
+        "num_legitimate": 19,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UKVI in Hungary",
+        "num_legitimate": 65,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Entorvert Limited - FrightFlicker.com",
+        "num_legitimate": 39,
+        "num_fraudulent": 10,
+        "precision": 0.1794871794871795,
+        "recall": 0.7,
+        "false_positive_rate": 0.8205128205128205,
+        "false_negative_rate": 0.3
+    },
+    {
+        "merchant": "COVE FLOW LIMITED - codenery.com",
+        "num_legitimate": 135,
+        "num_fraudulent": 7,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.014814814814814815,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Gameplan Marketing Limited - exploriumgames",
+        "num_legitimate": 42,
+        "num_fraudulent": 9,
+        "precision": 0.17777777777777778,
+        "recall": 0.8888888888888888,
+        "false_positive_rate": 0.8809523809523809,
+        "false_negative_rate": 0.1111111111111111
+    },
+    {
+        "merchant": "VFWW_UKVI in Burma",
+        "num_legitimate": 70,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Temperlink Logistics Ltd.",
+        "num_legitimate": 275,
+        "num_fraudulent": 2,
+        "precision": 0.16666666666666666,
+        "recall": 0.5,
+        "false_positive_rate": 0.01818181818181818,
+        "false_negative_rate": 0.5
+    },
+    {
+        "merchant": "Foxtrot Internet Limited - trutales.net",
+        "num_legitimate": 31,
+        "num_fraudulent": 7,
+        "precision": 0.21052631578947367,
+        "recall": 0.5714285714285714,
+        "false_positive_rate": 0.4838709677419355,
+        "false_negative_rate": 0.42857142857142855
+    },
+    {
+        "merchant": "Actinvite Limited - Budgenc",
+        "num_legitimate": 83,
+        "num_fraudulent": 4,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Balansea LLC",
+        "num_legitimate": 71,
+        "num_fraudulent": 4,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Digilyte Limited - lvbook.club",
+        "num_legitimate": 67,
+        "num_fraudulent": 5,
+        "precision": 0.06818181818181818,
+        "recall": 0.6,
+        "false_positive_rate": 0.6119402985074627,
+        "false_negative_rate": 0.4
+    },
+    {
+        "merchant": "Cotopaxi Media ltd - Thespeedyread",
+        "num_legitimate": 131,
+        "num_fraudulent": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.12213740458015267,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Zeinep Tech Hup Ltd.",
+        "num_legitimate": 280,
+        "num_fraudulent": 9,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0035714285714285713,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Mediteran Union Investment, S.L",
+        "num_legitimate": 24,
+        "num_fraudulent": 1,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Erudovany Nyni sro",
+        "num_legitimate": 178,
+        "num_fraudulent": 17,
+        "precision": 0.13414634146341464,
+        "recall": 0.6470588235294118,
+        "false_positive_rate": 0.398876404494382,
+        "false_negative_rate": 0.35294117647058826
+    },
+    {
+        "merchant": "Syncize - Fitffixx",
+        "num_legitimate": 20,
+        "num_fraudulent": 7,
+        "precision": 0.2857142857142857,
+        "recall": 0.5714285714285714,
+        "false_positive_rate": 0.5,
+        "false_negative_rate": 0.42857142857142855
+    },
+    {
+        "merchant": "Foxtrot Internet Limited - simunation.vip",
+        "num_legitimate": 30,
+        "num_fraudulent": 10,
+        "precision": 0.32142857142857145,
+        "recall": 0.9,
+        "false_positive_rate": 0.6333333333333333,
+        "false_negative_rate": 0.1
+    },
+    {
+        "merchant": "Alpine Way Global LTD - checkspend365.com",
+        "num_legitimate": 29,
+        "num_fraudulent": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.3103448275862069,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "VFS UK_Finland in UK",
+        "num_legitimate": 47,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Breaux Bridge LTD_7273",
+        "num_legitimate": 172,
+        "num_fraudulent": 50,
+        "precision": 0.3652173913043478,
+        "recall": 0.84,
+        "false_positive_rate": 0.42441860465116277,
+        "false_negative_rate": 0.16
+    },
+    {
+        "merchant": "Prokey Solutions LTD",
+        "num_legitimate": 148,
+        "num_fraudulent": 10,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Wandersmart Limited- multimzone",
+        "num_legitimate": 16,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UK in Honduras",
+        "num_legitimate": 27,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "FLIXILY LIMITED - blogkits",
+        "num_legitimate": 110,
+        "num_fraudulent": 9,
+        "precision": 0.10526315789473684,
+        "recall": 0.4444444444444444,
+        "false_positive_rate": 0.3090909090909091,
+        "false_negative_rate": 0.5555555555555556
+    },
+    {
+        "merchant": "VFWW_DK in PK",
+        "num_legitimate": 62,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Ambassador Holidays Limited",
+        "num_legitimate": 28,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_Austria in Ireland",
+        "num_legitimate": 10,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_France in Rwanda",
+        "num_legitimate": 75,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UKVI in Estonia",
+        "num_legitimate": 33,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UKVI in Barbados",
+        "num_legitimate": 21,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "GUNWALE LIMITED - investinery.com",
+        "num_legitimate": 100,
+        "num_fraudulent": 26,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.06,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "RedFun",
+        "num_legitimate": 43,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "TOLL BERRY LIMITED - codemaza.com",
+        "num_legitimate": 59,
+        "num_fraudulent": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.03389830508474576,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "VINTAGE Zone s.r.o - Slymuzic",
+        "num_legitimate": 99,
+        "num_fraudulent": 11,
+        "precision": 0.15384615384615385,
+        "recall": 0.18181818181818182,
+        "false_positive_rate": 0.1111111111111111,
+        "false_negative_rate": 0.8181818181818182
+    },
+    {
+        "merchant": "VFS UK_Austria in Kosovo",
+        "num_legitimate": 63,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UKVI in Serbia",
+        "num_legitimate": 20,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Anomerge Limited - Watchmultim",
+        "num_legitimate": 15,
+        "num_fraudulent": 1,
+        "precision": 0.07142857142857142,
+        "recall": 1.0,
+        "false_positive_rate": 0.8666666666666667,
+        "false_negative_rate": 0.0
+    },
+    {
+        "merchant": "Desdemona_MCC 5967",
+        "num_legitimate": 53,
+        "num_fraudulent": 2,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "CB Media Limited_7273",
+        "num_legitimate": 50,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Digilyte Limited - physiqq.pro",
+        "num_legitimate": 85,
+        "num_fraudulent": 8,
+        "precision": 0.09615384615384616,
+        "recall": 0.625,
+        "false_positive_rate": 0.5529411764705883,
+        "false_negative_rate": 0.375
+    },
+    {
+        "merchant": "Melemele Limited - webmastery.app",
+        "num_legitimate": 31,
+        "num_fraudulent": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.4838709677419355,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Ordos Media Ltd - Disctractlyonline",
+        "num_legitimate": 32,
+        "num_fraudulent": 3,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.03125,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "VFWW_UKVI in Cambodia",
+        "num_legitimate": 49,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Copeni APS - customresume.net",
+        "num_legitimate": 7,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Vendio Limited",
+        "num_legitimate": 23,
+        "num_fraudulent": 0,
+        "precision": 0.0,
+        "recall": 0,
+        "false_positive_rate": 0.043478260869565216,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UKVI in DR",
+        "num_legitimate": 44,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Wyddiant Limited - webverg.com",
+        "num_legitimate": 17,
+        "num_fraudulent": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.11764705882352941,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "VFWW_UKVI in North Macedonia",
+        "num_legitimate": 60,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Lotus Internet Ltd - cineville",
+        "num_legitimate": 40,
+        "num_fraudulent": 18,
+        "precision": 0.3,
+        "recall": 0.6666666666666666,
+        "false_positive_rate": 0.7,
+        "false_negative_rate": 0.3333333333333333
+    },
+    {
+        "merchant": "Mix & Match GMBH",
+        "num_legitimate": 23,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UKVI in Argentina",
+        "num_legitimate": 31,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "FLIXILY LIMITED - budgetgoal",
+        "num_legitimate": 71,
+        "num_fraudulent": 2,
+        "precision": 0.034482758620689655,
+        "recall": 0.5,
+        "false_positive_rate": 0.39436619718309857,
+        "false_negative_rate": 0.5
+    },
+    {
+        "merchant": "Skyline Worldwide UK Ltd",
+        "num_legitimate": 50,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Easy Chain Solutions Ltd",
+        "num_legitimate": 15,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "SBCOM",
+        "num_legitimate": 37,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UKVI in Bahrain",
+        "num_legitimate": 35,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Amic range LTD - baeseeker",
+        "num_legitimate": 154,
+        "num_fraudulent": 14,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "VFWW_UKVI in Kuwait",
+        "num_legitimate": 46,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "AKRA Kotschenreuther GmbH",
+        "num_legitimate": 17,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UKVI in Chile",
+        "num_legitimate": 20,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Gameplan Marketing Limited - raceonix",
+        "num_legitimate": 35,
+        "num_fraudulent": 16,
+        "precision": 0.32558139534883723,
+        "recall": 0.875,
+        "false_positive_rate": 0.8285714285714286,
+        "false_negative_rate": 0.125
+    },
+    {
+        "merchant": "ALPINE WAY GLOBAL LIMITED - techskills365.com",
+        "num_legitimate": 27,
+        "num_fraudulent": 2,
+        "precision": 0.07692307692307693,
+        "recall": 0.5,
+        "false_positive_rate": 0.4444444444444444,
+        "false_negative_rate": 0.5
+    },
+    {
+        "merchant": "Prosperity Solutions Ltd",
+        "num_legitimate": 44,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Melemele Limited - budgetmastery.app",
+        "num_legitimate": 39,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "FKG Entertainment s.r.o.",
+        "num_legitimate": 25,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Antelaria Limited -Meditateliving",
+        "num_legitimate": 93,
+        "num_fraudulent": 7,
+        "precision": 0.1935483870967742,
+        "recall": 0.8571428571428571,
+        "false_positive_rate": 0.26881720430107525,
+        "false_negative_rate": 0.14285714285714285
+    },
+    {
+        "merchant": "One Aldwych Limited",
+        "num_legitimate": 2,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Crescent Marketing Ltd - clickescape.cc",
+        "num_legitimate": 36,
+        "num_fraudulent": 9,
+        "precision": 0.2222222222222222,
+        "recall": 0.8888888888888888,
+        "false_positive_rate": 0.7777777777777778,
+        "false_negative_rate": 0.1111111111111111
+    },
+    {
+        "merchant": "KAHLI Media ltd - Unplays",
+        "num_legitimate": 29,
+        "num_fraudulent": 0,
+        "precision": 0.0,
+        "recall": 0,
+        "false_positive_rate": 0.5172413793103449,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Melemele Limited - masteringcodes.com",
+        "num_legitimate": 22,
+        "num_fraudulent": 2,
+        "precision": 0.15384615384615385,
+        "recall": 1.0,
+        "false_positive_rate": 0.5,
+        "false_negative_rate": 0.0
+    },
+    {
+        "merchant": "Wandersmart Limited- entrmultim",
+        "num_legitimate": 16,
+        "num_fraudulent": 1,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Pine Valley Ltd 7379",
+        "num_legitimate": 11,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UKVI in Trinidad & Tobago",
+        "num_legitimate": 9,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Orsiida Ltd",
+        "num_legitimate": 35,
+        "num_fraudulent": 2,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "VFWW_UKVI in Finland",
+        "num_legitimate": 69,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFS UK_Malta in UK",
+        "num_legitimate": 99,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Canary Riverside Plaza Hotel",
+        "num_legitimate": 6,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Dreamlines GmbH",
+        "num_legitimate": 19,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UKVI in Romania",
+        "num_legitimate": 24,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "We Can Book It Ireland Ltd",
+        "num_legitimate": 23,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Syncize - Boredgamers",
+        "num_legitimate": 21,
+        "num_fraudulent": 4,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.047619047619047616,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Gameplan Marketing Limited - athletazone",
+        "num_legitimate": 38,
+        "num_fraudulent": 10,
+        "precision": 0.2777777777777778,
+        "recall": 1.0,
+        "false_positive_rate": 0.6842105263157895,
+        "false_negative_rate": 0.0
+    },
+    {
+        "merchant": "Cintilet Limited_5967",
+        "num_legitimate": 47,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UK in El Salvador",
+        "num_legitimate": 11,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UKVI in Mongolia",
+        "num_legitimate": 52,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Blanc Voile Ltd",
+        "num_legitimate": 72,
+        "num_fraudulent": 5,
+        "precision": 0.08333333333333333,
+        "recall": 0.2,
+        "false_positive_rate": 0.1527777777777778,
+        "false_negative_rate": 0.8
+    },
+    {
+        "merchant": "VFWW_UKVI in Cayman Islands",
+        "num_legitimate": 24,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Copeni APS - turnintoweb.com",
+        "num_legitimate": 8,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "K.R. North Clause Ltd_MCC: 5967",
+        "num_legitimate": 8,
+        "num_fraudulent": 1,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Inncoon a.s",
+        "num_legitimate": 25,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UKVI in Jamaica",
+        "num_legitimate": 63,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Wyddiant Limited-codingclass",
+        "num_legitimate": 13,
+        "num_fraudulent": 0,
+        "precision": 0.0,
+        "recall": 0,
+        "false_positive_rate": 0.3076923076923077,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Active Advisory Limited",
+        "num_legitimate": 52,
+        "num_fraudulent": 2,
+        "precision": 0.1111111111111111,
+        "recall": 0.5,
+        "false_positive_rate": 0.15384615384615385,
+        "false_negative_rate": 0.5
+    },
+    {
+        "merchant": "VFWW_UKVI in Ukraine",
+        "num_legitimate": 7,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Technius LTD_Daopay",
+        "num_legitimate": 11,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UKVI in South Korea",
+        "num_legitimate": 19,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Winchester Solutions Ltd_7379",
+        "num_legitimate": 14,
+        "num_fraudulent": 2,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "VFWW_UKVI in Bolivia",
+        "num_legitimate": 11,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Turilla GmbH",
+        "num_legitimate": 59,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Torx Ltd_Segpay",
+        "num_legitimate": 15,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UKVI in Bulgaria",
+        "num_legitimate": 27,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Clicktentive Limited",
+        "num_legitimate": 72,
+        "num_fraudulent": 0,
+        "precision": 0.0,
+        "recall": 0,
+        "false_positive_rate": 0.013888888888888888,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Anomerge Limited - Multimentr",
+        "num_legitimate": 12,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Todd Tyree",
+        "num_legitimate": 11,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFS UK_Estonia in UK",
+        "num_legitimate": 46,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UKVI in Fiji",
+        "num_legitimate": 30,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Anomerge Limited - Medplayhub",
+        "num_legitimate": 10,
+        "num_fraudulent": 5,
+        "precision": 0.5,
+        "recall": 0.6,
+        "false_positive_rate": 0.3,
+        "false_negative_rate": 0.4
+    },
+    {
+        "merchant": "Hiburban",
+        "num_legitimate": 18,
+        "num_fraudulent": 3,
+        "precision": 0.3333333333333333,
+        "recall": 0.3333333333333333,
+        "false_positive_rate": 0.1111111111111111,
+        "false_negative_rate": 0.6666666666666666
+    },
+    {
+        "merchant": "VFWW_UKVI in Bahamas",
+        "num_legitimate": 13,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Uchell Limited_gamebuilderhelp.com",
+        "num_legitimate": 9,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "URBN UK Limited",
+        "num_legitimate": 2,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "InterMaxGroup AG_7273",
+        "num_legitimate": 16,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Uchell Limited_webticialsupport.com",
+        "num_legitimate": 12,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UKVI in Panama",
+        "num_legitimate": 6,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Wandersmart Limited- multimflix",
+        "num_legitimate": 9,
+        "num_fraudulent": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.1111111111111111,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Wyddiant Limited - spendingcheck",
+        "num_legitimate": 12,
+        "num_fraudulent": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.08333333333333333,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Wandersmart Limited- streammulti",
+        "num_legitimate": 21,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_Austria in Cyprus",
+        "num_legitimate": 10,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UKVI in Croatia",
+        "num_legitimate": 8,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Canal Ventures BV",
+        "num_legitimate": 5,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "KAHLI Media ltd - Demusik",
+        "num_legitimate": 28,
+        "num_fraudulent": 2,
+        "precision": 1.0,
+        "recall": 0.5,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.5
+    },
+    {
+        "merchant": "Copeni APS - bilingua.net",
+        "num_legitimate": 5,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFS UK_Cyprus in UK",
+        "num_legitimate": 21,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_Finland in Ireland",
+        "num_legitimate": 8,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "UnikatMedia",
+        "num_legitimate": 12,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "IDB MOBILE TECHNOLOGY SL",
+        "num_legitimate": 12,
+        "num_fraudulent": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.6666666666666666,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Wyddiant Limited - webgamebuilder.net",
+        "num_legitimate": 14,
+        "num_fraudulent": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.07142857142857142,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Uchell Limited_codingskillsupport.com",
+        "num_legitimate": 6,
+        "num_fraudulent": 1,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "VFWW_UKVI in Bermuda",
+        "num_legitimate": 7,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Toptomo Ltd",
+        "num_legitimate": 2,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_Hungary in Cyprus",
+        "num_legitimate": 6,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UKVI in Guyana",
+        "num_legitimate": 3,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "PXPUnity",
+        "num_legitimate": 1,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "GUNWALE LIMITED - cvbuildery.com",
+        "num_legitimate": 6,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_Finland in Cyprus",
+        "num_legitimate": 8,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Ebbex International Ltd",
+        "num_legitimate": 1,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Real Jam Network KFT",
+        "num_legitimate": 3,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "GUNWALE LIMITED - bmanagery.com",
+        "num_legitimate": 7,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Uchell Limited_budgethabitsupport.com",
+        "num_legitimate": 3,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_CroatiainIreland",
+        "num_legitimate": 8,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UKVI in Iceland",
+        "num_legitimate": 7,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UKVI in Peru",
+        "num_legitimate": 2,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Frisorger & Hain GbR",
+        "num_legitimate": 3,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UK in Dominica",
+        "num_legitimate": 4,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UKVI in Guatemela",
+        "num_legitimate": 2,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Media58 GmbH",
+        "num_legitimate": 2,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_Finland in Ethiopia",
+        "num_legitimate": 8,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_Ukraine Passport",
+        "num_legitimate": 5,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Sechshundert Media GmbH",
+        "num_legitimate": 1,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Interdate SA",
+        "num_legitimate": 2,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Proptic Ltd",
+        "num_legitimate": 0,
+        "num_fraudulent": 1,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Anomerge Limited",
+        "num_legitimate": 3,
+        "num_fraudulent": 1,
+        "precision": 0,
+        "recall": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+    },
+    {
+        "merchant": "Algora Ventures Ltd",
+        "num_legitimate": 2,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "VFWW_UKVI in Suriname",
+        "num_legitimate": 2,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "SegPay Technologies_TEST",
+        "num_legitimate": 1,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Flinbo",
+        "num_legitimate": 1,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    },
+    {
+        "merchant": "Junglemelody Unipessoal LDA",
+        "num_legitimate": 1,
+        "num_fraudulent": 0,
+        "precision": 0,
+        "recall": 0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0
+    }
+]

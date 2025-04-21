@@ -1,34 +1,27 @@
-import { useContext, useEffect, useRef } from 'react';
+import { useContext, useEffect } from 'react';
 import { AppContext } from '../context/AppContext';
-
-import fetchTransaction from '../services/fetchTransaction'
-import predictTransaction from '../services/predictTransaction'
+import fetchEvaluateTransaction from '../services/fetchEvaluateTransaction';
 
 export const useLiveViewUpdater = () => {
   const { index, setIndex, setTransaction, setResultsTable } = useContext(AppContext);
-  const currentIndex = useRef(index);
-
-  useEffect(() => {
-    currentIndex.current = index;
-  }, [index]);
 
   useEffect(() => {
     const update = async () => {
-      const transaction = await fetchTransaction(currentIndex.current);
-      const prediction = await predictTransaction(currentIndex.current);
-      
-      setTransaction(transaction);
-      setResultsTable(prev => [{
-        serial: transaction.serial,
-        date: transaction.date,
-        payment_id: transaction.payment_id,
-        ...prediction
-      }, ...prev]);
-      
-      setIndex(prev => prev + 1);
+      try {
+        const response = await fetchEvaluateTransaction(index);
+        if (response && response.details && response.result) {
+          setTransaction(response.details);
+          setResultsTable(prev => [response.result, ...prev]);
+          setIndex(prev => prev + 1);
+
+          console.info('LiveViewUpdater response:', response);
+        }
+      } catch (error) {
+        console.error('LiveViewUpdater error:', error);
+      }
     };
 
     const interval = setInterval(update, 5000);
     return () => clearInterval(interval);
-  }, [setTransaction, setResultsTable, setIndex]);
+  }, [index, setTransaction, setResultsTable, setIndex]);
 };

@@ -621,18 +621,29 @@ body {
 }
 
 .dropdown-menu {
-  background-color: var(--dark-gray) !important; 
-  color: var(--white) !important;
+  padding: 10px;
+  padding-right: 30px;
+  border-radius: 8px;
+  background-color: var(--black);
+  color: var(--white);
+  font-size: 1rem;
+  outline: none;
+  width: 150px;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E"); /* Custom dropdown arrow */
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
 }
 /* Guidance doc */
 .guidance-doc {
-  margin: 40px auto; /* Add top and bottom margin */
-  padding: 130px; /* Add padding */
+  margin: 40px auto;
+  padding: 130px;
   padding-top: 0px;
   padding-bottom: 0px;
   font-family: var(--primary-font);
   color: var(--white);
-  border-radius: 10px; /* Add border radius */
+  border-radius: 10px;
 }
 
 .guidance-doc h1 {
@@ -702,7 +713,7 @@ body {
   border-radius: 10px;
 }
 
-/* Search Section */
+/* ================= Search Section ================= */
 .search_section {
   display: flex;
   align-items: center;         /* Vertically center items */
@@ -787,7 +798,16 @@ body {
   color: var(--slider-color) !important;
 }
 
-slider .slider-thumb:active {
+.MuiSlider-valueLabel {
+  background-color: var(--brand-blue);
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+
+
+.slider-thumb:active {
   color: #007bff !important;
 }
 
@@ -808,6 +828,8 @@ header {
   align-items: center;
   gap: 10px;
 }
+
+/* Settings Popup */
 
 .settings-button {
   background: rgba(0, 0, 0, 0.5);
@@ -833,4 +855,88 @@ header {
 .switch-container {
   display: flex;
   align-items: center;
+}
+
+.settings-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7); /* Darker overlay for better focus */
+  z-index: 999;
+}
+
+.settings-content {
+  background: var(--black);
+  color: var(--white);
+  padding: 3rem;
+  border-radius: 12px;
+  width: 1000px;
+  height: 500px;
+  max-width: 90%;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Enhance shadow for better visibility */
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px; /* Adjust position for larger popup */
+  right: 20px; /* Adjust position for larger popup */
+  font-size: 2rem; /* Increase font size for better visibility */
+  background: none;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: var(--brand-red);
+}
+
+/* dropdown */
+.dropdown-container {
+  margin-top: 20px;
+  display: flex;
+  align-items: center; /* Align dropdown and button vertically */
+  gap: 10px; /* Add spacing between the dropdown and the button */
+}
+
+.dropdown-container label {
+  font-size: 1rem;
+  color: var(--white);
+}
+
+.dropdown-menu {
+  padding: 10px; /* Padding inside the dropdown */
+  padding-right: 30px; /* Add extra padding for the dropdown arrow */
+  border-radius: 8px;
+  background-color: var(--black);
+  color: var(--white);
+  font-size: 1rem;
+  outline: none;
+  width: 150px; /* Reduce the width */
+  appearance: none; /* Remove default browser styling for consistency */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E"); /* Custom dropdown arrow */
+  background-repeat: no-repeat;
+  background-position: right 10px center; /* Position the arrow */
+  background-size: 12px; /* Adjust arrow size */
+}
+
+.run-button {
+  padding: 10px 15px;
+  background-color: var(--brand-green);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.run-button:hover {
+    background-color: #4a9e4a; /* Darker green for hover effect */
 }

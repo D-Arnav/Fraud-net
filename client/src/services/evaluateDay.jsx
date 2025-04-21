@@ -1,11 +1,15 @@
-export default async function evaluateDay (day) {
+export default async function evaluateDay(day) {
 
-    const response = await fetch(`http://127.0.0.1:8000/predict_day?day=${day}`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-
-    return response.json()
-}
+    try {
+      const response = await fetch(`http://10.55.1.250:5000/predict_day?day=${day}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      return response.json();
+    } catch (error) {
+      console.error('Error fetching evaluate transaction:', JSON.stringify(error));
+      return 'Error fetching evaluate transaction';
+    }
+  }

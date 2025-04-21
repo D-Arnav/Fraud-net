@@ -13,6 +13,8 @@ import { useDailyViewUpdater } from '../hooks/useDailyViewUpdater';
 import { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 
+import fetchDates from '../services/fetchDates';
+
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
@@ -54,12 +56,12 @@ function ProgressBar({ running, timeToComplete, onComplete }) {
 
 function RunButton({ onRunClick }) {
   return (
-    <Button 
-      variant="contained" 
-      className="btn" 
-      id="run" 
-      endIcon={<PlayArrowOutlined />} 
-      disableElevation 
+    <Button
+      variant="contained"
+      className="btn"
+      id="run"
+      endIcon={<PlayArrowOutlined />}
+      disableElevation
       onClick={onRunClick}
     >
       Run
@@ -68,18 +70,23 @@ function RunButton({ onRunClick }) {
 }
 
 function DateDropdown() {
-  const { setSelectedDate } = useContext(AppContext);
+  const { selectedDate, setSelectedDate } = useContext(AppContext);
 
-  const dates = [
-    "Jan 15", "Jan 16", "Jan 17", "Jan 18", "Jan 19", "Jan 20", "Jan 21", "Jan 22",
-    "Jan 23", "Jan 24", "Jan 25", "Jan 26", "Jan 27", "Jan 28", "Jan 29", "Jan 30"
-  ];
 
-  const encodedDates = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+  const [dates, setDates] = React.useState(['3/1/2025']);
+
+  React.useEffect(() => {
+    const fetchAndSetDates = async () => {
+      const fetchedDates = await fetchDates();
+      setDates(fetchedDates);
+    };
+
+    fetchAndSetDates();
+  }, []);
 
   const handleDateChange = (event) => {
     const selectedIndex = event.target.value;
-    const date = encodedDates[selectedIndex - 1];
+    const date = dates[selectedIndex - 1]
     setSelectedDate(date);
   };
 
@@ -115,7 +122,7 @@ function DateDropdown() {
 
 export default function TopThing() {
   const [isRunning, setIsRunning] = React.useState(false);
-  const timeToComplete = 4; 
+  const timeToComplete = 38;
   const updateDailyView = useDailyViewUpdater();
 
   const handleRunClick = () => {
@@ -129,7 +136,7 @@ export default function TopThing() {
 
   return (
     <div className="top-thing">
-      
+
       <DateDropdown />
       <ProgressBar running={isRunning} timeToComplete={timeToComplete} onComplete={handleProgressComplete} />
       <RunButton onRunClick={handleRunClick} />

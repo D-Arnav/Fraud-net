@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -7,35 +7,87 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Searchbar from './Searchbar';
-import Slider from './Slider';
+import TwoPointSlider from './TwoPointSlider';
 
-// Temporary mock AppContext for debugging
-const MockAppContext = React.createContext();
+import fetchMerchantWiseResults from '../services/fetchMerchantWiseResults';
 
-const dummyData = [
-  { merchant: 'Merchant A', num_legitimate: 120, num_fraudulent: 5, precision: 0.96, recall: 0.92, false_negative_rate: 0.08, false_positive_rate: 0.04 },
-  { merchant: 'Merchant B', num_legitimate: 80, num_fraudulent: 20, precision: 0.80, recall: 0.75, false_negative_rate: 0.25, false_positive_rate: 0.20 },
-  { merchant: 'Merchant C', num_legitimate: 150, num_fraudulent: 10, precision: 0.94, recall: 0.90, false_negative_rate: 0.10, false_positive_rate: 0.06 },
-  { merchant: 'Merchant D', num_legitimate: 50, num_fraudulent: 30, precision: 0.62, recall: 0.60, false_negative_rate: 0.40, false_positive_rate: 0.38 },
-];
 
 export default function MerchantDummy() {
+
+  const [dummyData, setDummyData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await fetchMerchantWiseResults();
+        setDummyData(data);
+      } catch (error) {
+        console.error('Error fetching merchant data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
   const [searchQuery, setSearchQuery] = useState('');
+  const [filteredData, setFilteredData] = useState(dummyData);
+  const [minDate, setMinDate] = useState(null);
+  const [maxDate, setMaxDate] = useState(null);
+
+  useEffect(() => {
+    // Calculate the oldest and most recent dates
+    if (dummyData.length > 0) {
+      const dates = dummyData.map((row) => new Date(row.date).getTime());
+      const min = Math.min(...dates);
+      const max = Math.max(...dates);
+      setMinDate(min);
+      setMaxDate(max);
+    }
+  }, []);
+
+  const handleFilter = (filtered) => {
+    setFilteredData(filtered);
+  };
+
+  const formatDate = (timestamp) => {
+    const date = new Date(timestamp);
+    const day = date.getDate();
+    const month = date.toLocaleString('default', { month: 'long' });
+    return `${day}${getOrdinalSuffix(day)} ${month}`;
+  };
+
+  const getOrdinalSuffix = (day) => {
+    if (day > 3 && day < 21) return 'th';
+    switch (day % 10) {
+      case 1: return 'st';
+      case 2: return 'nd';
+      case 3: return 'rd';
+      default: return 'th';
+    }
+  };
+
   const filteredMerchant = dummyData.filter((row) =>
     row.merchant.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (
-    <MockAppContext.Provider value={{ filteredMerchant, setSearchQuery }}>
+    <>
       <h3 className="search-title">Merchant Group</h3>
       <div className="search_section">
         <div className="searchbar-container">
           <Searchbar onSearch={setSearchQuery} />
         </div>
         <div className="slider-container">
-          <span className="slider-label">15-10</span>
-          <Slider />
-          <span className="slider-label">24-10</span>
+          <span className="slider-label">{minDate ? formatDate(minDate) : ''}</span>
+          {minDate && maxDate && (
+            <TwoPointSlider
+              className="slider"
+              min={minDate}
+              max={maxDate}
+              data={dummyData}
+              onFilter={handleFilter}
+            />
+          )}
+          <span className="slider-label">{maxDate ? formatDate(maxDate) : ''}</span>
         </div>
       </div>
       <TableContainer component={Paper} elevation={0} className="table-container" sx={{ width: '100% !important' }}>
@@ -66,6 +118,6 @@ export default function MerchantDummy() {
           </TableBody>
         </Table>
       </TableContainer>
-    </MockAppContext.Provider>
+    </>
   );
 }

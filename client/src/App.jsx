@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import './App.css';
 import logo_dark from './assets/pxp_logo_dark.svg';
 import logo_light from './assets/pxp_logo.svg';
@@ -6,9 +6,11 @@ import settingsIcon from './assets/settings.svg';
 import Switch from './components/Switch';
 import LabTabs from './components/LabTabs';
 import { AppContext } from './context/AppContext';
+import Settings from './components/Settings'; 
 
 function App() {
   const { theme, setTheme } = useContext(AppContext);
+  const [showSettings, setShowSettings] = useState(false);
 
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
@@ -30,20 +32,24 @@ function App() {
         />
         <div className="header-controls">
           <Switch onToggle={toggleTheme} />
-          <button className="settings-button">
+          <button className="settings-button" onClick={() => setShowSettings(true)}>
             <img src={settingsIcon} alt="Settings" />
           </button>
         </div>
       </header>
+
       <div className="pxp-title">
         <h1>
           PXP Protect <span className="ver">Model Version Fn1.01</span>
         </h1>
         <p>AI Driven Fraud Detection Model</p>
       </div>
+
       <div className="container">
         <LabTabs />
       </div>
+      
+      {showSettings && <Settings onClose={() => setShowSettings(false)} />}
     </div>
   );
 }

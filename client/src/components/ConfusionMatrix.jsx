@@ -20,10 +20,10 @@ const ConfusionMatrix = () => {
   const [fnr, setFnr] = useState(0);
 
   useEffect(() => {
-    const totalTp = dailyViewTable.reduce((sum, item) => sum + item.true_positives, 0);
-    const totalFp = dailyViewTable.reduce((sum, item) => sum + item.false_positives, 0);
-    const totalTn = dailyViewTable.reduce((sum, item) => sum + item.true_negatives, 0);
-    const totalFn = dailyViewTable.reduce((sum, item) => sum + item.false_negatives, 0);
+    const totalTp = dailyViewTable.reduce((sum, item) => sum + item.tp, 0);
+    const totalFp = dailyViewTable.reduce((sum, item) => sum + item.fp, 0);
+    const totalTn = dailyViewTable.reduce((sum, item) => sum + item.tn, 0);
+    const totalFn = dailyViewTable.reduce((sum, item) => sum + item.fn, 0);
 
     setTp(totalTp);
     setFp(totalFp);
