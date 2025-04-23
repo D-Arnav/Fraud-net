@@ -9,7 +9,9 @@ from datetime import datetime
 import pandas as pd
 
 import os
-
+from sklearn.manifold import TSNE
+import numpy as np
+from tqdm import tqdm
 
 
 class NeuralNet_1_01(torch.nn.Module):
@@ -116,6 +118,48 @@ class FraudNet_FN_1_01(FraudNet):
 
         return loss.item()
 
+    def tsne(self, tl):
+        import matplotlib.pyplot as plt
+
+        self.model.eval()
+        embeddings = []
+        labels = []
+
+        with torch.no_grad():
+            for (X, y, _) in tqdm(tl.loader, desc="Generating t-SNE Embeddings"):
+                if self.cuda: X = X.cuda()
+                embeddings.append(self.model.fc3(self.model.fc2(self.model.fc1(X))).cpu().numpy())
+                labels.append(y.cpu().numpy())
+                break # 1 Batch is enough!
+
+        embeddings = np.concatenate(embeddings, axis=0)
+        labels = np.concatenate(labels, axis=0)
+
+        tsne = TSNE(n_components=2, random_state=42)
+        reduced_embeddings = tsne.fit_transform(embeddings)
+
+        plt.figure(figsize=(10, 8))
+        sorted_indices = np.argsort(labels)
+        reduced_embeddings = reduced_embeddings[sorted_indices]
+        labels = labels[sorted_indices]
+
+        fraud_indices = labels == 1
+        legitimate_indices = labels == 0
+
+        plt.scatter(reduced_embeddings[legitimate_indices, 0], reduced_embeddings[legitimate_indices, 1], 
+            c='black', label='Legitimate', alpha=0.7)
+        plt.scatter(reduced_embeddings[fraud_indices, 0], reduced_embeddings[fraud_indices, 1], 
+            c='red', label='Fraud', alpha=0.9, marker='x', s=50)
+
+        plt.legend()
+        plt.title('t-SNE Visualization of Embeddings')
+        plt.xlabel('t-SNE Dimension 1')
+        plt.ylabel('t-SNE Dimension 2')
+
+        os.makedirs('src/results', exist_ok=True)
+        plt.savefig('src/results/tsne_visualization.png')
+        plt.close()
+
     def get_results(self, confmat, print_results=True):
         
         tp, fp, fn, tn = confmat['TP'], confmat['FP'], confmat['FN'], confmat['TN']
@@ -167,6 +211,8 @@ if __name__ == '__main__':
     tl = NewTransactionLoader(test_data_path)
     tl.create_loader()
 
-    cm = model.evaluate(tl)
+    model.tsne(tl)
 
-    model.get_results(confmat=cm)
+    # cm = model.evaluate(tl)
+
+    # model.get_results(confmat=cm)

@@ -14,8 +14,7 @@ import ConfusionMatrix from "./ConfusionMatrix";
 import TopThing from "./TopThing";
 import DownloadButton from "./DownloadButton";
 import GuidanceDoc from "./GuidanceDoc";
-// import Merchant from "./Merchant";
-import MerchantDummy from "./MerchantDummy";
+import Merchant from "./Merchant";
 import Models from "./Models";
 
 const LabTabs = () => {
@@ -82,7 +81,7 @@ const LabTabs = () => {
         </TabPanel>
 
         <TabPanel value="6">
-          <MerchantDummy />
+          <Merchant />
         </TabPanel>
       </TabContext>
     </Box>

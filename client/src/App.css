@@ -8,6 +8,7 @@
   --gray: #555;
   --white: #edeeef;
   --translucent: rgba(13, 13, 17, 0.3);
+  --settings-bg: rgba(13, 13, 17, 0.3);
   --brand-blue: #292cf5;
   --brand-purple: #a047ff;
   --brand-green: #5fc15f;
@@ -24,6 +25,7 @@
   --gray: #555;
   --white: #09090c;
   --translucent: rgba(237, 238, 239, 0.15);
+  --settings-bg: rgba(237, 238, 239, 0.897);
   --brand-blue: #007bff;
   --brand-purple: #6f42c1;
   --brand-green: #28a745;
@@ -42,9 +44,9 @@ body {
   background-size: cover;
   color: var(--white) !important;
   font-family: var(--primary-font);
-  background: radial-gradient(circle at -30%, var(--brand-blue), transparent 60%), 
-              radial-gradient(circle at 100%, var(--brand-purple), transparent 60%), 
-              var(--black);
+  background: radial-gradient(circle at -30%, var(--brand-blue), transparent 60%),
+    radial-gradient(circle at 100%, var(--brand-purple), transparent 60%),
+    var(--black);
 
 }
 
@@ -102,8 +104,8 @@ body {
 
 .toggle-wrapper label {
   display: inline-block;
-  width: 40px;        /* Smaller width */
-  height: 20px;       /* Smaller height */
+  width: 40px;
+  height: 20px;
   background: #ccc;
   border-radius: 20px;
   position: relative;
@@ -125,11 +127,11 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.toggle-wrapper input[type="checkbox"]:checked + label {
+.toggle-wrapper input[type="checkbox"]:checked+label {
   background: linear-gradient(135deg, #CAFF0A 0%, #EDEEEF 100%);
 }
 
-.toggle-wrapper input[type="checkbox"]:checked + label::after {
+.toggle-wrapper input[type="checkbox"]:checked+label::after {
   left: 22px;
 }
 
@@ -156,12 +158,12 @@ body {
 }
 
 .pagebreak {
-  width: auto; /* Match the width of the surrounding content */
-  max-width: 800%; /* Adjust this value to fit your table width */
+  width: auto;
+  max-width: 800%;
   position: relative;
   border: none;
   border-top: 1px solid var(--gray);
-  margin: 20px auto; /* Center the line */
+  margin: 20px auto;
 }
 
 /* ================= Tabs ================= */
@@ -202,7 +204,7 @@ body {
   justify-content: flex-start !important;
 }
 
-/* White bottom border under the tabs till the last element */
+
 .MuiTabs-flexContainer::after {
   content: '';
   position: absolute;
@@ -262,7 +264,7 @@ body {
 
 /* ================= Results Table ================= */
 .table-container {
-  max-height: 300px; /* Adjust height as needed */
+  max-height: 300px;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: var(--gray) var(--black);
@@ -334,15 +336,15 @@ body {
   position: sticky;
   top: 0;
   z-index: 10;
-  backdrop-filter: blur(128px); /* Match the blur effect */
-  background-color: var(--translucent) !important; /* Match the semi-transparent background */
+  backdrop-filter: blur(128px);
+  background-color: var(--translucent) !important;
 }
 
 .dailyview-container .MuiTableHead-root .MuiTableCell-root {
   font-family: var(--secondary-font) !important;
   font-weight: 500 !important;
   font-size: 1rem !important;
-  background-color: transparent !important; /* Match the transparent background */
+  background-color: transparent !important;
   color: var(--white) !important;
 }
 
@@ -364,7 +366,7 @@ body {
 .dailyview-container .table-scroll {
   max-height: 300px;
   overflow-y: auto;
-  background: transparent; 
+  background: transparent;
 }
 
 /* Make the table header sticky */
@@ -392,18 +394,18 @@ body {
 }
 
 .dailyview-container .table-scroll::-webkit-scrollbar-track {
-  background: var(--dark-gray); /* Darker background for the track */
+  background: var(--dark-gray);
   border-radius: 10px;
 }
 
 .dailyview-container .table-scroll::-webkit-scrollbar-thumb {
-  background-color: var(--gray); /* Subtle gray color for the thumb */
+  background-color: var(--gray);
   border-radius: 10px;
   transition: background-color 0.3s;
 }
 
 .dailyview-container .table-scroll::-webkit-scrollbar-thumb:hover {
-  background-color: var(--gray); /* Lighter gray on hover */
+  background-color: var(--gray);
 }
 
 
@@ -450,32 +452,30 @@ body {
 
 .confmat-container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   justify-content: center;
-  gap: 50px;
-  background-color: transparent;
-  padding: 10px;
-  border-radius: 8px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 20px;
 }
 
 /* Grid Layout for Confusion Matrix */
 
 .confmat-grid {
   display: grid;
-  grid-template-columns: 160px 160px 160px;
+  grid-template-columns: repeat(3, minmax(100px, 160px));
   grid-template-rows: 50px 80px 80px;
   border: 2px solid var(--white);
+  width: 100%;
+  max-width: 480px;
 }
 
 /* Empty Top-left Cell */
-
 .confmat-empty-cell {
   border: 1px solid var(--white);
 }
 
 /* Header Cell Style */
-
 .confmat-header-cell {
   display: flex;
   justify-content: center;
@@ -489,7 +489,6 @@ body {
 }
 
 /* Main Cell Style */
-
 .confmat-cell {
   display: flex;
   flex-direction: column;
@@ -518,8 +517,10 @@ body {
 
 .metrics {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
   gap: 20px 30px;
+  width: 100%;
+  max-width: 300px;
 }
 
 .metric-item {
@@ -542,14 +543,37 @@ body {
   font-size: 0.9rem;
 }
 
-/* Metric Colors */
-
 .metric-value.green {
   color: var(--brand-green);
 }
 
 .metric-value.red {
   color: var(--brand-red);
+}
+
+/* ================= Responsive Breakpoints ================= */
+
+@media (max-width: 768px) {
+  .confmat-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .metrics {
+    grid-template-columns: 1fr;
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .metric-item {
+    align-items: center;
+  }
+
+  .metric-name,
+  .metric-value {
+    font-size: 0.85rem;
+  }
 }
 
 /* ================= TopThing Styling ================= */
@@ -576,12 +600,12 @@ body {
 .btn {
   border: none !important;
   border-radius: 9px !important;
-  padding: 10px 20px; /* Add padding to make the button wider */
-  min-width: 120px; /* Set a minimum width for the button */
+  padding: 10px 20px;
+  min-width: 120px;
 }
 
 .btn:hover {
-  background-color: #c1c1c1 !important; /* Darker Grey */
+  background-color: #c1c1c1 !important;
 }
 
 #run {
@@ -590,7 +614,7 @@ body {
 }
 
 #run:hover {
-  background-color: #3e7c3e !important; /* Darker Green */
+  background-color: #3e7c3e !important;
 }
 
 #download {
@@ -620,6 +644,11 @@ body {
   color: var(--white);
 }
 
+/* .MuiPaper-root{
+  overflow-y: hidden;
+  scrollbar-width: none;
+} */
+
 .dropdown-menu {
   padding: 10px;
   padding-right: 30px;
@@ -630,11 +659,12 @@ body {
   outline: none;
   width: 150px;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E"); /* Custom dropdown arrow */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 10px center;
   background-size: 12px;
 }
+
 /* Guidance doc */
 .guidance-doc {
   margin: 40px auto;
@@ -667,7 +697,8 @@ body {
   margin-bottom: 15px;
 }
 
-.guidance-doc p, .guidance-doc ul {
+.guidance-doc p,
+.guidance-doc ul {
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 15px;
@@ -716,9 +747,9 @@ body {
 /* ================= Search Section ================= */
 .search_section {
   display: flex;
-  align-items: center;         /* Vertically center items */
-  justify-content: flex-start; /* Align items to the left */
-  gap: 120px;                   /* Space between searchbar and slider */
+  align-items: center;
+  justify-content: flex-start;
+  gap: 120px;
   margin: 0 25px 10px 25px;
   padding: 0 20px 20px 0;
   color: var(--dark);
@@ -727,23 +758,30 @@ body {
 .slider-container {
   display: flex;
   align-items: center;
-  gap: 15px;                   /* Space between labels and slider */
+  gap: 35px;
+  margin-bottom: 20px;
 }
 
 .slider-label {
-  font-size: 16px;
-  color: var(--dark);
+  font-size: 1rem;
+  color: var(--white);
+  white-space: nowrap;
+  width: 120px;
+  text-align: right;
 }
 
-.search-title {
-  font-family: var(--secondary-font);
-  font-size: 25px;
-  font-weight: 500;
-  color: var(--dark);
+.slider {
+  width: 200px;
+}
+
+.slider-value {
+  font-size: 1rem;
+  color: var(--white);
+  white-space: nowrap;
 }
 
 .group {
-  position: relative; 
+  position: relative;
   display: flex;
   align-items: center;
   width: 120%;
@@ -760,7 +798,7 @@ body {
   box-shadow: 0px 0px 20px -18px;
   background-color: var(--dark-gray);
   color: var(--white);
-  font-family: var(--secondary-font); /* Change font to primary font */
+  font-family: var(--secondary-font);
   letter-spacing: 0.5px;
 }
 
@@ -788,8 +826,8 @@ body {
 }
 
 
-.input:focus ~ .search-icon,
-.input:hover ~ .search-icon {
+.input:focus~.search-icon,
+.input:hover~.search-icon {
   transform: scale(1.1);
   opacity: 0.8;
 }
@@ -857,6 +895,10 @@ header {
   align-items: center;
 }
 
+.settings-title {
+  padding: 15px;
+}
+
 .settings-overlay {
   display: flex;
   justify-content: center;
@@ -866,12 +908,12 @@ header {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7); /* Darker overlay for better focus */
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: 999;
 }
 
 .settings-content {
-  background: var(--black);
+  background: var(--settings-bg);
   color: var(--white);
   padding: 3rem;
   border-radius: 12px;
@@ -879,14 +921,35 @@ header {
   height: 500px;
   max-width: 90%;
   position: relative;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Enhance shadow for better visibility */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+  backdrop-filter: blur(10px);
+}
+
+.settings-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.settings-content::-webkit-scrollbar-track {
+  background: var(--dark-gray);
+  border-radius: 10px;
+}
+
+.settings-content::-webkit-scrollbar-thumb {
+  background-color: var(--gray);
+  border-radius: 10px;
+  border: 2px solid var(--black);
+}
+
+.settings-content::-webkit-scrollbar-thumb:hover {
+  background-color: var(--white);
 }
 
 .close-btn {
   position: absolute;
-  top: 15px; /* Adjust position for larger popup */
-  right: 20px; /* Adjust position for larger popup */
-  font-size: 2rem; /* Increase font size for better visibility */
+  top: 15px;
+  right: 20px;
+  font-size: 2rem;
   background: none;
   border: none;
   color: var(--white);
@@ -899,10 +962,11 @@ header {
 
 /* dropdown */
 .dropdown-container {
+  padding-left: 30px;
   margin-top: 20px;
   display: flex;
-  align-items: center; /* Align dropdown and button vertically */
-  gap: 10px; /* Add spacing between the dropdown and the button */
+  align-items: center;
+  gap: 10px;
 }
 
 .dropdown-container label {
@@ -911,19 +975,19 @@ header {
 }
 
 .dropdown-menu {
-  padding: 10px; /* Padding inside the dropdown */
-  padding-right: 30px; /* Add extra padding for the dropdown arrow */
+  padding: 10px;
+  padding-right: 30px;
   border-radius: 8px;
   background-color: var(--black);
   color: var(--white);
   font-size: 1rem;
   outline: none;
-  width: 150px; /* Reduce the width */
-  appearance: none; /* Remove default browser styling for consistency */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E"); /* Custom dropdown arrow */
+  width: 150px;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 10px center; /* Position the arrow */
-  background-size: 12px; /* Adjust arrow size */
+  background-position: right 10px center;
+  background-size: 12px;
 }
 
 .run-button {
@@ -938,5 +1002,99 @@ header {
 }
 
 .run-button:hover {
-    background-color: #4a9e4a; /* Darker green for hover effect */
+  background-color: #4a9e4a;
+}
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.slider-label {
+  font-size: 1rem;
+  color: var(--white);
+  white-space: nowrap;
+  width: 120px;
+  text-align: right;
+}
+
+.slider {
+  width: 250px !important;
+  /* Reduce the width of the slider */
+}
+
+.slider-value {
+  font-size: 1rem;
+  color: var(--white);
+  white-space: nowrap;
+  /* Prevent the value text from wrapping */
+}
+
+.save-button-container {
+  display: flex;
+  justify-content: flex-end;
+  /* Align the button to the right */
+  margin-top: 20px;
+  /* Add spacing above the button */
+}
+
+.save-button {
+  padding: 10px 15px;
+  background-color: var(--brand-green);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.save-button:hover {
+  background-color: #4a9e4a;
+  /* Darker green for hover effect */
+}
+
+.pass-through-slider .MuiSlider-thumb {
+  color: var(--brand-blue);
+  /* Change the thumb color to brand blue */
+}
+
+.pass-through-slider .MuiSlider-track {
+  color: var(--brand-blue);
+  /* Change the track color to brand blue */
+}
+
+.pass-through-slider .MuiSlider-rail {
+  color: #ccc;
+  /* Keep the rail a neutral color */
+}
+
+.retrain-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* Add spacing between elements */
+  margin-top: 20px;
+  /* Add spacing above the retrain section */
+}
+
+.retrain-label {
+  font-size: 1rem;
+  color: var(--white);
+}
+
+.retrain-input {
+  width: 60px;
+  padding: 5px;
+  font-size: 1rem;
+  text-align: center;
+  border: 1px solid var(--gray);
+  border-radius: 4px;
+}
+
+.retrain-text {
+  font-size: 1rem;
+  color: var(--white);
 }

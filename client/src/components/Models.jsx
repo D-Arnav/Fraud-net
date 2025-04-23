@@ -21,7 +21,7 @@ const rows = [
   createData("Random Forest + Class Balance", "10.61%", "9.55%", "90.45%", "0.50%"),
   createData("Random Forest + Tomek", "16.67%", "2.27%", "97.73%", "0.07%"),
   createData("Random Forest + Tomek + Class Balance", "11.39%", "10.45%", "89.55%", "0.51%"),
-  createData("Neural Network", "6.72%", "59.09%", "40.91%", "5.13%")
+  createData("Neural Network", "18.77%", "35.16%", "64.84%", "1.04%")
 ];
 
 export default function Models() {

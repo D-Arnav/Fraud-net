@@ -52,23 +52,6 @@ def load_model():
     return model
 
 
-def get_config():
-
-    config = {
-        'model': 'FN_2_01',
-        'model_path': 'src/weights/Fraudnet_2.01_0417130824.pt',
-        'thresholds': {
-            'V.High Risk': 0.5,
-            'High Risk': 0.5,
-            'Medium Risk': 0.5,
-            'Low Risk': 0.5,
-            'Unknown': 0.5
-        }
-    }
-
-    return config
-
-
 def get_single(data_frame, index):
     """
     Fetch and Returns a Single Transaction
@@ -105,12 +88,10 @@ def generate_details(row, index):
     
     return details
 
-def fetch_and_evaluate_single(index):
+def fetch_and_evaluate_single(index, config):
     """
     Fetches and evaluates a Single Transaction
     """
-
-    config = get_config()
 
     model = load_model()
     data_path = 'src/data/test_data.csv'
@@ -146,12 +127,11 @@ def fetch_and_evaluate_single(index):
     }
 
 
-def evaluate_day(day):
+def evaluate_day(day, config):
     """
     Evaluates an entire day of Transactions and returns the confusion matrix.
     """
 
-    config = get_config()
     model = load_model().model
     model.eval()
 
@@ -219,9 +199,8 @@ def fetch_dates():
     return unique_dates
 
 
-def evaluate_merchant_wise():
+def evaluate_merchant_wise(config):
     
-    config = get_config()
     model = load_model().model
     model.eval()
 
@@ -307,7 +286,7 @@ def fetch_merchant_wise():
 
     
 if __name__ == '__main__':
-
+    pass
     # o = fetch_and_evaluate_single(0)
     # print(o)
 
@@ -317,4 +296,4 @@ if __name__ == '__main__':
     #     )
     # )
 
-    evaluate_merchant_wise()
+    # evaluate_merchant_wise()

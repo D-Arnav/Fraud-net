@@ -20,7 +20,7 @@ export default function Results() {
     <div className="results-container">
     <div className="results-header">
       <h3 className="side-heading">Results</h3>
-      <p className="score">Score: {computeScore(resultsTable)}%</p>
+      {/* <p className="score"></p> */}
     </div>
       <TableContainer component={Paper} elevation={0} className="table-container">
         <Table className="result-table" size="small" aria-label="simple table">

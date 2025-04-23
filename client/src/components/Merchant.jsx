@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -8,36 +8,40 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Searchbar from './Searchbar';
 import TwoPointSlider from './TwoPointSlider';
-import { AppContext } from '../context/AppContext';
+
+import fetchMerchantWiseResults from '../services/fetchMerchantWiseResults';
+
 
 export default function Merchant() {
-  const { setSearchQuery } = useContext(AppContext);
+
   const [merchantData, setMerchantData] = useState([]);
-  const [filteredData, setFilteredData] = useState([]);
-  const [minDate, setMinDate] = useState(null);
-  const [maxDate, setMaxDate] = useState(null);
 
   useEffect(() => {
-    const fetchMerchantData = async () => {
+    const fetchData = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8000/merchant_data');
-        const data = await response.json();
+        const data = await fetchMerchantWiseResults();
         setMerchantData(data);
-        setFilteredData(data);
-
-        if (data.length > 0) {
-          const dates = data.map((row) => new Date(row.date).getTime());
-          const min = Math.min(...dates);
-          const max = Math.max(...dates);
-          setMinDate(min);
-          setMaxDate(max);
-        }
       } catch (error) {
         console.error('Error fetching merchant data:', error);
       }
     };
 
-    fetchMerchantData();
+    fetchData();
+  }, []);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filteredData, setFilteredData] = useState(merchantData);
+  const [minDate, setMinDate] = useState(null);
+  const [maxDate, setMaxDate] = useState(null);
+
+  useEffect(() => {
+    // Calculate the oldest and most recent dates
+    if (merchantData.length > 0) {
+      const dates = merchantData.map((row) => new Date(row.date).getTime());
+      const min = Math.min(...dates);
+      const max = Math.max(...dates);
+      setMinDate(min);
+      setMaxDate(max);
+    }
   }, []);
 
   const handleFilter = (filtered) => {
@@ -61,8 +65,8 @@ export default function Merchant() {
     }
   };
 
-  const filteredMerchant = filteredData.filter((row) =>
-    row.merchant.toLowerCase().includes(setSearchQuery.toLowerCase())
+  const filteredMerchant = merchantData.filter((row) =>
+    row.merchant.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (
